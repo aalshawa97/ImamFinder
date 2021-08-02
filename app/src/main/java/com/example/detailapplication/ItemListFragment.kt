@@ -101,7 +101,7 @@ class ItemListFragment : Fragment() {
         /**
          * Context click listener to handle Right click events
          * from mice and trackpad input to provide a more native
-         * experience on larger screen devices
+         * experience on larger screen devicesmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm                                                                                                                                                                                         j
          */
         val onContextClickListener = View.OnContextClickListener { v ->
             val item = v.tag as PlaceholderContent.PlaceholderItem

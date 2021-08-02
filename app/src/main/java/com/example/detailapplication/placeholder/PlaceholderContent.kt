@@ -41,7 +41,7 @@ object PlaceholderContent {
 
     private fun makeDetails(position: Int): String {
         val builder = StringBuilder()
-        builder.append("Details about Imam: ").append(position)
+        builder.append("Details about the Imam: ").append(position)
         for (i in 0..position - 1) {
             builder.append("\nMore details information here.")
         }
