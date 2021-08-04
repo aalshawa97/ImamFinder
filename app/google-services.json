@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "749803829891",
+    "project_id": "imamfinder-ac929",
+    "storage_bucket": "imamfinder-ac929.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749803829891:android:3dccef8c3b3d20bb7db9b6",
+        "android_client_info": {
+          "package_name": "com.example.detailapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749803829891-rrkb6t38glurn133q9ckpmmfpj3aodrq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATBNQ2C1S9FPWk7uzLkViAwf4x__1g7u0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749803829891-rrkb6t38glurn133q9ckpmmfpj3aodrq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
