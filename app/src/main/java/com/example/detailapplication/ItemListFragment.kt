@@ -71,7 +71,6 @@ class ItemListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         ViewCompat.addOnUnhandledKeyEventListener(view, unhandledKeyEventListenerCompat)
 
         val recyclerView: RecyclerView = binding.itemList
@@ -101,7 +100,7 @@ class ItemListFragment : Fragment() {
         /**
          * Context click listener to handle Right click events
          * from mice and trackpad input to provide a more native
-         * experience on larger screen devicesmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm                                                                                                                                                                                         j
+         * experience on larger screen devices                                                                                                                                                                                       j
          */
         val onContextClickListener = View.OnContextClickListener { v ->
             val item = v.tag as PlaceholderContent.PlaceholderItem

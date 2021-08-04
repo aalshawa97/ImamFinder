@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import com.example.detailapplication.placeholder.PlaceholderContent
 import com.example.detailapplication.databinding.FragmentItemDetailBinding
 
@@ -33,7 +34,6 @@ class ItemDetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         arguments?.let {
             if (it.containsKey(ARG_ITEM_ID)) {
                 // Load the placeholder content specified by the fragment
@@ -57,7 +57,7 @@ class ItemDetailFragment : Fragment() {
         itemDetailTextView = binding.itemDetail
         // Show the placeholder content as text in a TextView.
         item?.let {
-            itemDetailTextView.text = "Imam finder user.\n" + it.details
+            itemDetailTextView.text = "Nouman Khalid.\nQuran Teacher\n" + it.details
         }
 
         return rootView

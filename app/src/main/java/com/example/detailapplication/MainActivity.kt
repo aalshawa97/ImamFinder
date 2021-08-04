@@ -21,7 +21,9 @@ import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
 
+    //private var cover: Any
     private var imageData: ByteArray? = null
+    private var selectedImage: Uri? = null
     //Remeber to use
     private val postURL: String = "https://ptsv2.com/t/54odo-1576291398/post"
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -29,12 +31,31 @@ class MainActivity : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private lateinit var sendButton : Button
     private lateinit var imageButton : Button
+    //FloatingActionButton fab;
+    //cover = findViewById(R.id.floatActionButton);
+    //fab = findViewById(R.id.floatingActionButton);
+    /*
+    fab.setOnClickListener(new View.OnClickListener()
+    {
+        @Override
+        public void onClick(View v)
+        {
+            ImagePicker.Companion.with(MainActivity:this)
+                    .crop() //Crop image(Optional), Check Customization for more options
+                    .cropOval() //Allow dimmed layer to have a circle inside
+                    .compress(1024) //Final image size will be less than 1 MB(Optional)
+                    .maxResultSize(width:1080, height:1080)//Final image resolutions will be less than twice
+                    .start();
+        }
+    }
+     */
     companion object
     {
         private const val IMAGE_PICK_CODE = 999
     }
     override fun onCreate(savedInstanceState: Bundle?) {
-        Toast.makeText(this, "Welcome   !", Toast.LENGTH_LONG)
+        //ImageView cover;
+        var selectedImage: Uri? = null
         // Write a message to the database
         // Write a message to the database
         val database = FirebaseDatabase.getInstance()
@@ -43,6 +64,7 @@ class MainActivity : AppCompatActivity() {
         myRef.setValue("Hello, World!")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //cover = findViewById(R.id.imageView2)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         imageView = findViewById(R.id.imageView)
@@ -84,11 +106,6 @@ class MainActivity : AppCompatActivity() {
     private val mCorkyListener = View.OnClickListener {
         // do something when the button is clicked
         // Yes we will handle click here but which button clicked??? We don't know
-        /*public void onClick(View v) {
-            // do something when the button is clicked
-            // Yes we will handle click here but which button clicked??? We don't know
-
-        }*/
     }
 
     private fun launchGallery()
@@ -100,6 +117,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun uploadImage()
     {
+        if(selectedImage == null)
+        {
+            //layout_root.snackbar("Select an image first")
+            return
+        }
         Toast.makeText(this, "Uploading image!", Toast.LENGTH_LONG)
         imageData?: return
         /*
