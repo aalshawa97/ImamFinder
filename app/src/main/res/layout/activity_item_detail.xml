@@ -14,9 +14,11 @@
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:navGraph="@navigation/primary_details_nav_graph"
         tools:layout="@layout/fragment_item_detail" />
 
@@ -54,11 +56,14 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="134dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="276dp"
+        android:layout_marginLeft="276dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="@+id/nav_host_fragment_item_detail"
         app:layout_constraintTop_toTopOf="@+id/nav_host_fragment_item_detail"
+        app:srcCompat="@drawable/_200px_ismail_ibn_musa_menks_talk_at_kerala_state_business_excellence_awards_2015"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
