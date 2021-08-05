@@ -57,7 +57,7 @@ class ItemDetailFragment : Fragment() {
         itemDetailTextView = binding.itemDetail
         // Show the placeholder content as text in a TextView.
         item?.let {
-            itemDetailTextView.text = "Nouman Khalid.\nQuran Teacher\n" + it.details
+            itemDetailTextView.text = "Nouman Khalid.\nQuran Teacher\nPhone number +971 55 789 2356\n" + it.details
         }
 
         return rootView
