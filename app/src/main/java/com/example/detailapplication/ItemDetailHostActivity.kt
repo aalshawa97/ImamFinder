@@ -49,6 +49,21 @@ class ItemDetailHostActivity : AppCompatActivity() {
         uploadToFirebase()
     }
 
+    fun onClickUploadFile(view: View)
+    {
+        val text = findViewById(R.id.textView) as TextView;
+
+        if(text != null)
+        {
+            val text = findViewById(R.id.textView) as TextView;
+            text.setText("Uploading file...")
+        }
+
+        //numberOfButtonClicks += 1
+        //Test
+        //text.setText("Button clicked..." + numberOfButtonClicks)
+        uploadToFirebase()
+    }
     fun uploadToFirebase()
     {
         //final val fileRef = reference.child(System.currentTimeMillis() + "." + get
