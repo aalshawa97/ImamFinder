@@ -38,6 +38,7 @@
         android:id="@+id/item_detail_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:onClick="onClick"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <!--
         <EditText
@@ -74,8 +75,15 @@
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginBottom="@dimen/fab_margin"
         android:contentDescription="@string/message"
+        android:onClick="onClick"
         app:layout_anchorGravity="right|fill"
         app:srcCompat="@android:drawable/stat_notify_chat"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
 </RelativeLayout>

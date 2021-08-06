@@ -1,6 +1,8 @@
 package com.example.detailapplication
 
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -12,7 +14,7 @@ import com.example.detailapplication.databinding.ActivityItemDetailBinding
 class ItemDetailHostActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-
+    var numberOfButtonClicks = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -30,5 +32,14 @@ class ItemDetailHostActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_item_detail)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    fun onClick(view: View)
+    {
+        val text = findViewById(R.id.textView) as TextView;
+        text.setText("Salemwalkom wa rahmatulhi wa baraktu imam")
+        numberOfButtonClicks += 1
+        //Test
+        //text.setText("Button clicked..." + numberOfButtonClicks)
     }
 }
