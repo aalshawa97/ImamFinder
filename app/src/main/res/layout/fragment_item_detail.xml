@@ -80,7 +80,7 @@
         app:srcCompat="@android:drawable/stat_notify_chat"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
