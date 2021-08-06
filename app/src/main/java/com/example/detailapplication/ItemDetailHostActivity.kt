@@ -28,6 +28,11 @@ class ItemDetailHostActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
+    fun ItemListActivity(view: View)
+    {
+
+    }
+
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_item_detail)
         return navController.navigateUp(appBarConfiguration)
@@ -41,5 +46,12 @@ class ItemDetailHostActivity : AppCompatActivity() {
         numberOfButtonClicks += 1
         //Test
         //text.setText("Button clicked..." + numberOfButtonClicks)
+        uploadToFirebase()
+    }
+
+    fun uploadToFirebase()
+    {
+        //final val fileRef = reference.child(System.currentTimeMillis() + "." + get
+        //fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>)
     }
 }
