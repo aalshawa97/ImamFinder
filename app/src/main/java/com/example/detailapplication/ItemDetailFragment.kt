@@ -51,7 +51,7 @@ class ItemDetailFragment : Fragment() {
         val rootView = binding.root
 
         binding.toolbarLayout?.title = item?.content
-        val itemDetailViewText = "\n\nNouman Khalid.\nQuran Teacher\nPhone number +971 55 789 2356\n"
+        val itemDetailViewText = "\n\nNouman Khalid\nQuran Teacher\nPhone number +971 55 789 2356\n"
         itemDetailTextView = binding.itemDetail
         // Show the placeholder content as text in a TextView.
         item?.let {

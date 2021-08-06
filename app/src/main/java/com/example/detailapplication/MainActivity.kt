@@ -22,6 +22,7 @@ import java.io.IOException
 class MainActivity : AppCompatActivity() {
 
     //private var cover: Any
+    //private Button button
     private var imageData: ByteArray? = null
     private var selectedImage: Uri? = null
     //Remeber to use
@@ -54,8 +55,9 @@ class MainActivity : AppCompatActivity() {
         private const val IMAGE_PICK_CODE = 999
     }
     override fun onCreate(savedInstanceState: Bundle?) {
+
         //ImageView cover;
-        var selectedImage: Uri? = null
+        //var selectedImage: Uri? = null
         // Write a message to the database
         // Write a message to the database
         val database = FirebaseDatabase.getInstance()
@@ -64,11 +66,32 @@ class MainActivity : AppCompatActivity() {
         myRef.setValue("Hello, World!")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //button = (Button) findViewById(R.id.button
+        /*
+            button.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    openActivity2();
+                }
+            });
+
+         }
+        */
+
+        /*
+        public void openActivity2()
+        {
+            Intent intent = new Intent(this, Activity2.class);
+            startActivity2(intent)
+        }
+         */
         //cover = findViewById(R.id.imageView2)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         imageView = findViewById(R.id.imageView)
-        imageButton = findViewById(R.id.sendButton)
+        //imageButton = findViewById(R.id.sendButton));
         imageButton.setOnClickListener()
         {
             uploadImage()
