@@ -1,15 +1,13 @@
 package com.example.detailapplication
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import com.google.android.material.appbar.CollapsingToolbarLayout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import com.example.detailapplication.placeholder.PlaceholderContent
+import androidx.fragment.app.Fragment
 import com.example.detailapplication.databinding.FragmentItemDetailBinding
+import com.example.detailapplication.placeholder.PlaceholderContent
 
 /**
  * A fragment representing a single Item detail screen.
@@ -24,7 +22,7 @@ class ItemDetailFragment : Fragment() {
      */
     private var item: PlaceholderContent.PlaceholderItem? = null
 
-    lateinit var itemDetailTextView: TextView
+    private lateinit var itemDetailTextView: TextView
 
     private var _binding: FragmentItemDetailBinding? = null
 
@@ -53,13 +51,12 @@ class ItemDetailFragment : Fragment() {
         val rootView = binding.root
 
         binding.toolbarLayout?.title = item?.content
-
+        val itemDetailViewText = "\n\nNouman Khalid.\nQuran Teacher\nPhone number +971 55 789 2356\n"
         itemDetailTextView = binding.itemDetail
         // Show the placeholder content as text in a TextView.
         item?.let {
-            itemDetailTextView.text = "Nouman Khalid.\nQuran Teacher\nPhone number +971 55 789 2356\n" + it.details
+            itemDetailTextView.text = itemDetailViewText //+ it.details
         }
-
         return rootView
     }
 
