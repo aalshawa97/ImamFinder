@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var imageView: ImageView
+    //private lateinit var imageView: ImageView2
     private lateinit var sendButton : Button
     private lateinit var imageButton : Button
     //FloatingActionButton fab;
@@ -188,6 +189,7 @@ class MainActivity : AppCompatActivity() {
             if(uri != null)
             {
                 imageView.setImageURI(uri)
+                //imageView2.setImageURI(uri)
                 createImageData(uri)
             }
         }
