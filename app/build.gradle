@@ -51,6 +51,7 @@ dependencies {
     //Add the following line:
     //Google Services plugin
     apply plugin: 'com.google.gms.google-services'
+    apply plugin: 'kotlin-kapt'
     //Declare the dependencies for any other desired Firebase products
     //For example, declare the dependencies fpr Firebase Authentication and Cloud Firestore
     implementation 'com.google.firebase:firebase-auth'
@@ -69,6 +70,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation "org.jetbrains.kotlin:kotlin-reflect:1.5.21"
+    implementation fileTree(dir: 'libs', include:['*.jar'])
     //testImplementation 'junit:junit:4.13.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

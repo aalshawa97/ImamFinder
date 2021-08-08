@@ -1,4 +1,4 @@
-package com.example.detailapplication
+package com.example.detailapplication.activity
 
 import android.app.Activity
 import android.content.Intent
@@ -13,6 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.detailapplication.R
 import com.example.detailapplication.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.FirebaseDatabase
