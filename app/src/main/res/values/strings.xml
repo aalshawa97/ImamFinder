@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ImamFinder</string>
+    <string name="app_name">Imam Finder</string>
     <string name="title_item_detail">Imam Detail</string>
     <string name="title_activity_main">MainActivity</string>
     <!-- Strings used for fragments for navigation -->

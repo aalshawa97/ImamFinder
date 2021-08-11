@@ -13,6 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.android.volley.toolbox.Volley
 import com.example.detailapplication.R
 import com.example.detailapplication.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     //private var cover: Any
     //private Button button
+    val List = listOf("image1", "image2")
     private var imageData: ByteArray? = null
     private var selectedImage: Uri? = null
     //Remeber to use
@@ -138,6 +140,18 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startActivityForResult(intent, IMAGE_PICK_CODE)
+    }
+
+    /*var resultLauncher = registerForActivityResult(resultLauncher.launch(intent))
+    {
+
+    }
+    */
+
+    fun openSomeActivityForResult()
+    {
+        val intent = Intent(this, MainActivity::class.java)
+        //resultLauncher.launch(intent)
     }
 
     private fun uploadImage()
