@@ -4,8 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="@integer/material_motion_duration_long_1"
     tools:context=".activity.MainActivity">
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#444444"
+        android:padding="25dp"
+        android:orientation="vertical"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#6dffbf"
+        android:padding="30dp"
+        android:text="@string/login"
+        />
+    <EditText
+        android:id="@+id/edit_text"
+        android:hint="Username"
+        android:textColor="#6bfff7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
+        />
+    <!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="25dp"
+        android:orientation="horizontal"
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+        />
+    </LinearLayout>
+-->
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="match_parent"
@@ -16,9 +54,12 @@
         android:verticalSpacing="10dp"
         android:gravity="center"
         android:stretchMode="columnWidth"
-        >
+        />
 
-    </GridView>
+    <drawable xmlns:android="http://schemas.android.com/apk/res/android"
+        class="com.myapp.MyTopLevelClass$InnerCustomDrawable"
+        android:color="#ffff0000" />
+
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -35,14 +76,6 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
 
     <ImageView
         android:id="@+id/imageView3"

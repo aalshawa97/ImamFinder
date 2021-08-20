@@ -1,24 +1,36 @@
 package com.example.detailapplication.activity
 
 import android.app.Activity
+import android.content.ContentResolver
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
+//import android.widget.Button
+import android.widget.*;
+/*
 import android.widget.ImageView
 import android.widget.Toast
+*/
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.android.volley.toolbox.Volley
 import com.example.detailapplication.R
 import com.example.detailapplication.databinding.ActivityMainBinding
-import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import java.io.File
 import java.io.IOException
+import android.os.Environment
+import android.provider.MediaStore
+
+
+
+
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     val List = listOf("image1", "image2")
     private var imageData: ByteArray? = null
     private var selectedImage: Uri? = null
-    //Remeber to use
+    //Remember to use
     private val postURL: String = "https://ptsv2.com/t/54odo-1576291398/post"
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
@@ -57,7 +69,9 @@ class MainActivity : AppCompatActivity() {
     companion object
     {
         private const val IMAGE_PICK_CODE = 999
+        var i = null
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         //ImageView cover;
@@ -66,10 +80,23 @@ class MainActivity : AppCompatActivity() {
         // Write a message to the database
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("message")
+        lateinit var auth:FirebaseAuth
+        //Initialize Firebase Auth
+        //auth = Firebase.auth
 
         myRef.setValue("Hello, World!")
         super.onCreate(savedInstanceState)
+        //val mToolbar = (ToolBar)findViewById(R.id.app_bar)
         setContentView(R.layout.activity_main)
+        //Get reference to all views
+        var et_user_name = findViewById(R.id.edit_text) as EditText
+        sendButton.setOnClickListener()
+        {
+            //Clearing username and password edit text
+            et_user_name.setText("")
+        }
+        //Get reference to button
+         //val btn_click_me = findViewById(R.id.textView1)
         //button = (Button) findViewById(R.id.button
         /*
             button.setOnClickListener(new View.OnClickListener()
@@ -100,6 +127,10 @@ class MainActivity : AppCompatActivity() {
         {
             uploadImage()
         }
+        getSupportActionBar()?.hide();
+        getSupportActionBar()?.setTitle("Full Screen Image");
+
+        i = getIntent() as Nothing?;
         /*
         FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
             if (!task.isSuccessful) {
@@ -122,11 +153,27 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
+        /*
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+        */
+    }
+
+    public fun onDataChange()
+    {
+        val list = arrayListOf<Int>()
+        list.addAll(listOf(1))
+        Toast.makeText(this, "Hi", Toast.LENGTH_LONG)
+        list.clear()
+        /*
+        for()
+        {
+
+        }
+        */
+
     }
 
     // Create an anonymous implementation of OnClickListener
@@ -135,11 +182,41 @@ class MainActivity : AppCompatActivity() {
         // Yes we will handle click here but which button clicked??? We don't know
     }
 
+    private fun installApk()
+    {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.setDataAndType(
+            Uri.fromFile(
+                File(
+                    Environment.getExternalStorageDirectory().toString() + "/download/" + "app.apk"
+                )
+            ), "application/vnd.android.package-archive"
+        )
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+    }
+
+    private fun openScreenshot(imageFile: String) {
+        val intent = Intent()
+        intent.action = Intent.ACTION_VIEW
+        //val uri = Uri.fromFile(imageFile)
+        //intent.setDataAndType(uri, "image/*")
+        startActivity(intent)
+    }
+
+    private fun deletePhoto()
+    {
+        getContentResolver().delete();
+    }
+
     private fun launchGallery()
     {
+        val file = "C:\\Users\\15039\\Pictures\\Ismail_ibn_Musa_Menks_talk_at_Kerala_State_Business_Excellence_Awards_2015.jpg"
+        openScreenshot(file)
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
-        startActivityForResult(intent, IMAGE_PICK_CODE)
+        //intent.setDataAndType(https://pbs.twimg.com/profile_images/1102171650982928385/JR6X6tOB_400x400.jpg, ".jpg")
+        //onActivityResult(intent, IMAGE_PICK_CODE)
     }
 
     /*var resultLauncher = registerForActivityResult(resultLauncher.launch(intent))
@@ -150,17 +227,29 @@ class MainActivity : AppCompatActivity() {
 
     fun openSomeActivityForResult()
     {
-        val intent = Intent(this, MainActivity::class.java)
+        //val intent = Intent(this, MainActivity::class.java)
         //resultLauncher.launch(intent)
     }
 
     private fun uploadImage()
     {
+        sendBroadcast(
+            Intent(
+                Intent.ACTION_MEDIA_MOUNTED,
+                Uri.parse("file://" + Environment.getExternalStorageDirectory())
+            )
+        )
         if(selectedImage == null)
         {
             //layout_root.snackbar("Select an image first")
             return
         }
+        val takePicture = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        startActivityForResult(
+            takePicture,
+            0
+        ) //zero can be replaced with any action code (called requestCode)
+
         Toast.makeText(this, "Uploading image!", Toast.LENGTH_LONG)
         imageData?: return
         /*
@@ -184,6 +273,7 @@ class MainActivity : AppCompatActivity() {
         }
         */
         //Volley.newRequestQueue(this).add(request)
+        //Drawable d = ImagesArrayList.get(0)
     }
 
     @Throws(IOException::class)
@@ -199,12 +289,15 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE)
         {
+            Toast.makeText(this,"Setting image", Toast.LENGTH_LONG)
             val uri = data?.data
             if(uri != null)
             {
+                imageView.setImageURI(null)
                 imageView.setImageURI(uri)
                 //imageView2.setImageURI(uri)
                 createImageData(uri)
+                imageView.adjustViewBounds
             }
         }
         super.onActivityResult(requestCode, resultCode, data)
@@ -216,4 +309,28 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
+
+    suspend fun loginUser(email: String, password: String)
+    {
+        try
+        {
+            //firebase.com
+        }
+        catch (e: Exception)
+        {
+
+        }
+    }
+}
+
+private fun ContentResolver.delete() {
+    //getContentResolver().delete();
+}
+
+class dataSnapshot {
+
+}
+
+private fun EditText.setOnClickListener() {
+    TODO("Not yet implemented")
 }

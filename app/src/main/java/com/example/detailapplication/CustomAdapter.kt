@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 //import Anko;
-import java.util.List;
+//import java.util.List;
 
 class CustomAdapter //: AnkoLogger
 {

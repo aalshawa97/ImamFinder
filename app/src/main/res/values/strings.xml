@@ -12,4 +12,9 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="message">Message the imam</string>
+    <string name="salam">Salemwalkom rahamtulhi wa baraktu</string>
+    <string name="button">Button</string>
+    <string name="name">Name</string>
+    <string name="submit">Submit</string>
+    <string name="login">Login</string>
 </resources>

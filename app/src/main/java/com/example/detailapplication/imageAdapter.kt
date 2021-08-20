@@ -3,32 +3,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-/*
-public class imageAdapter : BaseAdapter
+private val counter = 0
+
+public class imageAdapter : BaseAdapter()
 {
-    private Context mContext;+
-    @Override
-    public int getCount()
-    {
-        return 0;
+    override fun getCount(): Int {
+        //TODO("Getting the number of images!")
+        return counter
     }
 
-    @Override
-    public Object getItem(int position)
-    {
-        return null;
+    override fun getItem(position: Int): Any {
+        TODO("Not yet implemented")
     }
 
-    @Override
-    public long getItemId(int position)
-    {
-        return 0;
+    override fun getItemId(position: Int): Long {
+        TODO("Not yet implemented")
     }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent)
-    {
-        return null;
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        TODO("Not yet implemented")
     }
 }
-*/
