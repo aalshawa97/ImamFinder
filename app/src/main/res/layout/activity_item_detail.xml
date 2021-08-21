@@ -54,7 +54,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/_200px_ismail_ibn_musa_menks_talk_at_kerala_state_business_excellence_awards_2015" />
 
     <ImageView
         android:id="@+id/imageView2"

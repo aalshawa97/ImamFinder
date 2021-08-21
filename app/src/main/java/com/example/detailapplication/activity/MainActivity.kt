@@ -250,7 +250,7 @@ class MainActivity : AppCompatActivity() {
             0
         ) //zero can be replaced with any action code (called requestCode)
 
-        Toast.makeText(this, "Uploading image!", Toast.LENGTH_LONG)
+        //Toast.makeText(this, "Uploading image!", Toast.LENGTH_LONG).show()
         imageData?: return
         /*
         val request = object : VolleyFileUpload(
@@ -287,8 +287,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-
-
         if(resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE)
         {
             Toast.makeText(this,"Setting image", Toast.LENGTH_LONG)
