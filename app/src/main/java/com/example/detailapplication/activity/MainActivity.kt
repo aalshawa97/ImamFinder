@@ -287,6 +287,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+
+
         if(resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE)
         {
             Toast.makeText(this,"Setting image", Toast.LENGTH_LONG)

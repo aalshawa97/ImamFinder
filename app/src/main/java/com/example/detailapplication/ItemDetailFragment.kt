@@ -1,5 +1,6 @@
 package com.example.detailapplication
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,13 @@ import com.example.detailapplication.placeholder.PlaceholderContent
  * in two-pane mode (on larger screen devices) or self-contained
  * on handsets.
  */
+
+/*
+class ToBeCalled {
+    companion object Test {
+        fun callMe() = println("You are calling me :)")
+    }
+    */
 class ItemDetailFragment : Fragment() {
 
     /**
@@ -46,6 +54,9 @@ class ItemDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        var activity = (this).apply {
+            //ToBeCalled.callMe()
+        }
 
         _binding = FragmentItemDetailBinding.inflate(inflater, container, false)
         val rootView = binding.root

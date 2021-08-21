@@ -47,6 +47,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-database:20.0.1'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     //Add the following line:
     //Google Services plugin
     apply plugin: 'com.google.gms.google-services'
