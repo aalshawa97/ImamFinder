@@ -18,7 +18,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.detailapplication.databinding.ActivityItemDetailBinding
-import java.io.File
 
 class ItemDetailHostActivity : AppCompatActivity() {
     lateinit var imageView : ImageView
@@ -40,11 +39,6 @@ class ItemDetailHostActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
-    fun ItemListActivity(view: View)
-    {
-
-    }
-
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_item_detail)
         return navController.navigateUp(appBarConfiguration)
@@ -53,13 +47,9 @@ class ItemDetailHostActivity : AppCompatActivity() {
 
     fun onClick(view: View)
     {
-        //MyHandlers handlers = new MyHandlers();
-
         val text = findViewById(R.id.textView) as TextView;
-        text.setText("Salemwalkom wa rahmatulhi wa baraktu imam")
+        text.setText("Salemwalkom wa rahmatulhi wa baraktu imam, how are you? I am interested in hiring you!")
         numberOfButtonClicks += 1
-        //Test
-        //text.setText("Button clicked..." + numberOfButtonClicks)
         uploadToFirebase()
     }
 

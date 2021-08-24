@@ -1,6 +1,7 @@
 package com.example.detailapplication
 
 import android.app.Activity
+import android.content.ClipData
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,12 +18,6 @@ import com.example.detailapplication.placeholder.PlaceholderContent
  * on handsets.
  */
 
-/*
-class ToBeCalled {
-    companion object Test {
-        fun callMe() = println("You are calling me :)")
-    }
-    */
 class ItemDetailFragment : Fragment() {
 
     /**
@@ -46,6 +41,7 @@ class ItemDetailFragment : Fragment() {
                 // arguments. In a real-world scenario, use a Loader
                 // to load content from a content provider.
                 item = PlaceholderContent.ITEM_MAP[it.getString(ARG_ITEM_ID)]
+                //item = PlaceholderContent.ITEM_MAP[it.getString("Test")]
             }
         }
     }

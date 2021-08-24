@@ -6,12 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-//import android.widget.Button
 import android.widget.*;
-/*
-import android.widget.ImageView
-import android.widget.Toast
-*/
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -26,17 +21,7 @@ import java.io.IOException
 import android.os.Environment
 import android.provider.MediaStore
 
-
-
-
-
-
-
-
 class MainActivity : AppCompatActivity() {
-
-    //private var cover: Any
-    //private Button button
     val List = listOf("image1", "image2")
     private var imageData: ByteArray? = null
     private var selectedImage: Uri? = null
@@ -48,24 +33,7 @@ class MainActivity : AppCompatActivity() {
     //private lateinit var imageView: ImageView2
     private lateinit var sendButton : Button
     private lateinit var imageButton : Button
-    //FloatingActionButton fab;
-    //cover = findViewById(R.id.floatActionButton);
-    //fab = findViewById(R.id.floatingActionButton);
-    /*
-    fab.setOnClickListener(new View.OnClickListener()
-    {
-        @Override
-        public void onClick(View v)
-        {
-            ImagePicker.Companion.with(MainActivity:this)
-                    .crop() //Crop image(Optional), Check Customization for more options
-                    .cropOval() //Allow dimmed layer to have a circle inside
-                    .compress(1024) //Final image size will be less than 1 MB(Optional)
-                    .maxResultSize(width:1080, height:1080)//Final image resolutions will be less than twice
-                    .start();
-        }
-    }
-     */
+
     companion object
     {
         private const val IMAGE_PICK_CODE = 999
@@ -73,11 +41,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        //ImageView cover;
-        //var selectedImage: Uri? = null
-        // Write a message to the database
-        // Write a message to the database
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("message")
         lateinit var auth:FirebaseAuth
@@ -86,39 +49,14 @@ class MainActivity : AppCompatActivity() {
 
         myRef.setValue("Hello, World!")
         super.onCreate(savedInstanceState)
-        //val mToolbar = (ToolBar)findViewById(R.id.app_bar)
         setContentView(R.layout.activity_main)
         //Get reference to all views
         var et_user_name = findViewById(R.id.edit_text) as EditText
         sendButton.setOnClickListener()
         {
-            //Clearing username and password edit text
             et_user_name.setText("")
         }
-        //Get reference to button
-         //val btn_click_me = findViewById(R.id.textView1)
-        //button = (Button) findViewById(R.id.button
-        /*
-            button.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View v)
-                {
-                    openActivity2();
-                }
-            });
 
-         }
-        */
-
-        /*
-        public void openActivity2()
-        {
-            Intent intent = new Intent(this, Activity2.class);
-            startActivity2(intent)
-        }
-         */
-        //cover = findViewById(R.id.imageView2)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         imageView = findViewById(R.id.imageView)
@@ -131,34 +69,12 @@ class MainActivity : AppCompatActivity() {
         getSupportActionBar()?.setTitle("Full Screen Image");
 
         i = getIntent() as Nothing?;
-        /*
-        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
-            if (!task.isSuccessful) {
-                Log.w(TAG, "Fetching FCM registration token failed", task.exception)
-                return@OnCompleteListener
-            }
-
-            // Get new FCM registration token
-            val token = task.result
-
-            // Log and toast
-            val msg = getString(R.string.msg_token_fmt, token)
-            Log.d(TAG, msg)
-            Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
-        })
-        */
 
         setSupportActionBar(binding.toolbar)
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-        /*
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-        */
     }
 
     public fun onDataChange()
@@ -167,12 +83,6 @@ class MainActivity : AppCompatActivity() {
         list.addAll(listOf(1))
         Toast.makeText(this, "Hi", Toast.LENGTH_LONG)
         list.clear()
-        /*
-        for()
-        {
-
-        }
-        */
 
     }
 
@@ -199,8 +109,6 @@ class MainActivity : AppCompatActivity() {
     private fun openScreenshot(imageFile: String) {
         val intent = Intent()
         intent.action = Intent.ACTION_VIEW
-        //val uri = Uri.fromFile(imageFile)
-        //intent.setDataAndType(uri, "image/*")
         startActivity(intent)
     }
 
@@ -219,16 +127,9 @@ class MainActivity : AppCompatActivity() {
         //onActivityResult(intent, IMAGE_PICK_CODE)
     }
 
-    /*var resultLauncher = registerForActivityResult(resultLauncher.launch(intent))
-    {
-
-    }
-    */
-
     fun openSomeActivityForResult()
     {
-        //val intent = Intent(this, MainActivity::class.java)
-        //resultLauncher.launch(intent)
+
     }
 
     private fun uploadImage()
@@ -241,39 +142,15 @@ class MainActivity : AppCompatActivity() {
         )
         if(selectedImage == null)
         {
-            //layout_root.snackbar("Select an image first")
             return
         }
         val takePicture = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         startActivityForResult(
             takePicture,
             0
-        ) //zero can be replaced with any action code (called requestCode)
-
-        //Toast.makeText(this, "Uploading image!", Toast.LENGTH_LONG).show()
-        imageData?: return
-        /*
-        val request = object : VolleyFileUpload(
-            Request.Method.POST,
-            postURL,
-            /*Response.Listener
-            {
-                println("response is: $it")
-            },*/
-            Response.ErrorListener {
-                println("error is: $it")
-            }
         )
-        */
-        /*override fun getByteData():MutableMap<String, FileDataPart>
-        {
-            var params = HashMap<String, FileDataPart>()
-            params["imageFile"] = FileDataPart("image", imageData!!, "jpeg")
-            return params
-        }
-        */
-        //Volley.newRequestQueue(this).add(request)
-        //Drawable d = ImagesArrayList.get(0)
+        imageData?: return
+
     }
 
     @Throws(IOException::class)
