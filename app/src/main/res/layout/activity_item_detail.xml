@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".ItemDetailHostActivity">
 
+    <LinearLayout
+        android:id="@+id/lytCameraPick"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/sendButton"
         android:background="@color/common_google_signin_btn_text_light"

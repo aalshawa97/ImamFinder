@@ -6,17 +6,18 @@
     android:layout_height="match_parent"
     android:layout_weight="@integer/material_motion_duration_long_1"
     tools:context=".activity.MainActivity">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:text="Tutorials Point"
+        android:gravity="center_horizontal"
+        android:text="@string/tutorial"
         android:textAlignment="center"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="32sp"
-        android:textStyle="bold"
-        android:gravity="center_horizontal" />
+        android:textStyle="bold" />
     <LinearLayout
         android:id="@+id/main_layout"
         android:layout_width="match_parent"

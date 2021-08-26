@@ -22,7 +22,9 @@ import java.io.File
 import java.io.IOException
 import android.os.Environment
 import android.provider.MediaStore
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
 import java.lang.reflect.Array.get
 import java.util.*
 import java.util.Calendar.getInstance
@@ -47,6 +49,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        //val storage = Firebase.storage
+        // Get a non-default Storage bucket
+        val storage = Firebase.storage("gs://my-custom-bucket")
         //val uri = data.data
         //val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
         // Create a storage reference from our app
@@ -166,6 +171,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
         val takePicture = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
         startActivityForResult(
             takePicture,
             0
