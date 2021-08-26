@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     android:layout_weight="@integer/material_motion_duration_long_1"
     tools:context=".activity.MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Tutorials Point"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
     <LinearLayout
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
@@ -30,20 +41,6 @@
         android:layout_height="wrap_content"
 
         />
-    <!--
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="25dp"
-        android:orientation="horizontal"
-        <Button
-            android:id="@+id/btn_reset"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-        />
-    </LinearLayout>
--->
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="match_parent"
@@ -70,7 +67,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/teal_200"
             app:popupTheme="@style/Theme.DetailApplication.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -80,7 +77,7 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="880dp"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

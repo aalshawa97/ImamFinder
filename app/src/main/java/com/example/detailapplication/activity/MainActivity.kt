@@ -3,6 +3,8 @@ package com.example.detailapplication.activity
 import android.app.Activity
 import android.content.ContentResolver
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -20,6 +22,10 @@ import java.io.File
 import java.io.IOException
 import android.os.Environment
 import android.provider.MediaStore
+import com.google.firebase.storage.StorageReference
+import java.lang.reflect.Array.get
+import java.util.*
+import java.util.Calendar.getInstance
 
 class MainActivity : AppCompatActivity() {
     val List = listOf("image1", "image2")
@@ -41,6 +47,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        //val uri = data.data
+        //val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
+        // Create a storage reference from our app
+        // Create a Cloud Storage reference from the app
+        // Create a Cloud Storage reference from the app
+        //val storageRef: StorageReference = storage.getReference()
+        //val storage = firebase
+        //var storageRef = storage.reference
+        // Create a child reference
+// imagesRef now points to "images"
+        //var imagesRef: StorageReference? = storageRef.child("images")
+        // Create a reference to "kabah.jpg"
+        //val storageRef
+        //val kabahRef: StorageReference = storageRef.child("kabah.jpg")
+
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("message")
         lateinit var auth:FirebaseAuth
@@ -163,6 +184,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    var selectedPhoto: Uri? = null
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE)
         {
@@ -177,6 +199,10 @@ class MainActivity : AppCompatActivity() {
                 imageView.adjustViewBounds
             }
         }
+        val uri = data?.data
+        val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
+        val bitmapDrawable = BitmapDrawable(bitmap)
+        //selectphoto_button_register.setBackgroundDrawable(bitmapDrawable)
         super.onActivityResult(requestCode, resultCode, data)
     }
 
@@ -210,4 +236,10 @@ class dataSnapshot {
 
 private fun EditText.setOnClickListener() {
     TODO("Not yet implemented")
+}
+
+private fun uploadImageToFirebaseStorage()
+{
+    val filename = UUID.randomUUID()
+    //val ref = FirebaseStorage.getInstance().getReference("/images/$filename")
 }
