@@ -34,6 +34,7 @@
         android:padding="30dp"
         android:text="@string/login"
         />
+    <!--
     <EditText
         android:id="@+id/edit_text"
         android:hint="@string/username"
@@ -42,6 +43,8 @@
         android:layout_height="wrap_content"
         android:inputType="text"
         android:autofillHints="" />
+    -->
+    <!--
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="match_parent"
@@ -53,8 +56,9 @@
         android:gravity="center"
         android:stretchMode="columnWidth"
         />
+    -->
 
-
+    <!--
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,14 +72,17 @@
             app:popupTheme="@style/Theme.DetailApplication.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
+    -->
 
     <include layout="@layout/content_main" />
 
+    <!--
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
-        android:layout_height="880dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic"
-        android:contentDescription="@string/todo" />
+        android:layout_height="50dp"
+        android:contentDescription="@string/todo"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        -->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
