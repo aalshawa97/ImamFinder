@@ -77,10 +77,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //Get reference to all views
-        var et_user_name = findViewById(R.id.edit_text) as EditText
+        //var et_user_name = findViewById(R.id.edit_text) as EditText
         sendButton.setOnClickListener()
         {
-            et_user_name.setText("")
+            //et_user_name.setText("")
         }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
 
         i = getIntent() as Nothing?;
 
-        setSupportActionBar(binding.toolbar)
+        //setSupportActionBar(binding.toolbar)
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
