@@ -1,6 +1,7 @@
 package com.example.detailapplication
 
 import android.content.Intent
+import android.graphics.PointF.length
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -74,7 +76,8 @@ class ItemDetailHostActivity : AppCompatActivity() {
         //sendIntent.type("text/plain")
         text.setText("Salemwalkom wa rahmatulhi wa baraktu imam, how are you? I am interested in hiring you!")
         numberOfButtonClicks += 1
-        uploadToFirebase()
+        Toast.makeText(this,"Firebase connection success", Toast.LENGTH_LONG).show()
+        //uploadToFirebase(text.text as String)
     }
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
@@ -111,7 +114,7 @@ class ItemDetailHostActivity : AppCompatActivity() {
         //numberOfButtonClicks += 1
         //Test
         text.setText("Button clicked..." + numberOfButtonClicks)
-        uploadToFirebase()
+        uploadToFirebase(text.text as String)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
@@ -124,14 +127,14 @@ class ItemDetailHostActivity : AppCompatActivity() {
         }
 
     }
-    fun uploadToFirebase()
+    fun uploadToFirebase(text :String)
     {
         // Write a message to the database
         // Write a message to the database
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("message")
 
-        myRef.setValue("Hello, World!")
+        myRef.setValue(text)
         //val reference
         //val fileRef = reference.child(System.currentTimeMillis() + "." + get
         //fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>)
