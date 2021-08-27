@@ -36,12 +36,12 @@
         />
     <EditText
         android:id="@+id/edit_text"
-        android:hint="Username"
+        android:hint="@string/username"
         android:textColor="#6bfff7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        />
+        android:inputType="text"
+        android:autofillHints="" />
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="match_parent"
@@ -53,10 +53,6 @@
         android:gravity="center"
         android:stretchMode="columnWidth"
         />
-
-    <drawable xmlns:android="http://schemas.android.com/apk/res/android"
-        class="com.myapp.MyTopLevelClass$InnerCustomDrawable"
-        android:color="#ffff0000" />
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -79,6 +75,7 @@
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="880dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        android:contentDescription="@string/todo" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
