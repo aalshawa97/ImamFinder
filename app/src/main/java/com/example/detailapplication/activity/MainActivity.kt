@@ -30,6 +30,12 @@ import java.util.*
 import java.util.Calendar.getInstance
 
 class MainActivity : AppCompatActivity() {
+    //private var name = "Paramjeet"
+    //val nametxt = findViewById (R.id.nametxt) as EditText
+    //nametxt.setText(name)
+
+    var name:String = "Muzammil"
+    //edittext.setText(name)
     val List = listOf("image1", "image2")
     private var imageData: ByteArray? = null
     private var selectedImage: Uri? = null

@@ -77,7 +77,7 @@ class ItemDetailHostActivity : AppCompatActivity() {
         text.setText("Salemwalkom wa rahmatulhi wa baraktu imam, how are you? I am interested in hiring you!")
         numberOfButtonClicks += 1
         Toast.makeText(this,"Firebase connection success", Toast.LENGTH_LONG).show()
-        //uploadToFirebase(text.text as String)
+        uploadToFirebase()
     }
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
@@ -114,7 +114,7 @@ class ItemDetailHostActivity : AppCompatActivity() {
         //numberOfButtonClicks += 1
         //Test
         text.setText("Button clicked..." + numberOfButtonClicks)
-        uploadToFirebase(text.text as String)
+        uploadToFirebase()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
@@ -127,14 +127,15 @@ class ItemDetailHostActivity : AppCompatActivity() {
         }
 
     }
-    fun uploadToFirebase(text :String)
+    fun uploadToFirebase()
     {
+        Toast.makeText(this,"Uploading", Toast.LENGTH_LONG).show()
         // Write a message to the database
         // Write a message to the database
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("message")
 
-        myRef.setValue(text)
+        myRef.setValue("Hire the imam!")
         //val reference
         //val fileRef = reference.child(System.currentTimeMillis() + "." + get
         //fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>)
