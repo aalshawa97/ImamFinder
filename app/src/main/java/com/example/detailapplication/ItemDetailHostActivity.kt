@@ -133,9 +133,9 @@ class ItemDetailHostActivity : AppCompatActivity() {
         // Write a message to the database
         // Write a message to the database
         val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("message")
+        val myRef = database.getReference("Hiring pool")
 
-        myRef.setValue("Hire the imam!")
+        myRef.setValue("Hire the imam: " + "Nouman Khan!")
         //val reference
         //val fileRef = reference.child(System.currentTimeMillis() + "." + get
         //fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>)
