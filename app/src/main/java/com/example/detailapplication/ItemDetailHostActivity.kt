@@ -1,7 +1,6 @@
 package com.example.detailapplication
 
 import android.content.Intent
-import android.graphics.PointF.length
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -20,20 +19,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.detailapplication.databinding.ActivityItemDetailBinding
-import com.google.firebase.database.DatabaseReference
-
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.DatabaseError
-
-import com.google.firebase.database.DataSnapshot
-
 import com.google.firebase.database.ValueEventListener
-
-
-
-
-
-
 
 class ItemDetailHostActivity : AppCompatActivity() {
     lateinit var imageView : ImageView
@@ -111,7 +98,6 @@ class ItemDetailHostActivity : AppCompatActivity() {
             startActivityForResult(gallary, pickImage)
         }
 
-        //numberOfButtonClicks += 1
         //Test
         text.setText("Button clicked..." + numberOfButtonClicks)
         uploadToFirebase()
@@ -136,6 +122,10 @@ class ItemDetailHostActivity : AppCompatActivity() {
         val myRef = database.getReference("Hiring pool")
 
         myRef.setValue("Hire the imam: " + "Nouman Khan!")
+        readFromDataBase()
+        //database.child("users").child(userId).setValue(user)
+
+
         //val reference
         //val fileRef = reference.child(System.currentTimeMillis() + "." + get
         //fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>)
@@ -143,10 +133,11 @@ class ItemDetailHostActivity : AppCompatActivity() {
     
     fun readFromDataBase()
     {
+        Toast.makeText(this,"Downloading", Toast.LENGTH_LONG).show()
         // Read from the database
         // Read from the database
         /*
-        myRef.addValueEventListener(object : ValueEventListener {
+        database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
@@ -154,12 +145,12 @@ class ItemDetailHostActivity : AppCompatActivity() {
                 Log.d(TAG, "Value is: $value")
             }
 
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException())
-            }
-        })
+           override fun onCancelled(error: DatabaseError) {
+               // Failed to read value
+               Log.w(TAG, "Failed to read value.", error.toException())
+           }
+       })
 
-         */
+        */
     }
 }
