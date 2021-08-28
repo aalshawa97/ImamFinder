@@ -91,6 +91,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //binding.re
         imageView = findViewById(R.id.imageView)
         //imageButton = findViewById(R.id.sendButton));
         imageButton.setOnClickListener()
@@ -101,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         getSupportActionBar()?.setTitle("Full Screen Image");
 
         i = getIntent() as Nothing?;
-
+        //binding.set
         //setSupportActionBar(binding.toolbar)
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)

@@ -19,6 +19,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.detailapplication.databinding.ActivityItemDetailBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
@@ -117,7 +119,6 @@ class ItemDetailHostActivity : AppCompatActivity() {
     {
         Toast.makeText(this,"Uploading", Toast.LENGTH_LONG).show()
         // Write a message to the database
-        // Write a message to the database
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("Hiring pool")
 
@@ -130,11 +131,76 @@ class ItemDetailHostActivity : AppCompatActivity() {
         //val fileRef = reference.child(System.currentTimeMillis() + "." + get
         //fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>)
     }
-    
+
+    /*
+    val childEventListener = object : ChildEventListener {
+        override fun onChildAdded(dataSnapshot: DataSnapshot, previousChildName: String?) {
+            Log.d(TAG, "onChildAdded:" + dataSnapshot.key!!)
+
+            // A new comment has been added, add it to the displayed list
+            val comment = dataSnapshot.getValue<Comment>()
+
+            // ...
+        }
+
+        override fun onChildChanged(dataSnapshot: DataSnapshot, previousChildName: String?) {
+            Log.d(TAG, "onChildChanged: ${dataSnapshot.key}")
+
+            // A comment has changed, use the key to determine if we are displaying this
+            // comment and if so displayed the changed comment.
+            val newComment = dataSnapshot.getValue<Comment>()
+            val commentKey = dataSnapshot.key
+
+            // ...
+        }
+
+        override fun onChildRemoved(dataSnapshot: DataSnapshot) {
+            Log.d(TAG, "onChildRemoved:" + dataSnapshot.key!!)
+
+            // A comment has changed, use the key to determine if we are displaying this
+            // comment and if so remove it.
+            val commentKey = dataSnapshot.key
+
+            // ...
+        }
+
+        override fun onChildMoved(dataSnapshot: DataSnapshot, previousChildName: String?) {
+            Log.d(TAG, "onChildMoved:" + dataSnapshot.key!!)
+
+            // A comment has changed position, use the key to determine if we are
+            // displaying this comment and if so move it.
+            val movedComment = dataSnapshot.getValue<Comment>()
+            val commentKey = dataSnapshot.key
+
+            // ...
+        }
+
+        fun onCancelled(databaseError: DatabaseError) {
+            Log.w(TAG, "postComments:onCancelled", databaseError.toException())
+            Toast.makeText(this, "Failed to load comments.",
+                Toast.LENGTH_SHORT).show()
+        }
+    }
+    databaseReference.addChildEventListener(childEventListener)
+    */
     fun readFromDataBase()
     {
         Toast.makeText(this,"Downloading", Toast.LENGTH_LONG).show()
-        // Read from the database
+        val database = FirebaseDatabase.getInstance().getReference("Hiring pool")
+        database.child("Hiring pool").child("Abdullah Mutaz")
+        /*if(it.exists()){
+
+        }
+        */
+        //myRef.database.("Hire the imam: " + "Nouman Khan!")
+        //readFromDataBase()
+        //import { getStorage, ref } from "firebase/storage";
+
+        // Get a reference to the storage service, which is used to create references in your storage bucket
+        //const storage = getStorage();
+
+        // Create a storage reference from our storage service
+        //const storageRef = ref(storage);
         // Read from the database
         /*
         database.addValueEventListener(object : ValueEventListener {
@@ -152,5 +218,14 @@ class ItemDetailHostActivity : AppCompatActivity() {
        })
 
         */
+    }
+    val menuListener = object : ValueEventListener {
+        override fun onCancelled(databaseError: DatabaseError) {
+            // handle error
+        }
+        override fun onDataChange(dataSnapshot: DataSnapshot) {
+            //user = dataSnapshot.getValue(User::class.java)
+            //textView.text = user?.name
+        }
     }
 }
