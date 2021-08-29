@@ -50,10 +50,6 @@ class ItemDetailHostActivity : AppCompatActivity() {
                 || super.onSupportNavigateUp()
     }
 
-    private companion object {
-        var sendIntent = 1
-    }
-
     fun onClick(view: View)
     {
         val text = findViewById(R.id.textView) as TextView;
