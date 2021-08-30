@@ -87,8 +87,7 @@ class MainActivity : AppCompatActivity() {
         val storage = Firebase.storage("gs://imamfinder-ac929.appspot.com")
         // Configure sign-in to request the user's ID, email address, and basic
 // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-        // Configure sign-in to request the user's ID, email address, and basic
-// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
             .build()
@@ -97,18 +96,15 @@ class MainActivity : AppCompatActivity() {
         var mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         // Check for existing Google Sign In account, if the user is already signed in
 // the GoogleSignInAccount will be non-null.
-        // Check for existing Google Sign In account, if the user is already signed in
-// the GoogleSignInAccount will be non-null.
+
         val account = GoogleSignIn.getLastSignedInAccount(this)
         updateUI(account)
-        // Set the dimensions of the sign-in button.
         // Set the dimensions of the sign-in button.
         var signInButton = findViewById<SignInButton>(R.id.sign_in_button)
         signInButton.setSize(SignInButton.SIZE_STANDARD)
         //val uri = data.data
         //val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
         // Create a storage reference from our app
-        // Create a Cloud Storage reference from the app
         // Create a Cloud Storage reference from the app
         //val storageRef: StorageReference = storage.getReference()
         //val storage = firebase

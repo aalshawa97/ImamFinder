@@ -8,8 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.example.detailapplication.activity.MainActivity
 import com.example.detailapplication.databinding.FragmentItemDetailBinding
 import com.example.detailapplication.placeholder.PlaceholderContent
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 /**
  * A fragment representing a single Item detail screen.
@@ -64,6 +69,13 @@ class ItemDetailFragment : Fragment() {
         item?.let {
             itemDetailTextView.text = itemDetailViewText //+ it.details
         }
+        val storage = Firebase.storage("gs://imamfinder-ac929.appspot.com")
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+
+        // Build a GoogleSignInClient with the options specified by gso.
+        //var mGoogleSignInClient = GoogleSignIn.getClient(MainActivity, gso);
         return rootView
     }
 
