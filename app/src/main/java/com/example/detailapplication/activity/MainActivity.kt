@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
         //findViewById(R.id.sign_in_button).setOnClickListener(this);
         //val storage = Firebase.storage
         // Get a non-default Storage bucket
-        val storage = Firebase.storage("gs://my-custom-bucket")
+        val storage = Firebase.storage("gs://imamfinder-ac929.appspot.com")
         // Configure sign-in to request the user's ID, email address, and basic
 // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         // Configure sign-in to request the user's ID, email address, and basic
