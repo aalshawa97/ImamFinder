@@ -2,6 +2,7 @@ package com.example.detailapplication.activity
 
 import android.app.Activity
 import android.content.ContentResolver
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
@@ -22,12 +23,22 @@ import java.io.File
 import java.io.IOException
 import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
+import com.google.android.gms.auth.api.Auth
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.auth.api.signin.GoogleSignInResult
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import java.lang.reflect.Array.get
 import java.util.*
 import java.util.Calendar.getInstance
+import com.google.android.gms.common.SignInButton
+
+
+
 
 class MainActivity : AppCompatActivity() {
     //private var name = "Paramjeet"
@@ -55,9 +66,45 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        //super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        //GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
+            //.requestEmail()
+            //.build()
+        //mGoogleApiClient = new GoogleApiClient.Builder(this)
+            //enableAutoManage(this /* FragmentActivity*/* this /* onConnectionFailedListener */)
+            //.addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+            //.build()
+        //statusTextView = (TextView) findViewById(R.id.status_textview)
+        //signInButton = (SignInButton)
+        // Set the dimensions of the sign-in button.
+        //val signInButton = findViewById<SignInButton>(R.id.sign_in_button)
+        //signInButton.setSize(SignInButton.SIZE_STANDARD)
+        //findViewById(R.id.sign_in_button).setOnClickListener(this);
         //val storage = Firebase.storage
         // Get a non-default Storage bucket
         val storage = Firebase.storage("gs://my-custom-bucket")
+        // Configure sign-in to request the user's ID, email address, and basic
+// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        // Configure sign-in to request the user's ID, email address, and basic
+// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+
+        // Build a GoogleSignInClient with the options specified by gso.
+        var mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        // Check for existing Google Sign In account, if the user is already signed in
+// the GoogleSignInAccount will be non-null.
+        // Check for existing Google Sign In account, if the user is already signed in
+// the GoogleSignInAccount will be non-null.
+        val account = GoogleSignIn.getLastSignedInAccount(this)
+        updateUI(account)
+        // Set the dimensions of the sign-in button.
+        // Set the dimensions of the sign-in button.
+        var signInButton = findViewById<SignInButton>(R.id.sign_in_button)
+        signInButton.setSize(SignInButton.SIZE_STANDARD)
         //val uri = data.data
         //val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
         // Create a storage reference from our app
@@ -108,6 +155,10 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+    }
+
+    private fun updateUI(account: GoogleSignInAccount?) {
+
     }
 
     public fun onDataChange()
@@ -197,8 +248,43 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /*
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult){
+        //An unresolvable error has occurred and Google APIs (including Sign-In) will not be available.
+        Log.d(TAG, "onConnectionFailed: " + connectionResult)
+    }
+    */
+
+    /*
+    private fun void handleSignInResult(GoogleSignInResult result){
+        Log.d(TAG, "handleSignInResult:" * result.isSuccess());
+        if (result.isSuccess())
+        {
+            //Signed in successfully, show authenticated UI.
+            GoogleSignInAccount acct = result.getSignInAccount();
+            statusTextView.set("Hello, " + acc.getDisplayName());
+        }
+        else
+        {
+
+        }
+    }
+    */
+
+
     var selectedPhoto: Uri? = null
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
+    {
+        super.onActivityResult(requestCode, resultCode, data)
+        //Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...)
+
+        /*
+        if(requestCode == RC_SIGN_IN){
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data)
+            handleSignInResult(result)
+        }
+        */
         if(resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE)
         {
             Toast.makeText(this,"Setting image", Toast.LENGTH_LONG)
@@ -238,6 +324,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+/*
+private fun GoogleSignInOptions.serverClientId(mainActivity: MainActivity, gso: GoogleSignInOptions?): Any {
+ return new GGoogleSignInOptions
+}
+*/
+
 
 private fun ContentResolver.delete() {
     //getContentResolver().delete();
