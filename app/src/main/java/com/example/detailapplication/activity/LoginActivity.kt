@@ -64,8 +64,6 @@ class LoginActivity : AppCompatActivity(){
         //startActivityForResult(signInIntent, RC_SIGN_IN)
         // Check for existing Google Sign In account, if the user is already signed in
 // the GoogleSignInAccount will be non-null.
-        // Check for existing Google Sign In account, if the user is already signed in
-// the GoogleSignInAccount will be non-null.
         val account = GoogleSignIn.getLastSignedInAccount(this)
         //updateUI(account)
     }

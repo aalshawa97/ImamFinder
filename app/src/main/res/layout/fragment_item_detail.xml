@@ -36,8 +36,8 @@
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/item_detail_scroll_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:onClick="onClick"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:ignore="DuplicateClickableBoundsCheck">
@@ -77,6 +77,20 @@
         android:layout_marginBottom="@dimen/fab_margin"
         android:contentDescription="@string/message"
         android:onClick="onClick"
+        app:layout_anchorGravity="right|fill"
+        app:srcCompat="@android:drawable/stat_notify_chat"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabLogin"
+        android:layout_width="157dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:contentDescription="@string/login"
+        android:onClick="onLogin"
         app:layout_anchorGravity="right|fill"
         app:srcCompat="@android:drawable/stat_notify_chat"
         tools:ignore="SpeakableTextPresentCheck" />
