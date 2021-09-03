@@ -20,8 +20,13 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.detailapplication.databinding.ActivityItemDetailBinding
+import com.google.android.gms.auth.api.credentials.IdToken
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.FirebaseException
+import com.google.firebase.auth.AuthCredential
+import com.google.firebase.auth.PhoneAuthCredential
+import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -52,7 +57,10 @@ class ItemDetailHostActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
+
     fun onLogin(view: View) {
+        //Invoke the login using an implicit intent
+        val loginIntent = Intent(Intent.ACTION_PICK)
         Toast.makeText(this,"Logging in", Toast.LENGTH_LONG).show()
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             //.requestIdToken("")
@@ -65,7 +73,14 @@ class ItemDetailHostActivity : AppCompatActivity() {
         // the GoogleSignInAccount will be non-null.
         val account = GoogleSignIn.getLastSignedInAccount(this)
         //updateUI(account)
+        //val layoutPhone.visibility = View.VISIBLE
     }
+
+    fun firebaseAuthWithGoogle(idToken: String)
+    {
+        //AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null)
+    }
+
 
     fun onClick(view: View)
     {

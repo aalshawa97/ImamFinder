@@ -14,10 +14,13 @@
     <string name="message">Message the imam</string>
     <string name="salam">Salemwalkom rahamtulhi wa baraktu</string>
     <string name="button">Button</string>
+    <string name="verify_my_account">Verify</string>
     <string name="name">Name</string>
     <string name="submit">Submit</string>
     <string name="login">Login</string>
     <string name="tutorial">Tutorial point</string>
     <string name="username">Username</string>
     <string name="todo">TODO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
