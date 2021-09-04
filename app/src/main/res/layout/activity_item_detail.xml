@@ -91,6 +91,7 @@
         app:layout_constraintStart_toStartOf="@+id/nav_host_fragment_item_detail"
         app:layout_constraintTop_toTopOf="@+id/nav_host_fragment_item_detail"
         app:srcCompat="@drawable/_200px_ismail_ibn_musa_menks_talk_at_kerala_state_business_excellence_awards_2015"
+        android:contentDescription="@string/menkContent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
