@@ -15,27 +15,60 @@
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
     </LinearLayout>
 
     <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
-        android:onClick="onLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="268dp"
-        android:layout_marginLeft="268dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/signInButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:text="Text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="683dp"
+            android:drawableStart="@drawable/common_google_signin_btn_icon_dark"
+            android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
+            android:drawablePadding="8dp"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:text="Sign in with Google"
+            android:textAllCaps="false"
+            android:textColor="@color/purple_200"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.gms.common.SignInButton>
+
 
     <Button
         android:id="@+id/sendButton"
-        android:background="@color/common_google_signin_btn_text_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:background="@color/common_google_signin_btn_text_light"
         android:onClick="onClickUploadFile"
         android:text="@string/upload"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -82,16 +115,16 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:fadingEdge="horizontal"
         android:layout_width="200dp"
         android:layout_height="610dp"
         android:layout_marginStart="280dp"
         android:layout_marginLeft="280dp"
         android:layout_marginTop="64dp"
+        android:contentDescription="@string/menkContent"
+        android:fadingEdge="horizontal"
         app:layout_constraintStart_toStartOf="@+id/nav_host_fragment_item_detail"
         app:layout_constraintTop_toTopOf="@+id/nav_host_fragment_item_detail"
         app:srcCompat="@drawable/_200px_ismail_ibn_musa_menks_talk_at_kerala_state_business_excellence_awards_2015"
-        android:contentDescription="@string/menkContent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

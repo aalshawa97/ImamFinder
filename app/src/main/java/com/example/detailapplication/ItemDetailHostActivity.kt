@@ -84,6 +84,7 @@ class ItemDetailHostActivity : AppCompatActivity() {
 
     fun onClick(view: View)
     {
+        
         val text = findViewById(R.id.textView) as TextView;
         val shareText = "Hire me!"
         //val settings = Intent(this, SettingsActivity::class.java)

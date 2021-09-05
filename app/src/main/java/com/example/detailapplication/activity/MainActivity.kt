@@ -25,10 +25,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import com.google.android.gms.auth.api.Auth
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.auth.api.signin.GoogleSignInResult
+import com.google.android.gms.auth.api.signin.*
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
@@ -36,8 +33,13 @@ import java.lang.reflect.Array.get
 import java.util.*
 import java.util.Calendar.getInstance
 import com.google.android.gms.common.SignInButton
+import com.google.android.gms.common.api.ApiException
 
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 
+import androidx.annotation.NonNull
+import com.android.volley.toolbox.HttpResponse
+import com.google.android.gms.tasks.Task
 
 
 class MainActivity : AppCompatActivity() {
@@ -45,6 +47,8 @@ class MainActivity : AppCompatActivity() {
     //val nametxt = findViewById (R.id.nametxt) as EditText
     //nametxt.setText(name)
 
+    lateinit var mGoogleSignInClient: GoogleSignInClient
+    private val RC_SIGN_IN = 9001
     var name:String = "Muzammil"
     //edittext.setText(name)
     val List = listOf("image1", "image2")
@@ -65,9 +69,83 @@ class MainActivity : AppCompatActivity() {
         var i = null
     }
 
+    private fun googleBtnUi() {
+        // TODO Auto-generated method stub
+
+        //SignInButton googleButton = (SignInButton) findViewById(R.id.google_button);
+        /*
+
+    googleButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    });
+
+for (int i = 0; i < googleButton.getChildCount(); i++) {
+    View v = googleButton.getChildAt(i);
+
+    if (v instanceof TextView)
+    {
+        TextView tv = (TextView) v;
+        tv.setTextSize(14);
+        tv.setTypeface(null, Typeface.NORMAL);
+        tv.setText("My Text");
+        tv.setTextColor(Color.parseColor("#FFFFFF"));
+        tv.setBackgroundDrawable(getResources().getDrawable(
+            R.drawable.ic_launcher));
+        tv.setSingleLine(true);
+        tv.setPadding(15, 15, 15, 15);
+
+        return;
+    }
+}
+
+ */
+    }
+    var idToken = " "
+    private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
+        try {
+            val account: GoogleSignInAccount? = completedTask.getResult(ApiException::class.java)
+            if (account != null) {
+                idToken = account.idToken.toString()
+            }
+
+            // TODO(developer): send ID Token to server and validate
+            updateUI(account)
+        } catch (e: ApiException) {
+            Log.w(TAG, "handleSignInResult:error", e)
+            updateUI(null)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         //super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(idToken)
+            .requestEmail()
+            .build()
+
+
+        //val httpClient: HttpClient = DefaultHttpClient()
+        /*
+      val httpPost = HttpPost("https://yourbackend.example.com/tokensignin")
+
+      try {
+          val nameValuePairs: MutableList<NameValuePair> = ArrayList<NameValuePair>(1)
+          nameValuePairs.add(BasicNameValuePair("idToken", idToken))
+          httpPost.setEntity(UrlEncodedFormEntity(nameValuePairs))
+          val response: HttpResponse = httpClient.execute(httpPost)
+          val statusCode: Int = response.getStatusLine().getStatusCode()
+          val responseBody: String = EntityUtils.toString(response.getEntity())
+          Log.i(TAG, "Signed in as: $responseBody")
+      } catch (e: ClientProtocolException) {
+          Log.e(TAG, "Error sending ID token to backend.", e)
+      } catch (e: IOException) {
+          Log.e(TAG, "Error sending ID token to backend.", e)
+      }
+      */
 
         //GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
             //.requestEmail()
@@ -87,10 +165,6 @@ class MainActivity : AppCompatActivity() {
         val storage = Firebase.storage("gs://imamfinder-ac929.appspot.com")
         // Configure sign-in to request the user's ID, email address, and basic
 // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestEmail()
-            .build()
 
         // Build a GoogleSignInClient with the options specified by gso.
         var mGoogleSignInClient = GoogleSignIn.getClient(this, gso);

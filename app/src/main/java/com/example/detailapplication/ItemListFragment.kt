@@ -77,7 +77,7 @@ class ItemListFragment : Fragment() {
 
         // Leaving this not using view binding as it relies on if the view is visible the current
         // layout configuration (layout, layout-sw600dp)
-        val itemDetailFragmentContainer: View? = view.findViewById(R.id.item_detail_nav_container)
+        val itemDetailFragmentContainer: View? = view.findViewById(R.id.fabLogin)
 
         /** Click Listener to trigger navigation based on if you have
          * a single pane layout or two pane layout

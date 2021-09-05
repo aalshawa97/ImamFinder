@@ -75,7 +75,7 @@ class ItemDetailFragment : Fragment() {
             .build()
 
         // Build a GoogleSignInClient with the options specified by gso.
-        //var mGoogleSignInClient = GoogleSignIn.getClient(MainActivity, gso);
+        //var mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
         return rootView
     }
 

@@ -1,5 +1,6 @@
 package com.example.detailapplication.placeholder
 
+import android.widget.Toast
 import java.util.ArrayList
 import java.util.HashMap
 
@@ -34,9 +35,16 @@ object PlaceholderContent {
         ITEMS.add(item)
         ITEM_MAP.put(item.id, item)
     }
+    //creating list of strings
+    val a = listOf("Nouman Khan", "Muad Siala", "Muhammad Khateeb", "Ahmed Mohammad")
+    val text = "Loading : "
+    val duration = Toast.LENGTH_SHORT
+    //Log.i(text, "")
 
+    //val toast = Toast.makeText(applicationContext, text, duration)
+    //toast.show()
     private fun createPlaceholderItem(position: Int): PlaceholderItem {
-        return PlaceholderItem(position.toString(), "Imam " + position, makeDetails(position))
+        return PlaceholderItem(position.toString(), "Imam" , makeDetails(position))
     }
 
     private fun makeDetails(position: Int): String {
