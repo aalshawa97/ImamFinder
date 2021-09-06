@@ -121,7 +121,7 @@ class ItemDetailHostActivity : AppCompatActivity() {
             text.setText("Uploading file...")
         }
 
-        imageView = findViewById(R.id.imageView2)
+        //imageView = findViewById(R.id.imageView2)
 
         button = findViewById(R.id.fab)
         button.setOnClickListener{

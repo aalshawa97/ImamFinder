@@ -40,14 +40,15 @@ object PlaceholderContent {
     val text = "Loading : "
     val duration = Toast.LENGTH_SHORT
     //Log.i(text, "")
-
-    //val toast = Toast.makeText(applicationContext, text, duration)
-    //toast.show()
     private fun createPlaceholderItem(position: Int): PlaceholderItem {
         return PlaceholderItem(position.toString(), "Imam" , makeDetails(position))
     }
 
     private fun makeDetails(position: Int): String {
+
+        var someList : Array<String> = arrayOf("Nouman Khan", "Muad Siala", "Muhammad Khateeb", "Ahmed Mohammad")
+        someList.forEach { System.out.print(it) }
+
         val builder = StringBuilder()
         builder.append("Details about the Imam: ").append(position)
         for (i in 0..position - 1) {
