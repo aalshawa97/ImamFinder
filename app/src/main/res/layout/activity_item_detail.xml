@@ -55,7 +55,7 @@
             android:drawablePadding="8dp"
             android:minHeight="48dp"
             android:padding="8dp"
-            android:text="Sign in with Google"
+            android:text="@string/sign_in_with_google"
             android:textAllCaps="false"
             android:textColor="@color/purple_200"
             android:textStyle="bold"

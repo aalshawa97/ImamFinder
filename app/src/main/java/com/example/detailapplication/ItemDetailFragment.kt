@@ -10,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
+import com.example.detailapplication.activity.LoginActivity
 import com.example.detailapplication.activity.MainActivity
 import com.example.detailapplication.databinding.FragmentItemDetailBinding
 import com.example.detailapplication.placeholder.PlaceholderContent
@@ -56,6 +58,7 @@ class ItemDetailFragment : Fragment() {
     }
 
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -67,7 +70,8 @@ class ItemDetailFragment : Fragment() {
         val rootView = binding.root
 
         binding.toolbarLayout?.title = item?.content
-        val itemDetailViewText = "\n\nNouman Khalid\nQuran Teacher\nPhone number +971 55 789 2356\n"
+        val imamDetails = "\n\nNouman Khalid\nQuran Teacher\nPhone number +971 55 789 2356\n"
+        val itemDetailViewText = imamDetails
         itemDetailTextView = binding.itemDetail
         // Show the placeholder content as text in a TextView.
         item?.let {
@@ -79,8 +83,37 @@ class ItemDetailFragment : Fragment() {
             .build()
 
         // Build a GoogleSignInClient with the options specified by gso.
-        //var mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+        //var mGoogleSignInClient = GoogleSignIn.getClient(Activity(), gso)
         return rootView
+    }
+
+    // Create new views (invoked by the layout manager)
+    fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
+        // Create a new view, which defines the UI of the list item
+        val view = LayoutInflater.from(viewGroup.context)
+            .inflate(R.layout.text_row_item, viewGroup, false)
+
+        return ViewHolder(view)
+    }
+
+    // Replace the contents of a view (invoked by the layout manager)
+    fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+
+        // Get element from your dataset at this position and replace the
+        // contents of the view with that element
+        //viewHolder.textView.text = dataSet[position]
+    }
+
+    // Return the size of your dataset (invoked by the layout manager)
+    //fun getItemCount() = dataSet.size
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val textView: TextView
+
+        init {
+            // Define click listener for the ViewHolder's View.
+            textView = view.findViewById(R.id.textView)
+        }
     }
     /*
 private void googleBtnUi() {

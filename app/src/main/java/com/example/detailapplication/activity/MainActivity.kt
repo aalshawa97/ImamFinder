@@ -288,6 +288,8 @@ for (int i = 0; i < googleButton.getChildCount(); i++) {
 
     private fun uploadImage()
     {
+        Toast.makeText(this, "Welcome now uploading!", Toast.LENGTH_LONG)
+        uploadImageToFirebaseStorage()
         sendBroadcast(
             Intent(
                 Intent.ACTION_MEDIA_MOUNTED,
@@ -415,6 +417,8 @@ private fun EditText.setOnClickListener() {
 
 private fun uploadImageToFirebaseStorage()
 {
+    Log.d("MainActivity", "Uploading to firebase")
     val filename = UUID.randomUUID()
+    //val storageReference fileRef = storageReference.child("profile.jgp")
     //val ref = FirebaseStorage.getInstance().getReference("/images/$filename")
 }
