@@ -8,10 +8,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.view.View
 import android.view.View.inflate
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -37,6 +34,8 @@ class ItemDetailHostActivity : AppCompatActivity() {
     lateinit var button: Button
     val pickImage = 100
     var imageUri: Uri? = null
+    lateinit var etName: EditText   //declartion
+    lateinit var tvRes: TextView
     private lateinit var appBarConfiguration: AppBarConfiguration
     var numberOfButtonClicks = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,13 +58,17 @@ class ItemDetailHostActivity : AppCompatActivity() {
     }
 
     fun onLogin(view: View) {
+        var name = "Welcome user"
+        Toast.makeText(this@ItemDetailHostActivity, name, Toast.LENGTH_LONG).show()
+        tvRes.setText("Welcome " + name)
+        setContentView(R.layout.activity_login)
         //Invoke the login using an implicit intent
         val loginIntent = Intent(Intent.ACTION_PICK)
-        Toast.makeText(this,"Logging in", Toast.LENGTH_LONG).show()
+        //Toast.makeText(this,"Logging in", Toast.LENGTH_LONG).show()
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             //.requestIdToken("")
             .requestEmail()
-            .build()
+              .build()
         val mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         val signInIntent: Intent = mGoogleSignInClient.getSignInIntent()
         //startActivityForResult(signInIntent, RC_SIGN_IN)

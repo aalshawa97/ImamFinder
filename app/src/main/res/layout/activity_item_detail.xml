@@ -68,7 +68,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@color/common_google_signin_btn_text_light"
         android:onClick="onClickUploadFile"
         android:text="@string/upload"
         app:layout_constraintBottom_toBottomOf="parent"
