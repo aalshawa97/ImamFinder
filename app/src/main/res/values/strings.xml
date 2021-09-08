@@ -27,4 +27,8 @@
     <string name="text">Text</string>
     <string name="element_text">Hiring application</string>
     <string name="sign_in_with_google">Welcome, sign in with Google</string>
+    <string name="cancel">Cancel</string>
+    <string name="textview">Welcome!</string>
+    <string name="enter_name">Enter username</string>
+    <string name="enter_password">Enter password</string>
 </resources>

@@ -174,8 +174,8 @@ for (int i = 0; i < googleButton.getChildCount(); i++) {
         val account = GoogleSignIn.getLastSignedInAccount(this)
         updateUI(account)
         // Set the dimensions of the sign-in button.
-        var signInButton = findViewById<SignInButton>(R.id.sign_in_button)
-        signInButton.setSize(SignInButton.SIZE_STANDARD)
+        //var signInButton = findViewById<SignInButton>(R.id.sign_in_button)
+        //signInButton.setSize(SignInButton.SIZE_STANDARD)
         //val uri = data.data
         //val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
         // Create a storage reference from our app

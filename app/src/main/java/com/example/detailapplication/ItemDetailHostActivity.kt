@@ -40,7 +40,8 @@ class ItemDetailHostActivity : AppCompatActivity() {
     var numberOfButtonClicks = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        tvRes = findViewById(R.id.tvResult)
+        etName = findViewById(R.id.etName) //initialization
         val binding = ActivityItemDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -58,7 +59,7 @@ class ItemDetailHostActivity : AppCompatActivity() {
     }
 
     fun onLogin(view: View) {
-        var name = "Welcome user"
+        var name = etName.text.toString()
         Toast.makeText(this@ItemDetailHostActivity, name, Toast.LENGTH_LONG).show()
         tvRes.setText("Welcome " + name)
         setContentView(R.layout.activity_login)
@@ -87,6 +88,10 @@ class ItemDetailHostActivity : AppCompatActivity() {
 
     fun onClick(view: View)
     {
+        var name = etName.text.toString()
+        Toast.makeText(this@ItemDetailHostActivity, name, Toast.LENGTH_LONG).show()
+        tvRes.setText("Welcome " + name)
+        Toast.makeText(this,"Welcome " + name, Toast.LENGTH_LONG).show();
         
         val text = findViewById(R.id.textView) as TextView;
         val shareText = "Hire me!"
@@ -104,20 +109,26 @@ class ItemDetailHostActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     fun onClickUploadFile(view: View)
     {
+        uploadToFirebase()
         //Invoke the image gallery using an implicit intent
+
         val photoPickerIntent = Intent(Intent.ACTION_PICK)
         val text = findViewById(R.id.textView) as TextView;
 
         //Where do we want to find the data?
+
         val pictureDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS)
-        val pictureDirectoryPath = pictureDirectory.getPath();
+        val pictureDirectoryPath = pictureDirectory.getPath()
+
         //Finally, get a URI representation
         val data = Uri.parse(pictureDirectoryPath)
         //Set the data and type. Get all image types
         photoPickerIntent.setDataAndType(data, "image/*")
+
         //We will invoke this activity, and get something back from it.
         val IMAGE_GALLERY_REQUEST = 0
         startActivityForResult(photoPickerIntent, IMAGE_GALLERY_REQUEST)
+
         if(text != null)
         {
             val text = findViewById(R.id.textView) as TextView;
@@ -134,7 +145,10 @@ class ItemDetailHostActivity : AppCompatActivity() {
 
         //Test
         text.setText("Button clicked..." + numberOfButtonClicks)
+
         uploadToFirebase()
+
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)

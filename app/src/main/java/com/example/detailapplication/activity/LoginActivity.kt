@@ -52,9 +52,13 @@ class LoginActivity : AppCompatActivity(){
     }
 
     fun onClick(v: View) {
+        Toast.makeText(this,"Welcome user!", Toast.LENGTH_LONG).show();
+        setContentView(R.layout.activity_item_detail)
+        /*
         when (v.getId()) {
             com.example.detailapplication.R.id.sign_in_button -> signIn()
         }
+        */
     }
 
     private fun signIn() {

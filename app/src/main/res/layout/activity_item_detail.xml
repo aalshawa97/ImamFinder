@@ -23,45 +23,6 @@
 
     </LinearLayout>
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/signInButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_alignParentTop="true"
-        android:layout_margin="10dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginBottom="0dp"
-        android:text="Text"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-        <Button
-            android:id="@+id/sign_in_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="683dp"
-            android:drawableStart="@drawable/common_google_signin_btn_icon_dark"
-            android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
-            android:drawablePadding="8dp"
-            android:minHeight="48dp"
-            android:padding="8dp"
-            android:text="@string/sign_in_with_google"
-            android:textAllCaps="false"
-            android:textColor="@color/purple_200"
-            android:textStyle="bold"
-            tools:ignore="TouchTargetSizeCheck" />
-    </com.google.android.gms.common.SignInButton>
-
 
     <Button
         android:id="@+id/sendButton"
@@ -88,7 +49,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         app:navGraph="@navigation/primary_details_nav_graph"
         tools:layout="@layout/fragment_item_detail" />
 
@@ -102,8 +63,8 @@
         android:layout_marginEnd="142dp"
         android:layout_marginRight="142dp"
         android:layout_marginBottom="336dp"
-        android:contentDescription="@string/contentDescription"
         android:onClick="onClickUploadFile"
+        android:contentDescription="@string/contentDescription"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
