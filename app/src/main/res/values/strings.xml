@@ -31,4 +31,6 @@
     <string name="textview">Welcome!</string>
     <string name="enter_name">Enter username</string>
     <string name="enter_password">Enter password</string>
+    <string name="profile_picture">Profile photo</string>
+    <string name="select_image">SELECT IMAGE</string>
 </resources>
