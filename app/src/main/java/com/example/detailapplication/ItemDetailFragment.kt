@@ -40,6 +40,8 @@ class ItemDetailFragment : Fragment() {
 
     private var _binding: FragmentItemDetailBinding? = null
 
+    var imamDetails = ""
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -70,13 +72,9 @@ class ItemDetailFragment : Fragment() {
         val rootView = binding.root
 
         binding.toolbarLayout?.title = item?.content
-        val imamDetails = "\n\nNouman Khalid\nQuran Teacher\nPhone number +971 55 789 2356\n"
-        val itemDetailViewText = imamDetails
-        itemDetailTextView = binding.itemDetail
-        // Show the placeholder content as text in a TextView.
-        item?.let {
-            itemDetailTextView.text = itemDetailViewText //+ it.details
-        }
+        //Populate this with live data instead of hardcoding
+        addImam("\n\nNouman Khalid\nQuran Teacher\nPhone number +971 55 789 2356\n")
+        addImam("\n\nAbdullah Atassi\nQuran Teacher\nPhone number +971 51 789 2356\n")
         val storage = Firebase.storage("gs://imamfinder-ac929.appspot.com")
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
@@ -85,6 +83,16 @@ class ItemDetailFragment : Fragment() {
         // Build a GoogleSignInClient with the options specified by gso.
         //var mGoogleSignInClient = GoogleSignIn.getClient(Activity(), gso)
         return rootView
+    }
+
+    fun addImam(anImamDetails:String){
+        this.imamDetails = anImamDetails
+        val itemDetailViewText = imamDetails
+        itemDetailTextView = binding.itemDetail
+        // Show the placeholder content as text in a TextView.
+        item?.let {
+            itemDetailTextView.text = itemDetailViewText //+ it.details
+        }
     }
 
     // Create new views (invoked by the layout manager)
