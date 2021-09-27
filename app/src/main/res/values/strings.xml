@@ -34,6 +34,16 @@
     <string name="profile_picture">Profile photo</string>
     <string name="select_image">SELECT IMAGE</string>
     <string-array name="imams">
-        <item></item>
-        </string-array>
+        <item>Muhammad Khateeb</item>
+        <item>Idris Alam</item>
+        <item>Osama Alatssi</item>
+        <item>Abdullah Muhammad</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>Imam</item>
+        <item>Imam</item>
+        <item>Lecturer</item>
+        <item>Psychiatrist</item>
+    </string-array>
 </resources>
