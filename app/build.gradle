@@ -61,6 +61,7 @@ dependencies {
     //Google Services plugin
     apply plugin: 'com.google.gms.google-services'
     apply plugin: 'kotlin-kapt'
+    apply plugin: 'kotlin-android-extensions'
     //Declare the dependencies for any other desired Firebase products
     //For example, declare the dependencies fpr Firebase Authentication and Cloud Firestore
     implementation 'com.google.firebase:firebase-auth'

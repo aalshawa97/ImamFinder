@@ -2,12 +2,14 @@ package com.example.detailapplication
 
 import android.app.Activity
 import android.content.ClipData
+import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_item_list.item_list
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
@@ -42,9 +44,14 @@ class ItemDetailFragment : Fragment() {
 
     var imamDetails = ""
 
+    lateinit var myImam: Imam;
+
+    var imams: Array<Imam> = Array(1) { Imam("Abdullah Atassi ", "0 ", 70000.0); Imam("Muhammad Khateeb ", "1 ", 70000.0)}
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,8 +80,20 @@ class ItemDetailFragment : Fragment() {
 
         binding.toolbarLayout?.title = item?.content
         //Populate this with live data instead of hardcoding
-        addImam("\n\nNouman Khalid\nQuran Teacher\nPhone number +971 55 789 2356\n")
-        addImam("\n\nAbdullah Atassi\nQuran Teacher\nPhone number +971 51 789 2356\n")
+        //addImam("\n\nNouman Khalid\nQuran Teacher\nPhone number +971 55 789 2356\n")
+        //addImam("\n\nAbdullah Atassi\nQuran Teacher\nPhone number +971 51 789 2356\n")
+        //myImam = Imam("Abdullah Atassi ", "0 ", 70000.0)
+
+        //imams.set(0, myImam)
+        /*
+        myImam = Imam("Mohammad Khateeb ", "1 ", 70000.0)
+        imams.set(1, myImam)
+        addImams(imams)
+        */
+        addImams(imams)
+
+        //addImam(myImam)
+
         val storage = Firebase.storage("gs://imamfinder-ac929.appspot.com")
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
@@ -85,9 +104,35 @@ class ItemDetailFragment : Fragment() {
         return rootView
     }
 
+    fun addImams(imams:Array<Imam>) {
+        for(imam: Imam in imams){
+            this.imamDetails = imam.name
+            val itemDetailViewText = imam.id + imamDetails + imam.salary
+
+            itemDetailTextView = binding.itemDetail
+            // Show the placeholder content as text in a TextView.
+            item?.let {
+                itemDetailTextView.text = itemDetailViewText //+ it.details
+            }
+        }
+
+    }
+
+    fun addImam(anImamDetails:Imam){
+        this.imamDetails = anImamDetails.name
+        val itemDetailViewText = anImamDetails.id + imamDetails + anImamDetails.salary
+
+        itemDetailTextView = binding.itemDetail
+        // Show the placeholder content as text in a TextView.
+        item?.let {
+            itemDetailTextView.text = itemDetailViewText //+ it.details
+        }
+    }
+
     fun addImam(anImamDetails:String){
         this.imamDetails = anImamDetails
         val itemDetailViewText = imamDetails
+
         itemDetailTextView = binding.itemDetail
         // Show the placeholder content as text in a TextView.
         item?.let {

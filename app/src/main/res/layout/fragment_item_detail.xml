@@ -92,6 +92,7 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
+        android:visibility="invisible"
         android:layout_width="357dp"
         android:layout_height="364dp"
         android:layout_marginStart="@dimen/fab_margin"
@@ -108,6 +109,7 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabLogin"
+        android:visibility="invisible"
         android:layout_width="157dp"
         android:layout_height="88dp"
         android:layout_marginTop="@dimen/fab_margin"

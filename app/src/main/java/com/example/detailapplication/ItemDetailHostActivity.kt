@@ -16,6 +16,8 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.detailapplication.databinding.ActivityItemDetailBinding
 import com.google.android.gms.auth.api.credentials.IdToken
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -28,6 +30,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.fragment_item_list.*
+import java.lang.reflect.Array
+
 
 class ItemDetailHostActivity : AppCompatActivity() {
     lateinit var imageView : ImageView
@@ -36,12 +41,30 @@ class ItemDetailHostActivity : AppCompatActivity() {
     var imageUri: Uri? = null
     lateinit var etName: EditText   //declartion
     lateinit var tvRes: TextView
+    lateinit var recyclerView : RecyclerView
+    private lateinit var linearLayoutManager: LinearLayoutManager
+    lateinit var myAdapter: MyAdapter
+    var s1 = arrayOf("")
+    var s2 = arrayOf("")
+    val images : kotlin.Array<Int> = arrayOf(R.drawable.muhammad_khateeb_imam_finder_ic_launcher_background, R.drawable.idris_alam_imam_finder_ic_launcher_background, R.drawable.osama_alatssi_imam_finder_ic_launcher_background, R.drawable.abdullah_muhammad_imam_finder_ic_launcher_background)
+    //printNumbers(*numbers.toIntArray())
+    //var images= (R.drawable.muhammad_khateeb_imam_finder_ic_launcher_background, R.drawable.idris_alam_imam_finder_ic_launcher_background, R.drawable.osama_alatssi_imam_finder_ic_launcher_background, R.drawable.abdullah_muhammad_imam_finder_ic_launcher_background)
+    //var arr = arrayOfNulls<Int>(10)
+
     private lateinit var appBarConfiguration: AppBarConfiguration
     var numberOfButtonClicks = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //Initialization
         tvRes = findViewById(R.id.tvResult)
-        etName = findViewById(R.id.etName) //initialization
+        etName = findViewById(R.id.etName)
+        s1 = resources.getStringArray(R.array.imams)
+        s2 = resources.getStringArray(R.array.description)
+        recyclerView = item_list
+        myAdapter = MyAdapter(this, s1, s2)
+        recyclerView.adapter = (myAdapter)
+        linearLayoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = linearLayoutManager
         val binding = ActivityItemDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
