@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.content.Intent
 import android.net.Uri
+import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.*
@@ -75,7 +76,9 @@ class LoginActivity : AppCompatActivity(){
 
     fun onClick(v: View) {
         Toast.makeText(this,"Welcome " + etName.toString(), Toast.LENGTH_LONG).show();
-        setContentView(R.layout.activity_item_detail)
+        //setContentView(R.layout.activity_item_detail)
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
         /*
         when (v.getId()) {
             com.example.detailapplication.R.id.sign_in_button -> signIn()
