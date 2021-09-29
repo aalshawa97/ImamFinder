@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.recycler_view)
 
-
         //Load the date from the network or other resources
         //into the array list asynchronously
         contactsList.add(Imam("Muhammad Khateeb", "778899009"))
@@ -26,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         contactsList.add(Imam("Abdullah Muhammad", "778899006"))
         //listAdapter!!.notifyDataSetChanged()
 
-        recycler = findViewById(R.id.recycler_view)
+        recycler = findViewById(R.id.my_recycler_view)
         val layoutManager = LinearLayoutManager(this)
         recycler?.setLayoutManager(layoutManager)
         listAdapter = MyAdapter(contactsList, this)

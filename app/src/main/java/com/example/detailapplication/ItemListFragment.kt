@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewbinding.ViewBinding
 import com.example.detailapplication.placeholder.PlaceholderContent;
 import com.example.detailapplication.databinding.FragmentItemListBinding
 import com.example.detailapplication.databinding.ItemListContentBinding
@@ -73,7 +74,7 @@ class ItemListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         ViewCompat.addOnUnhandledKeyEventListener(view, unhandledKeyEventListenerCompat)
 
-        val recyclerView: RecyclerView = binding.itemList
+        val recyclerView: RecyclerView? = binding.itemList
 
         // Leaving this not using view binding as it relies on if the view is visible the current
         // layout configuration (layout, layout-sw600dp)
@@ -111,7 +112,9 @@ class ItemListFragment : Fragment() {
             ).show()
             true
         }
-        setupRecyclerView(recyclerView, onClickListener, onContextClickListener)
+        if (recyclerView != null) {
+            setupRecyclerView(recyclerView, onClickListener, onContextClickListener)
+        }
     }
 
     private fun setupRecyclerView(

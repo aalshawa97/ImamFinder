@@ -17,9 +17,6 @@ import com.google.android.gms.tasks.Task
 
 import com.google.android.gms.common.api.ApiException
 
-
-
-
 //@repeatable
 class LoginActivity : AppCompatActivity(){
     lateinit var etName: EditText   //declartion
