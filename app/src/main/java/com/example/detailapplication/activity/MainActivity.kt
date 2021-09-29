@@ -1,22 +1,58 @@
 package com.example.detailapplication.activity
 
+import android.R.attr
 import com.example.detailapplication.MyAdapter
-
+import android.os.Handler;
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.detailapplication.Imam
 import com.example.detailapplication.R
+import android.content.Intent
+import android.graphics.Color
+import android.net.Uri
+import android.R.attr.delay
+import android.view.View
+import android.view.WindowManager
+import android.widget.Button
+import android.widget.Toast
+import com.example.detailapplication.PhoneActivity
+import java.util.*
+import kotlin.collections.ArrayList
+
+
 class MainActivity : AppCompatActivity() {
     private lateinit var listAdapter: MyAdapter
     private val contactsList: ArrayList<Imam> = ArrayList()
     private lateinit var recycler: RecyclerView
+    private lateinit var makeCallButton : Button
+
+    /*
+    final Handler handler = new Handler();
+    handler.postDelayed(new Runnable() {
+        @Override
+        public void run() {
+            // Do something after 5s = 5000ms
+            buttons[inew][jnew].setBackgroundColor(Color.BLACK);
+        }
+    }, 5000);
+    */
+
+    fun makeCall(view: View){
+        Toast.makeText(this, "Phone calling", Toast.LENGTH_LONG).show()
+        val intent = Intent(this, PhoneActivity::class.java)
+        startActivity(intent)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.recycler_view)
+        val intent = Intent(Intent.ACTION_CALL)
+        intent.data = Uri.parse("5039359491")
+        //startActivity(intent)
 
+        setContentView(R.layout.recycler_view)
+        makeCallButton = findViewById(R.id.button_call);
         //Load the date from the network or other resources
         //into the array list asynchronously
         contactsList.add(Imam("Muhammad Khateeb", "778899009"))
@@ -30,6 +66,16 @@ class MainActivity : AppCompatActivity() {
         recycler?.setLayoutManager(layoutManager)
         listAdapter = MyAdapter(contactsList, this)
         recycler.setAdapter(listAdapter)
+
+        /*
+        inline fun Timer.schedule(
+            delay: Long,
+            crossinline action: TimerTask.() -> Unit
+        ): TimerTask
+        */
+
+        //
+
     }
 
     /*

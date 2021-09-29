@@ -36,6 +36,9 @@
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="title_recycler_activity">Recycler activity</string>
+    <string name="calling">calling...</string>
+    <string name="image_call_hint">make call</string>
+    <string name="make_call">Make call</string>
     <string-array name="imams">
         <item>Muhammad Khateeb</item>
         <item>Idris Alam</item>
