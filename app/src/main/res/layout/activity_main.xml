@@ -1,88 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="@integer/material_motion_duration_long_1"
-    tools:context=".activity.MainActivity">
-
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:gravity="center_horizontal"
-        android:text="@string/tutorial"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_green_dark"
-        android:textSize="32sp"
-        android:textStyle="bold" />
-    <LinearLayout
-        android:id="@+id/main_layout"
+        android:id="@+id/txt_name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:background="#444444"
-        android:padding="25dp"
-        android:orientation="vertical"
-        />
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:padding="5dp"/>
     <TextView
+        android:id="@+id/txt_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#6dffbf"
-        android:padding="30dp"
-        android:text="@string/login"
-        />
-    <!--
-    <EditText
-        android:id="@+id/edit_text"
-        android:hint="@string/username"
-        android:textColor="#6bfff7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:autofillHints="" />
-    -->
-    <!--
-    <GridView
-        android:id="@+id/grid_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:numColumns="3"
-        android:columnWidth="90dp"
-        android:horizontalSpacing="10dp"
-        android:verticalSpacing="10dp"
-        android:gravity="center"
-        android:stretchMode="columnWidth"
-        />
-    -->
-
-    <!--
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.DetailApplication.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/teal_200"
-            app:popupTheme="@style/Theme.DetailApplication.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-    -->
-
-    <include layout="@layout/content_main" />
-
-    <!--
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:contentDescription="@string/todo"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
-        -->
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        android:textSize="15sp"
+        android:padding="5dp"/>
+</LinearLayout>

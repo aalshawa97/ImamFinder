@@ -1,30 +1,17 @@
 package com.example.detailapplication
 
-import android.app.Activity
-import android.content.ClipData
-import android.content.Context
-import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_item_list.item_list
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.example.detailapplication.activity.LoginActivity
-import com.example.detailapplication.activity.MainActivity
 import com.example.detailapplication.databinding.FragmentItemDetailBinding
 import com.example.detailapplication.placeholder.PlaceholderContent
-import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.play.core.appupdate.i
-import com.google.android.play.core.assetpacks.v
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
-import java.util.Calendar.getInstance
 
 /**
  * A fragment representing a single Item detail screen.
@@ -48,7 +35,7 @@ class ItemDetailFragment : Fragment() {
 
     lateinit var myImam: Imam;
 
-    var imams: Array<Imam> = Array(1) { Imam("Abdullah Atassi ", "0 ", 70000.0); Imam("Muhammad Khateeb ", "1 ", 70000.0); Imam("Idris Alam ", "2 ", 70000.0); Imam("Abdullah Muhammad ", "3 ", 70000.0)}
+    var imams: Array<Imam> = Array(1) { Imam("Abdullah Atassi ", "0 "); Imam("Muhammad Khateeb ",  "70000.0 "); Imam("Idris Alam ", "70000.0 "); Imam("Abdullah Muhammad ", "70000.0 ")}
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -110,7 +97,7 @@ class ItemDetailFragment : Fragment() {
         //holder.textView.setText(ContactsContract.Contacts.Data.getInstance().getData(position));
         for(imam: Imam in imams){
             this.imamDetails = imam.name
-            val itemDetailViewText = imam.id + imamDetails + imam.salary
+            val itemDetailViewText = imam.name + imamDetails + imam.number
 
             itemDetailTextView = binding.itemDetail
             // Show the placeholder content as text in a TextView.
@@ -123,7 +110,7 @@ class ItemDetailFragment : Fragment() {
 
     fun addImam(anImamDetails:Imam){
         this.imamDetails = anImamDetails.name
-        val itemDetailViewText = anImamDetails.id + imamDetails + anImamDetails.salary
+        val itemDetailViewText = anImamDetails.name + imamDetails + anImamDetails.number
 
         itemDetailTextView = binding.itemDetail
         // Show the placeholder content as text in a TextView.

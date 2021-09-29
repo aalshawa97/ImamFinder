@@ -14,7 +14,7 @@ class RecyclerActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler)
-        wordsRecyclerView = findViewById(R.id.wordsRecyclerview)
+        wordsRecyclerView = findViewById(R.id.recycler_view)
         var adapter = WordsAdapter(words)
         wordsRecyclerView.layoutManager = LinearLayoutManager(this)
     }

@@ -1,26 +1,28 @@
 package com.example.detailapplication;
 
 public class Imam {
-    String name;
-    public String id;
-    private double salary;
-    public Imam(String name, String id,
-                    double salary)
-    {
+
+    private String name;
+    private String number;
+
+    public Imam(String name, String number) {
         this.name = name;
-        this.id = id;
-        this.salary = salary;
+        this.number = number;
     }
-    public String getName()
-    {
+
+    public String getName() {
         return name;
     }
-    public String getId()
-    {
-        return id;
+
+    public void setName(String name) {
+        this.name = name;
     }
-    public Double getSalary()
-    {
-        return salary;
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 }
