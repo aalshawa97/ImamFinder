@@ -6,6 +6,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +24,7 @@ import com.google.android.play.core.appupdate.i
 import com.google.android.play.core.assetpacks.v
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import java.util.Calendar.getInstance
 
 /**
  * A fragment representing a single Item detail screen.
@@ -46,7 +48,7 @@ class ItemDetailFragment : Fragment() {
 
     lateinit var myImam: Imam;
 
-    var imams: Array<Imam> = Array(1) { Imam("Abdullah Atassi ", "0 ", 70000.0); Imam("Muhammad Khateeb ", "1 ", 70000.0)}
+    var imams: Array<Imam> = Array(1) { Imam("Abdullah Atassi ", "0 ", 70000.0); Imam("Muhammad Khateeb ", "1 ", 70000.0); Imam("Idris Alam ", "2 ", 70000.0); Imam("Abdullah Muhammad ", "3 ", 70000.0)}
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -105,6 +107,7 @@ class ItemDetailFragment : Fragment() {
     }
 
     fun addImams(imams:Array<Imam>) {
+        //holder.textView.setText(ContactsContract.Contacts.Data.getInstance().getData(position));
         for(imam: Imam in imams){
             this.imamDetails = imam.name
             val itemDetailViewText = imam.id + imamDetails + imam.salary

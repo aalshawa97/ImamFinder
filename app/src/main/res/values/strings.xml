@@ -35,6 +35,7 @@
     <string name="select_image">SELECT IMAGE</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
+    <string name="title_recycler_activity">Recycler activity</string>
     <string-array name="imams">
         <item>Muhammad Khateeb</item>
         <item>Idris Alam</item>

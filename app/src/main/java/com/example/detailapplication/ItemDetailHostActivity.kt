@@ -43,9 +43,10 @@ class ItemDetailHostActivity : AppCompatActivity() {
     lateinit var tvRes: TextView
     lateinit var recyclerView : RecyclerView
     private lateinit var linearLayoutManager: LinearLayoutManager
-    lateinit var myAdapter: MyAdapter
+    lateinit var myAdapter: SampleRecyclerAdapter
     var s1 = arrayOf("")
     var s2 = arrayOf("")
+    var names : ArrayList<String> = arrayListOf("Muhammad Khateeb", "Idris Alam", "Osama Alatssi", "Abdullah Mohammad")
     val images : kotlin.Array<Int> = arrayOf(R.drawable.muhammad_khateeb_imam_finder_ic_launcher_background, R.drawable.idris_alam_imam_finder_ic_launcher_background, R.drawable.osama_alatssi_imam_finder_ic_launcher_background, R.drawable.abdullah_muhammad_imam_finder_ic_launcher_background)
     //printNumbers(*numbers.toIntArray())
     //var images= (R.drawable.muhammad_khateeb_imam_finder_ic_launcher_background, R.drawable.idris_alam_imam_finder_ic_launcher_background, R.drawable.osama_alatssi_imam_finder_ic_launcher_background, R.drawable.abdullah_muhammad_imam_finder_ic_launcher_background)
@@ -61,7 +62,7 @@ class ItemDetailHostActivity : AppCompatActivity() {
         s1 = resources.getStringArray(R.array.imams)
         s2 = resources.getStringArray(R.array.description)
         recyclerView = item_list
-        myAdapter = MyAdapter(this, s1, s2)
+        myAdapter = SampleRecyclerAdapter(this, names)
         recyclerView.adapter = (myAdapter)
         linearLayoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = linearLayoutManager
