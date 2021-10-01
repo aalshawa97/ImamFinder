@@ -58,6 +58,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:20.0.0'
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
     implementation 'com.google.firebase:firebase-messaging-ktx:22.0.0'
+    implementation 'androidx.room:room-common:2.3.0'
     //Add the following line:
     //Google Services plugin
     apply plugin: 'com.google.gms.google-services'
