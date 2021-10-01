@@ -15,9 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
+//import com.firebase.ui.auth.AuthUI;
 /*
-import com.firebase.ui.auth.AuthUI;
+
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.example.fireeats.adapter.RestaurantAdapter;
 import com.google.firebase.example.fireeats.util.FirebaseUtil;
