@@ -1,8 +1,6 @@
 package com.example.detailapplication.activity
 
-import android.R.attr
 import com.example.detailapplication.MyAdapter
-import android.os.Handler;
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
@@ -10,15 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.detailapplication.Imam
 import com.example.detailapplication.R
 import android.content.Intent
-import android.graphics.Color
 import android.net.Uri
-import android.R.attr.delay
 import android.view.View
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
-import com.example.detailapplication.PhoneActivity
-import java.util.*
 import kotlin.collections.ArrayList
 
 
