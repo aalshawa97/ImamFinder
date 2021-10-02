@@ -2,6 +2,7 @@ package com.example.detailapplication
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.detailapplication.room.Imam
 
 @Dao
 interface ImamDao {
@@ -19,7 +20,7 @@ interface ImamDao {
     @Update
     fun update(Imam: Imam?)
 
-    @Query("DELETE FROM Imam")
+    @Query("DELETE FROM imam_table")
     fun deleteAllNotes()
     fun deleteAll()
 

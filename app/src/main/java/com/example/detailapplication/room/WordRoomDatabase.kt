@@ -5,7 +5,6 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.example.detailapplication.Imam
 import com.example.detailapplication.ImamDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -29,13 +28,13 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     imamDao.deleteAll()
 
                     // Add sample words.
-                    var imam = Imam("Idris Akbar", "1")
+                    var imam = Imam("Idris Akbar")
                     imamDao.insert(imam)
-                    imam = Imam("Mahdi Ahmed!", "2")
+                    imam = Imam("Mahdi Ahmed!")
                     imamDao.insert(imam)
 
                     // TODO: Add your own words!
-                    imam = Imam("Sulaymaan Mustafa!", "3")
+                    imam = Imam("Sulaymaan Mustafa!")
                     imamDao.insert(imam)
                 }
             }

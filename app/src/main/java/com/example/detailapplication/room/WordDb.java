@@ -6,8 +6,6 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.example.detailapplication.Imam;
-
 @Database(entities = {Imam.class}, version = 1)
 public abstract class WordDb extends RoomDatabase {
 

@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.detailapplication.room.Imam;
+
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
@@ -43,8 +45,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
         final Imam contact = contactsList.get(position);
 
         // Set the data to the views here
-        holder.setContactName(contact.getName());
-        holder.setContactNumber(contact.getNumber());
+        holder.setContactName(contact.getWord());
+        holder.setContactNumber(""+contact.getWord().length());
 
         // You can set click listners to indvidual items in the viewholder here
         // make sure you pass down the listner or make the Data members of the viewHolder public

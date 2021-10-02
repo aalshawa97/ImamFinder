@@ -17,10 +17,9 @@ package com.example.detailapplication.room
  */
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 /**
@@ -35,7 +34,7 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
     // - We can put an observer on the data (instead of polling for changes) and only update the
     //   the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
-    val allWords: LiveData<List<com.example.detailapplication.Imam>>
+    val allWords: LiveData<List<Imam>>
 
     init {
         val wordsDao = WordRoomDatabase.getDatabase(application, viewModelScope).imamDao()
@@ -46,7 +45,7 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
     /**
      * Launching a new coroutine to insert the data in a non-blocking way
      */
-    fun insert(word: com.example.detailapplication.Imam) = viewModelScope.launch(Dispatchers.IO) {
+    fun insert(word: Imam) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(word)
     }
 }

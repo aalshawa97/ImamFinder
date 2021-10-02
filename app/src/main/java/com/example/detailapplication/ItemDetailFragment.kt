@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.detailapplication.databinding.FragmentItemDetailBinding
 import com.example.detailapplication.placeholder.PlaceholderContent
+import com.example.detailapplication.room.Imam
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
@@ -35,7 +36,7 @@ class ItemDetailFragment : Fragment() {
 
     lateinit var myImam: Imam;
 
-    var imams: Array<Imam> = Array(1) { Imam("Abdullah Atassi ", "0 "); Imam("Muhammad Khateeb ",  "70000.0 "); Imam("Idris Alam ", "70000.0 "); Imam("Abdullah Muhammad ", "70000.0 ")}
+    var imams: Array<Imam> = Array(1) { Imam("Abdullah Atassi "); Imam("Muhammad Khateeb "); Imam("Idris Alam "); Imam("Abdullah Muhammad ")}
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -96,8 +97,8 @@ class ItemDetailFragment : Fragment() {
     fun addImams(imams:Array<Imam>) {
         //holder.textView.setText(ContactsContract.Contacts.Data.getInstance().getData(position));
         for(imam: Imam in imams){
-            this.imamDetails = imam.name
-            val itemDetailViewText = imam.name + imamDetails + imam.number
+            this.imamDetails = imam.word
+            val itemDetailViewText = imamDetails
 
             itemDetailTextView = binding.itemDetail
             // Show the placeholder content as text in a TextView.
@@ -109,8 +110,8 @@ class ItemDetailFragment : Fragment() {
     }
 
     fun addImam(anImamDetails:Imam){
-        this.imamDetails = anImamDetails.name
-        val itemDetailViewText = anImamDetails.name + imamDetails + anImamDetails.number
+        this.imamDetails = anImamDetails.word
+        val itemDetailViewText = imamDetails
 
         itemDetailTextView = binding.itemDetail
         // Show the placeholder content as text in a TextView.

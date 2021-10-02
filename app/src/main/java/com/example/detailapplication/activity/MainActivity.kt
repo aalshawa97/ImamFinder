@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.detailapplication.*
+import com.example.detailapplication.room.Imam
 import kotlin.collections.ArrayList
 
 
@@ -81,10 +82,10 @@ fab.setOnClickListener {
         makeCallButton = findViewById(R.id.button_call);
         //Load the date from the network or other resources
         //into the array list asynchronously
-        contactsList.add(Imam("Muhammad Khateeb", "778899009"))
-        contactsList.add(Imam("Idris Alam", "778899008"))
-        contactsList.add(Imam("Osama Alatssi", "778899007"))
-        contactsList.add(Imam("Abdullah Muhammad", "778899006"))
+        contactsList.add(Imam("Muhammad Khateeb"))
+        contactsList.add(Imam("Idris Alam"))
+        contactsList.add(Imam("Osama Alatssi"))
+        contactsList.add(Imam("Abdullah Muhammad"))
         //listAdapter!!.notifyDataSetChanged()
 
         recycler = findViewById(R.id.my_recycler_view)

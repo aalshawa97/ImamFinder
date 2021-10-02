@@ -2,7 +2,6 @@ package com.example.detailapplication.room
 
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
-import com.example.detailapplication.Imam
 import com.example.detailapplication.ImamDao
 
 // Declares the DAO as a private property in the constructor. Pass in the DAO
