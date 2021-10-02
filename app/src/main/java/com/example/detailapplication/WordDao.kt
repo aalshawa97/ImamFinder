@@ -19,4 +19,8 @@ interface ImamDao {
 
     @Query("DELETE FROM Imam")
     fun deleteAllNotes()
+    fun deleteAll()
+
+    //@Query("SELECT * FROM word_table ORDER BY word ASC"
+    //abstract fun getAlphabetizedWords(): Any
 }

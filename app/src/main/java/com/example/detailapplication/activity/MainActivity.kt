@@ -1,17 +1,16 @@
 package com.example.detailapplication.activity
 
-import com.example.detailapplication.MyAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.detailapplication.Imam
-import com.example.detailapplication.R
 import android.content.Intent
 import android.net.Uri
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.activity.viewModels
+import com.example.detailapplication.*
 import kotlin.collections.ArrayList
 
 
@@ -20,6 +19,16 @@ class MainActivity : AppCompatActivity() {
     private val contactsList: ArrayList<Imam> = ArrayList()
     private lateinit var recycler: RecyclerView
     private lateinit var makeCallButton : Button
+    private val newWordActivityRequestCode = 1
+
+    /*
+    private val wordViewModel: WordViewModel by viewModels {
+        WordViewModelFactory((application as WordsApplication).repository)
+        wordViewModel.allWords.observe(this, Observer { words ->
+            // Update the cached copy of the words in the adapter.
+            words?.let { adapter.submitList(it) }
+})
+    }*/
 
     /*
     final Handler handler = new Handler();
@@ -30,6 +39,30 @@ class MainActivity : AppCompatActivity() {
             buttons[inew][jnew].setBackgroundColor(Color.BLACK);
         }
     }, 5000);
+
+    val fab = findViewById<FloatingActionButton>(R.id.fab)
+fab.setOnClickListener {
+  val intent = Intent(this@MainActivity, NewWordActivity::class.java)
+  startActivityForResult(intent, newWordActivityRequestCode)
+}
+    */
+
+    /*
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK) {
+            data?.getStringExtra(NewWordActivity.EXTRA_REPLY)?.let {
+                val word = Imam(it)
+                wordViewModel.insert(word)
+            }
+        } else {
+            Toast.makeText(
+                applicationContext,
+                R.string.empty_not_saved,
+                Toast.LENGTH_LONG).show()
+        }
+    }
     */
 
     fun makeCall(view: View){
