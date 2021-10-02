@@ -25,7 +25,9 @@
             android:name=".activity.RecyclerActivity"
             android:label="@string/title_recycler_activity">
         </activity>
-        <activity android:name=".NewWordActivity"></activity>
+        <activity android:name=".activity.NewWordActivity"
+            android:label="@string/title_new_word_activity">
+        </activity>
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main"
@@ -35,6 +37,10 @@
             android:name=".activity.PhoneActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.DetailApplication.NoActionBar">
+        </activity>
+
+        <activity android:name=".activity.ImamMainActivity"
+            android:label="@string/title_imam_main_activity">
         </activity>
 
         <activity

@@ -43,6 +43,8 @@
     <string name="calling">calling...</string>
     <string name="image_call_hint">make call</string>
     <string name="make_call">Make call</string>
+    <string name="title_new_word_activity">New word activity</string>
+    <string name="title_imam_main_activity">Imam MainActivity</string>
     <string-array name="imams">
         <item>Muhammad Khateeb</item>
         <item>Idris Alam</item>

@@ -1,19 +1,23 @@
 package com.example.detailapplication.activity
 
+import android.os.Bundle
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.detailapplication.R
 
 class ComposeMessageActivity : AppCompatActivity()
 {
     private fun AppCompatActivity.onCreate() {
-        //super.onCreate(savedInstanceState);
+        //Bundle outState
+        //super.onSaveInstanceState(outState);
+        val savedInstanceState = null
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main)
         val i = getIntent()
         val name = i.getStringExtra("NAME")
         if(name == null)
-        {
-            //((TextView())findViewById(R.id.textView)).setText("Composing Message")
-        }
+            Toast.makeText(this,"Composing Message", Toast.LENGTH_LONG).show()
     }
 }
 

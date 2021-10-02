@@ -5,7 +5,7 @@ import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.abdul.firstapp.WordsAdapter
+import com.example.detailapplication.room.WordListAdapter
 import com.example.detailapplication.R
 
 class RecyclerActivity : AppCompatActivity(){
@@ -16,7 +16,7 @@ class RecyclerActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler)
         wordsRecyclerView = findViewById(R.id.recycler_view)
-        var adapter = WordsAdapter(words)
+        //var adapter = WordListAdapter(words)
         wordsRecyclerView.layoutManager = LinearLayoutManager(this)
     }
 }
