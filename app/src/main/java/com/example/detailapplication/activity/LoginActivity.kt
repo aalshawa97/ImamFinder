@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.content.Intent
 import android.net.Uri
+import java.util.Timer
+import android.os.Handler
+import android.os.Looper
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.provider.MediaStore
 import android.util.Log
@@ -15,8 +18,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.example.detailapplication.R
 import com.google.android.gms.tasks.Task
+import kotlin.concurrent.schedule
+
 
 import com.google.android.gms.common.api.ApiException
+import java.util.*
 
 //@repeatable
 class LoginActivity : AppCompatActivity(){
@@ -59,7 +65,7 @@ class LoginActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(com.example.detailapplication.R.layout.activity_login)
         BSelectImage = findViewById(R.id.BSelectImage)
-        IVPreviewImage = findViewById(R.id.imageView)
+        //IVPreviewImage = findViewById(R.id.imageView)
         etName = findViewById(R.id.etName) //initialization
         tvRes = findViewById(R.id.tvResult)
         title = "ImamFinder"
