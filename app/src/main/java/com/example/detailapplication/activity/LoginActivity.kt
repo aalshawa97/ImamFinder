@@ -82,6 +82,10 @@ class LoginActivity : AppCompatActivity(){
 
     fun onClick(v: View) {
         etName
+        if(etName.text.isNullOrEmpty())
+        {
+            Toast.makeText(this,"Could you please sign in or register? " , Toast.LENGTH_LONG).show();
+        }
         Toast.makeText(this,"Welcome " + etName.text, Toast.LENGTH_LONG).show();
         //setContentView(R.layout.activity_item_detail)
         val intent = Intent(this, MainActivity::class.java)
