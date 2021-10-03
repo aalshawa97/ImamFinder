@@ -65,7 +65,7 @@ class LoginActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(com.example.detailapplication.R.layout.activity_login)
         BSelectImage = findViewById(R.id.BSelectImage)
-        //IVPreviewImage = findViewById(R.id.imageView)
+        IVPreviewImage = findViewById(R.id.imageView)
         etName = findViewById(R.id.etName) //initialization
         tvRes = findViewById(R.id.tvResult)
         title = "ImamFinder"
@@ -81,6 +81,7 @@ class LoginActivity : AppCompatActivity(){
     }
 
     fun onClick(v: View) {
+        etName
         Toast.makeText(this,"Welcome " + etName.toString(), Toast.LENGTH_LONG).show();
         //setContentView(R.layout.activity_item_detail)
         val intent = Intent(this, MainActivity::class.java)
