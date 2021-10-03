@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import butterknife.ButterKnife
 import com.example.detailapplication.ImamDao
 import com.example.detailapplication.R
 import com.example.detailapplication.room.Imam
@@ -18,6 +19,7 @@ import com.example.detailapplication.room.WordListAdapter
 import com.example.detailapplication.room.WordViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.util.Observer
+
 
 class ImamMainActivity : AppCompatActivity() {
     private val newWordActivityRequestCode = 1
@@ -27,7 +29,8 @@ class ImamMainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.recycler_view)
+        ButterKnife.bind(this)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         //setSupportActionBar(toolbar)
@@ -63,8 +66,8 @@ class ImamMainActivity : AppCompatActivity() {
         fab.setOnClickListener {
             val intent = Intent(this, NewWordActivity::class.java)
             startActivityForResult(intent, newWordActivityRequestCode)
-        }
-        */
+        }*/
+
 
     }
 

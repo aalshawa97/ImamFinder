@@ -45,6 +45,17 @@
     <string name="make_call">Make call</string>
     <string name="title_new_word_activity">New word activity</string>
     <string name="title_imam_main_activity">Imam MainActivity</string>
+    <string name="create_your_account">Create your account</string>
+    <string name="full_name">Full Name</string>
+    <string name="imamfinder">ImamFinder</string>
+    <string name="your_name">Your name</string>
+    <string name="email">Email</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="user_name">User name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="already_have_an_account">Already have an account?</string>
     <string-array name="imams">
         <item>Muhammad Khateeb</item>
         <item>Idris Alam</item>
