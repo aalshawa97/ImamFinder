@@ -82,7 +82,7 @@ class LoginActivity : AppCompatActivity(){
 
     fun onClick(v: View) {
         etName
-        Toast.makeText(this,"Welcome " + etName.toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"Welcome " + etName.text, Toast.LENGTH_LONG).show();
         //setContentView(R.layout.activity_item_detail)
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
