@@ -48,4 +48,11 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
     fun insert(word: Imam) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(word)
     }
+
+    class ViewModelFactory(val requestItemData: Imam):ViewModelProvider.Factory {
+
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            return modelClass.getConstructor(Imam::class.java).newInstance(requestItemData)
+        }
+    }
 }

@@ -6,9 +6,12 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.detailapplication.ImamDao
 import com.example.detailapplication.R
 import com.example.detailapplication.room.Imam
 import com.example.detailapplication.room.WordListAdapter
@@ -18,51 +21,50 @@ import java.util.Observer
 
 class ImamMainActivity : AppCompatActivity() {
     private val newWordActivityRequestCode = 1
+    var imam = Imam("Idris Akbar")
+    var imamList = listOf<Imam>(imam)
     private lateinit var wordViewModel: WordViewModel
-    var words = arrayOf("Muhammad Khateeb","Idris Adil","Abdullah Mohammad", "Osama Alatssi")
-    lateinit var wordsRecyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recycler)
-        wordsRecyclerView =  findViewById<RecyclerView>(R.id.recycler_view)
-        //var adapter = WordListAdapter(words)
-        wordsRecyclerView.layoutManager = LinearLayoutManager(this)
-
-        setContentView(R.layout.activity_recycler)
+        setContentView(R.layout.activity_main)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-
         //setSupportActionBar(toolbar)
 
-       val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        val adapter = WordListAdapter(this)
 
-       val adapter = WordListAdapter(this)
 
-       recyclerView.adapter = adapter
-       recyclerView.layoutManager = LinearLayoutManager(this)
+        // Add an observer on the LiveData returned by getAlphabetizedWords.
+        // The onChanged() method fires when the observed data changes and the activity is
+        // in the foreground.
+        if(adapter != null)
+        {
+            //recyclerView.adapter = adapter
+            //recyclerView.layoutManager = LinearLayoutManager(this)
 
-       // Get a new or existing ViewModel from the ViewModelProvider.
-       //wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
+            // Get a new or existing ViewModel from the ViewModelProvider.
+            //wordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
 
-       // Add an observer on the LiveData returned by getAlphabetizedWords.
-       // The onChanged() method fires when the observed data changes and the activity is
-       // in the foreground.
+
+            //adapter.setWords(imamList)
+        }
         /*
-       wordViewModel.allWords.observe(this, Observer { words ->
-           // Update the cached copy of the words in the adapter.
-           words?.let { adapter.setWords(it) }
-       })
-        pagedListLiveData.observe(lifeCycleOwner, android.arch.lifecycle.Observer{
-            adapter.submitList(it)
+        wordViewModel.allWords.observe(this, Observer { words ->
+            // Update the cached copy of the words in the adapter.
+            words?.let { adapter.setWords(it) }
         })
         */
+
+        val fab = findViewById<FloatingActionButton>(R.id.fabData)
+
         /*
-       val fab = findViewById<FloatingActionButton>(R.id.fab)
-       fab.setOnClickListener {
-           val intent = Intent(this@ImamMainActivity, NewWordActivity::class.java)
-           startActivityForResult(intent, newWordActivityRequestCode)
-       }*/
+        fab.setOnClickListener {
+            val intent = Intent(this, NewWordActivity::class.java)
+            startActivityForResult(intent, newWordActivityRequestCode)
+        }
+        */
 
     }
 
