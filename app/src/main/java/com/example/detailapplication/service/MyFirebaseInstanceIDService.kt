@@ -1,5 +1,8 @@
 package com.example.detailapplication.service
 
+import android.app.Service
+import android.content.Intent
+import android.os.IBinder
 import android.util.Log
 /*
 import com.google.firebase.iid.FirebaseInstanceId
@@ -7,7 +10,7 @@ import com.google.firebase.iid.FirebaseInstanceIdService
 */
 
 
-class MyFirebaseInstanceIDService /*: FirebaseInstanceIdService()*/ {
+class MyFirebaseInstanceIDService : Service() {
     /**
      * Called if InstanceID token is updated. This may occur if the security of
      * the previous token had been compromised. Note that this is called when the InstanceID token
@@ -44,5 +47,30 @@ class MyFirebaseInstanceIDService /*: FirebaseInstanceIdService()*/ {
 
     companion object {
         private const val TAG = "MyFirebaseIIDService"
+    }
+
+    /**
+     * Return the communication channel to the service.  May return null if
+     * clients can not bind to the service.  The returned
+     * [android.os.IBinder] is usually for a complex interface
+     * that has been [described using
+ * aidl]({@docRoot}guide/components/aidl.html).
+     *
+     *
+     * *Note that unlike other application components, calls on to the
+     * IBinder interface returned here may not happen on the main thread
+     * of the process*.  More information about the main thread can be found in
+     * [Processes and
+ * Threads]({@docRoot}guide/topics/fundamentals/processes-and-threads.html).
+     *
+     * @param intent The Intent that was used to bind to this service,
+     * as given to [ Context.bindService][android.content.Context.bindService].  Note that any extras that were included with
+     * the Intent at that point will *not* be seen here.
+     *
+     * @return Return an IBinder through which clients can call on to the
+     * service.
+     */
+    override fun onBind(intent: Intent?): IBinder? {
+        TODO("Not yet implemented")
     }
 }
