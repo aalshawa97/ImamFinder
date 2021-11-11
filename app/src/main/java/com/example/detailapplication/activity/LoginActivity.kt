@@ -62,11 +62,12 @@ class LoginActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         lateinit var btnSignIn: Button
+        //Initialization
         super.onCreate(savedInstanceState)
         setContentView(com.example.detailapplication.R.layout.activity_login)
         BSelectImage = findViewById(R.id.BSelectImage)
         IVPreviewImage = findViewById(R.id.imageView)
-        etName = findViewById(R.id.etName) //initialization
+        etName = findViewById(R.id.etName)
         tvRes = findViewById(R.id.tvResult)
         title = "ImamFinder"
         BSelectImage?.setOnClickListener {
@@ -99,6 +100,13 @@ class LoginActivity : AppCompatActivity(){
 
     // this function is triggered when
     // the Select Image Button is clicked
+    fun register(view: android.view.View) {
+        val intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
+    }
+
+    // this function is triggered when
+    // the Select Image Button is clicked
     fun imageChooser(view: android.view.View) {
 
         // create an instance of the
@@ -107,8 +115,7 @@ class LoginActivity : AppCompatActivity(){
         i.type = "image/*"
         i.action = Intent.ACTION_GET_CONTENT
 
-        // pass the constant to compare it
-        // with the returned requestCode
+        //Pass the constant to compare it with the returned requestCode
         startActivityForResult(Intent.createChooser(i, "Select Picture"), SELECT_PICTURE)
     }
 

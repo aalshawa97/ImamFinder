@@ -4,13 +4,60 @@ import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import android.util.Log
+import android.widget.Toast
+import com.example.detailapplication.R
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.messaging.FirebaseMessagingService
+
 /*
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.iid.FirebaseInstanceIdService
 */
 
 
-class MyFirebaseInstanceIDService : Service() {
+class MyFirebaseInstanceIDService : FirebaseMessagingService() {
+
+    override fun onNewToken(p0: String) {
+        super.onNewToken(p0)
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w(TAG, "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
+
+            // Get new FCM registration token
+            val token = task.result
+
+            val format = 0
+            // Log and toast
+            val msg = getString(0, token)
+            Log.d(TAG, msg)
+            Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+        })
+
+        // If you want to send messages to this application instance or
+        // manage this apps subscriptions on the server side, send the
+        // FCM registration token to your app server.
+        sendRegistrationToServer(FirebaseMessaging.getInstance().token.toString())
+    }
+
+    /*
+    FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+        if (!task.isSuccessful) {
+            Log.w(TAG, "Fetching FCM registration token failed", task.exception)
+            return@OnCompleteListener
+        }
+
+        // Get new FCM registration token
+        val token = task.result
+
+        // Log and toast
+        val msg = getString(R.string.msg_token_fmt, token)
+        Log.d(TAG, msg)
+        Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+    })
+    */
     /**
      * Called if InstanceID token is updated. This may occur if the security of
      * the previous token had been compromised. Note that this is called when the InstanceID token
@@ -70,7 +117,4 @@ class MyFirebaseInstanceIDService : Service() {
      * @return Return an IBinder through which clients can call on to the
      * service.
      */
-    override fun onBind(intent: Intent?): IBinder? {
-        TODO("Not yet implemented")
-    }
 }

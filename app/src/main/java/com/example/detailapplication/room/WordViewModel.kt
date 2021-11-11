@@ -49,10 +49,11 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
         repository.insert(word)
     }
 
-    class ViewModelFactory(val requestItemData: Imam):ViewModelProvider.Factory {
+    abstract class ViewModelFactory(val requestItemData: Imam):ViewModelProvider.Factory {
 
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
             return modelClass.getConstructor(Imam::class.java).newInstance(requestItemData)
         }
+
     }
 }

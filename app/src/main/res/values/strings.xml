@@ -56,6 +56,8 @@
     <string name="user_name">User name</string>
     <string name="phone_number">Phone number</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="default_notification_channel_id">Default Notification  Channel ID</string>
+    <string name="msg_token_fmt">0</string>
     <string-array name="imams">
         <item>Muhammad Khateeb</item>
         <item>Idris Alam</item>
