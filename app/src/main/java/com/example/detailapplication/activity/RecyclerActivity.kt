@@ -19,4 +19,5 @@ class RecyclerActivity : AppCompatActivity(){
         //var adapter = WordListAdapter(words)
         wordsRecyclerView.layoutManager = LinearLayoutManager(this)
     }
+
 }

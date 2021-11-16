@@ -15,6 +15,9 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
 
+    private static final int TYPE_ONE = 1;
+    private static final int TYPE_TWO = 2;
+
     // List to store all the contact details
     private ArrayList<Imam> contactsList;
 
@@ -39,10 +42,49 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
         return contactsList.size();
     }
 
+    private void initLayoutOne(ViewHolderOne holder, int pos) {
+        //holder.item.setText(itemList.get(pos).getName());
+    }
+
+    private void initLayoutTwo(ViewHolderTwo holder, int pos) {
+        //holder.tvLeft.setText(itemList.get(pos).getName());
+        //holder.tvRight.setText(item.get(pos).getName());
+    }
+
+    // Static inner class to initialize the views of rows
+    static class ViewHolderOne extends RecyclerView.ViewHolder {
+        public TextView item;
+        public ViewHolderOne(View itemView) {
+            super(itemView);
+            item = (TextView) itemView.findViewById(R.id.tvRow);
+        }
+    }
+
+    static class ViewHolderTwo extends RecyclerView.ViewHolder {
+        public TextView tvLeft, tvRight;
+        public ViewHolderTwo(View itemView) {
+            super(itemView);
+            tvLeft = (TextView) itemView.findViewById(R.id.row_item_left);
+            tvRight = (TextView) itemView.findViewById(R.id.row_item_right);
+        }
+    }
+
     // This method is called when binding the data to the views being created in RecyclerView
     @Override
     public void onBindViewHolder(@NonNull ContactHolder holder, final int position) {
         final Imam contact = contactsList.get(position);
+
+        //Load the image into each row
+        switch (holder.getItemViewType()) {
+            case TYPE_ONE:
+                //initLayoutOne((ViewHolderOne)holder, listPosition);
+                break;
+            case TYPE_TWO:
+                //initLayoutTwo((ViewHolderTwo) holder, listPosition);
+                break;
+            default:
+                break;
+        }
 
         // Set the data to the views here
         holder.setContactName(contact.getWord());

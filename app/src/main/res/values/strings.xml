@@ -58,6 +58,9 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="default_notification_channel_id">Default Notification  Channel ID</string>
     <string name="msg_token_fmt">0</string>
+    <string name="textview_left">TextView left</string>
+    <string name="textview_right">Textview right</string>
+    <string name="sheikh">Sheikh</string>
     <string-array name="imams">
         <item>Muhammad Khateeb</item>
         <item>Idris Alam</item>
