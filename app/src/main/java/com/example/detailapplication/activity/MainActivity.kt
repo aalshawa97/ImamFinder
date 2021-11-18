@@ -91,6 +91,7 @@ fab.setOnClickListener {
         contactsList.add(Imam("Idris Alam"))
         contactsList.add(Imam("Osama Alatssi"))
         contactsList.add(Imam("Abdullah Muhammad"))
+        contactsList.add(Imam("Muhammad Muhammad"))
         //listAdapter!!.notifyDataSetChanged()
 
         recycler = findViewById(R.id.my_recycler_view)

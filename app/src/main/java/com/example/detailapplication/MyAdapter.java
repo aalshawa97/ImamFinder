@@ -93,7 +93,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
     @Override
     public void onBindViewHolder(@NonNull ContactHolder holder, final int position) {
         final Imam contact = contactsList.get(position);
-        //Album = holder.itemView.findViewById(R.id.myImageView);
+        //holder.itemView.findViewById(R.id.myImageView) = holder.itemView.findViewById(R.drawable.idris_alam_imam_finder_ic_launcher_background);
         //holder.itemView.findViewById(R.id.myImageView)= holder.itemView.findViewById(R.id.myImageView);
         //Load the image into each row
         switch (holder.getItemViewType()) {
@@ -127,10 +127,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
     }
 
     // This is your ViewHolder class that helps to populate data to the view
-    public class ContactHolder extends RecyclerView.ViewHolder {
+    public static class ContactHolder extends RecyclerView.ViewHolder {
 
-        private TextView txtName;
-        private TextView txtNumber;
+        private final TextView txtName;
+        private final TextView txtNumber;
 
         public ContactHolder(View itemView) {
             super(itemView);
