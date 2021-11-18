@@ -4,6 +4,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 private val counter = 0
+private val item = 0
+private val itemId = 0L
 
 public class imageAdapter : BaseAdapter()
 {
@@ -13,14 +15,16 @@ public class imageAdapter : BaseAdapter()
     }
 
     override fun getItem(position: Int): Any {
-        TODO("Not yet implemented")
+        return item
     }
 
     override fun getItemId(position: Int): Long {
-        TODO("Not yet implemented")
+        return itemId
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        TODO("Not yet implemented")
+        val rowView = this.getView(R.layout.recycler_view,convertView, parent)
+
+        return rowView
     }
 }

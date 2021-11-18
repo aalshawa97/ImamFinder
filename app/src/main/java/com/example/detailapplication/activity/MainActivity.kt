@@ -14,13 +14,18 @@ import com.example.detailapplication.*
 import com.example.detailapplication.room.Imam
 import kotlin.collections.ArrayList
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var listAdapter: MyAdapter
     private val contactsList: ArrayList<Imam> = ArrayList()
     private lateinit var recycler: RecyclerView
     private lateinit var makeCallButton : Button
     private val newWordActivityRequestCode = 1
+    var programImages = intArrayOf(
+        R.drawable.osama_alatssi_imam_finder_ic_launcher_background,
+        R.drawable.abdullah_muhammad_imam_finder_ic_launcher_background,
+        R.drawable.muhammad_khateeb_imam_finder_ic_launcher_background,
+        R.drawable.idris_alam_imam_finder_ic_launcher_background
+    )
 
     /*
     private val wordViewModel: WordViewModel by viewModels {
@@ -82,7 +87,7 @@ fab.setOnClickListener {
         makeCallButton = findViewById(R.id.button_call);
         //Load the date from the network or other resources
         //into the array list asynchronously
-        contactsList.add(Imam("Muhammad Khateeb"))
+        contactsList.add(0, Imam("Muhammad Khateeb"))
         contactsList.add(Imam("Idris Alam"))
         contactsList.add(Imam("Osama Alatssi"))
         contactsList.add(Imam("Abdullah Muhammad"))

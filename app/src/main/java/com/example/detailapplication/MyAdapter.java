@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,7 +21,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
 
     // List to store all the contact details
     private ArrayList<Imam> contactsList;
-
+    int[] images = new int[]{ R.drawable.osama_alatssi_imam_finder_ic_launcher_background,
+            R.drawable.abdullah_muhammad_imam_finder_ic_launcher_background,
+            R.drawable.muhammad_khateeb_imam_finder_ic_launcher_background,
+            R.drawable.idris_alam_imam_finder_ic_launcher_background }; ;
     // Counstructor for the Class
     public MyAdapter(ArrayList<Imam> contactsList, Context context) {
         this.contactsList = contactsList;
@@ -34,7 +38,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
 
         // Inflate the layout view you have created for the list rows here
         View view = layoutInflater.inflate(R.layout.contact_list_item, parent, false);
+        onCreateViewHolderImage(parent, viewType);
         return new ContactHolder(view);
+    }
+
+    public ImageViewHolder onCreateViewHolderImage(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+
+        // Inflate the layout view you have created for the list rows here
+        View view = layoutInflater.inflate(R.layout.contact_list_item, parent, false);
+        ImageViewHolder imageViewHolder = new ImageViewHolder(view);
+        return imageViewHolder;
     }
 
     @Override
@@ -53,10 +67,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
 
     // Static inner class to initialize the views of rows
     static class ViewHolderOne extends RecyclerView.ViewHolder {
+        private final ImageView rowImage;
+        private final int[] images;
         public TextView item;
-        public ViewHolderOne(View itemView) {
+        public ViewHolderOne(int[] images, View itemView) {
             super(itemView);
+            this.images = images;
             item = (TextView) itemView.findViewById(R.id.tvRow);
+            rowImage = itemView.findViewById(R.id.imageView);
+            ImageView rowImage = itemView.findViewById(R.id.imageView);
+            rowImage.setImageResource(this.images[0]);
         }
     }
 
@@ -73,7 +93,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
     @Override
     public void onBindViewHolder(@NonNull ContactHolder holder, final int position) {
         final Imam contact = contactsList.get(position);
-
+        //Album = holder.itemView.findViewById(R.id.myImageView);
+        //holder.itemView.findViewById(R.id.myImageView)= holder.itemView.findViewById(R.id.myImageView);
         //Load the image into each row
         switch (holder.getItemViewType()) {
             case TYPE_ONE:
@@ -93,6 +114,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
         // You can set click listners to indvidual items in the viewholder here
         // make sure you pass down the listner or make the Data members of the viewHolder public
 
+    }
+
+    public static class ImageViewHolder  extends RecyclerView.ViewHolder {
+        ImageView Album;
+        TextView AlbumTitle;
+
+        public ImageViewHolder(@NonNull View itemView) {
+            super(itemView);
+            Album = itemView.findViewById(R.id.myImageView);
+        }
     }
 
     // This is your ViewHolder class that helps to populate data to the view

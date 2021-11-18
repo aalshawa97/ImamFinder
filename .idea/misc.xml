@@ -16,7 +16,7 @@
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout-sw600dp/fragment_item_detail.xml" value="0.123046875" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout-sw600dp/fragment_item_list.xml" value="0.536" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_compose_message.xml" value="0.2" />
-        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_firestore.xml" value="0.1" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_firestore.xml" value="0.264" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_imam_finder_page.xml" value="0.17760416666666667" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_item_detail.xml" value="0.2" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_login.xml" value="0.2" />
@@ -24,7 +24,7 @@
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_main.xml" value="0.20703125" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_new_word.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_phone.xml" value="0.1640625" />
-        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_recycler.xml" value="0.264" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_recycler.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_recycler_pojo.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_register.xml" value="0.176" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_storage.xml" value="0.4" />
@@ -41,7 +41,7 @@
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/fragment_send_message.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/fragment_verify_phone.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/item_list_content.xml" value="0.1671875" />
-        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/my_row.xml" value="0.1" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/my_row.xml" value="0.264" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/phone_call.xml" value="0.16" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/recycler_view.xml" value="0.2" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/recycler_view_item.xml" value="0.1671875" />
