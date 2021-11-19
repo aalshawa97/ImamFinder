@@ -9,13 +9,8 @@
 
     <EditText
         android:id="@+id/editTextTextPersonEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:layout_marginBottom="500dp"
+        android:layout_width="411dp"
+        android:layout_height="57dp"
         android:background="@color/black"
         android:ems="10"
         android:hint="@string/enter_your_email"
@@ -23,22 +18,13 @@
         android:minHeight="48dp"
         android:text="@string/email"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        app:layout_constraintVertical_bias="0.28" />
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="396dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
+        android:layout_width="411dp"
+        android:layout_height="56dp"
         android:background="@color/black"
         android:ems="10"
         android:hint="@string/your_name"
@@ -46,86 +32,59 @@
         android:minHeight="48dp"
         android:text="@string/full_name"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRegistration"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="489dp" />
 
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="104dp"
-        android:layout_marginBottom="288dp"
         android:text="@string/imamfinder"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.446"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textSize="40sp" />
 
 
     <TextView
         android:id="@+id/textViewRegistration"
         android:layout_width="80dp"
-        android:layout_height="49dp"
+        android:layout_height="50dp"
         android:inputType="none"
         android:text="@string/create_your_account"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/textViewPhoneNumber"
-        android:layout_width="381dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="411dp"
+        android:layout_height="39dp"
         android:background="@color/black"
         android:text="@string/phone_number"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonEmail" />
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="450dp" />
 
     <TextView
         android:id="@+id/textViewUserName"
-        android:layout_width="383dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
+        android:layout_width="416dp"
+        android:layout_height="41dp"
         android:background="@color/black"
         android:text="@string/user_name"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewPhoneNumber" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="545dp" />
 
     <TextView
         android:id="@+id/textViewPassword"
-        android:layout_width="386dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
+        android:layout_width="420dp"
+        android:layout_height="56dp"
         android:background="@color/black"
         android:text="@string/password"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewUserName" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="578dp" />
 
     <Button
         android:id="@+id/Register"
@@ -134,8 +93,8 @@
         android:text="@string/register"
         android:textSize="10sp"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="473dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="679dp" />
 
     <Button
         android:id="@+id/buttonAlreadySignIn"
@@ -144,8 +103,8 @@
         android:text="@string/already_have_an_account"
         android:textSize="10sp"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="178dp"
-        tools:layout_editor_absoluteY="473dp" />
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="679dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1962962962962963" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/abdullah_muhammad_imam_finder_ic_launcher_background.xml" value="0.11041666666666666" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/hire.xml" value="0.1" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.28854166666666664" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1962962962962963" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic_phone.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic_stat_ic_notification.xml" value="0.10989583333333333" />
@@ -13,6 +14,7 @@
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/imam_finder_ic_launcher_background.xml" value="0.1962962962962963" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/muhammad_khateeb_imam_finder_ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/osama_alatssi_imam_finder_ic_launcher_background.xml" value="0.11041666666666666" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/profile.xml" value="0.28854166666666664" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout-sw600dp/fragment_item_detail.xml" value="0.123046875" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout-sw600dp/fragment_item_list.xml" value="0.536" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_compose_message.xml" value="0.2" />
@@ -26,7 +28,7 @@
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_phone.xml" value="0.1640625" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_recycler.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_recycler_pojo.xml" value="0.1" />
-        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_register.xml" value="0.176" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_storage.xml" value="0.4" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/contact_list_item.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/content_gallery_only.xml" value="0.1" />
