@@ -10,12 +10,9 @@
         android:id="@+id/imam_photo"
         android:layout_width="185dp"
         android:layout_height="140dp"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/item_list"
+        app:srcCompat="@drawable/abdullah_muhammad_imam_finder_ic_launcher_background" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/item_list"

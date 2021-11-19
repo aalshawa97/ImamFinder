@@ -5,6 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/imageViewImam"
+        android:layout_width="84dp"
+        android:layout_height="203dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/photo_of_imam"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/abdullah_muhammad_imam_finder_ic_launcher_background"/>
+
     <TextView
         android:id="@+id/row_item_left"
         android:layout_width="wrap_content"
