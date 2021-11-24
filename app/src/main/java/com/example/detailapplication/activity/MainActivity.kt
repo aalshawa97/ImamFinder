@@ -79,6 +79,7 @@ fab.setOnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val intent = Intent(Intent.ACTION_CALL)
         intent.data = Uri.parse("5039359491")
         //startActivity(intent)
@@ -95,7 +96,7 @@ fab.setOnClickListener {
         //listAdapter!!.notifyDataSetChanged()
 
         recycler = findViewById(R.id.my_recycler_view)
-        val layoutManager = LinearLayoutManager(this)
+        var layoutManager = LinearLayoutManager(this)
         recycler?.setLayoutManager(layoutManager)
         listAdapter = MyAdapter(contactsList, this)
         recycler.setAdapter(listAdapter)

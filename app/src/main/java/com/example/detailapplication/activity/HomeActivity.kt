@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.util.Log
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.detailapplication.R
 import java.util.Timer
 import kotlin.concurrent.schedule
@@ -14,6 +16,16 @@ import kotlin.concurrent.schedule
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        /*
+        findViewById<RecyclerView>(R.id.list).apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = MainAdapter(context, mutableListOf(
+                Mask, NinePatchMask, RoundedCorners, CropTop, CropCenter, CropBottom, CropSquare, CropCircle,
+                CropCircleWithBorder, Grayscale, BlurLight, BlurDeep, Toon, Sepia, Contrast, Invert,
+                Pixel, Sketch, Swirl, Brightness, Kuawahara, Vignette
+            ))
+        }
+        */
         setContentView(com.example.detailapplication.R.layout.activity_imam_finder_page)
         Timer("SettingUp", false).schedule(3000) {
             val myIntent = Intent(this@HomeActivity, LoginActivity::class.java)
