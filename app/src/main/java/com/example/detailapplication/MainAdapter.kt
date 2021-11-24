@@ -67,8 +67,8 @@ class MainAdapter(
     when (dataSet[position]) {
       Type.Mask -> {
         Glide.with(context)
-          .load(R.drawable.check)
-          .apply(overrideOf(266, 252))
+          .load(R.drawable.demo)
+          .apply(overrideOf(50, 50))
           .apply(bitmapTransform(MultiTransformation<Bitmap>(CenterCrop())))
           .into(holder.image)
       }

@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.net.Uri
 import android.view.View
+import java.util.Timer
+import kotlin.concurrent.schedule
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -90,12 +92,12 @@ fab.setOnClickListener {
         makeCallButton = findViewById(R.id.button_call);
         //Load the date from the network or other resources
         //into the array list asynchronously
-        contactsList.add(0, Imam("Muhammad Khateeb"))
+        contactsList.add(Imam("Muhammad Khateeb"))
         contactsList.add(Imam("Idris Alam"))
         contactsList.add(Imam("Osama Alatssi"))
         contactsList.add(Imam("Abdullah Muhammad"))
         contactsList.add(Imam("Muhammad Muhammad"))
-        //listAdapter!!.notifyDataSetChanged()
+        contactsList.add(Imam("Mufti Muhammad Ali"))
 
         recycler = findViewById(R.id.my_recycler_view)
         var layoutManager = LinearLayoutManager(this)
@@ -104,25 +106,19 @@ fab.setOnClickListener {
         recycler.setAdapter(listAdapter)
 
         /*
+        For using glide
         findViewById<RecyclerView>(R.id.list).apply {
-            layoutManager = LinearLayoutManager(applicationContext)
-            adapter = MainAdapter(applicationContext, mutableListOf(
-                Type.Mask,
-                Type.NinePatchMask,
-                Type.RoundedCorners,
-                Type.CropTop, Type.CropCenter, Type.CropBottom, Type.CropSquare, Type.CropCircle,
-                Type.CropCircleWithBorder, Type.Grayscale, Type.BlurLight, Type.BlurDeep, Type.Toon, Type.Sepia,
-                Type.Contrast,
-                Type.Invert,
-                Pixel,
-                Type.Sketch,
-                Type.Swirl,
-                Type.Brightness,
-                Type.Kuawahara,
-                Type.Vignette
-            ))
+            recycler.setAdapter(MainAdapter(applicationContext, mutableListOf(
+                Type.Mask
+            )))
         }
         */
+
+
+        //listAdapter!!.notifyDataSetChanged()
+
+
+
 
         /*
         inline fun Timer.schedule(
