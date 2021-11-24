@@ -11,6 +11,8 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.detailapplication.*
+import com.example.detailapplication.MainAdapter.*
+import com.example.detailapplication.MainAdapter.Type.Pixel
 import com.example.detailapplication.room.Imam
 import kotlin.collections.ArrayList
 
@@ -100,6 +102,27 @@ fab.setOnClickListener {
         recycler?.setLayoutManager(layoutManager)
         listAdapter = MyAdapter(contactsList, this)
         recycler.setAdapter(listAdapter)
+
+        /*
+        findViewById<RecyclerView>(R.id.list).apply {
+            layoutManager = LinearLayoutManager(applicationContext)
+            adapter = MainAdapter(applicationContext, mutableListOf(
+                Type.Mask,
+                Type.NinePatchMask,
+                Type.RoundedCorners,
+                Type.CropTop, Type.CropCenter, Type.CropBottom, Type.CropSquare, Type.CropCircle,
+                Type.CropCircleWithBorder, Type.Grayscale, Type.BlurLight, Type.BlurDeep, Type.Toon, Type.Sepia,
+                Type.Contrast,
+                Type.Invert,
+                Pixel,
+                Type.Sketch,
+                Type.Swirl,
+                Type.Brightness,
+                Type.Kuawahara,
+                Type.Vignette
+            ))
+        }
+        */
 
         /*
         inline fun Timer.schedule(
