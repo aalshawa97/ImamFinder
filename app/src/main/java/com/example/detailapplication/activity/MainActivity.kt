@@ -10,6 +10,7 @@ import android.view.View
 import java.util.Timer
 import kotlin.concurrent.schedule
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.detailapplication.*
@@ -24,6 +25,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recycler: RecyclerView
     private lateinit var makeCallButton : Button
     private val newWordActivityRequestCode = 1
+    private lateinit var mPhoneNumber: EditText
+    private lateinit var mCode: EditText
+    private lateinit var mSend: Button
+
     var programImages = intArrayOf(
         R.drawable.osama_alatssi_imam_finder_ic_launcher_background,
         R.drawable.abdullah_muhammad_imam_finder_ic_launcher_background,
@@ -98,12 +103,38 @@ fab.setOnClickListener {
         contactsList.add(Imam("Abdullah Muhammad"))
         contactsList.add(Imam("Muhammad Muhammad"))
         contactsList.add(Imam("Mufti Muhammad Ali"))
+        contactsList.add(Imam("Abdulsalam Roomal"))
 
         recycler = findViewById(R.id.my_recycler_view)
         var layoutManager = LinearLayoutManager(this)
         recycler?.setLayoutManager(layoutManager)
         listAdapter = MyAdapter(contactsList, this)
         recycler.setAdapter(listAdapter)
+
+        try {
+            mPhoneNumber = findViewById(R.id.phoneNumber)
+
+            mCode = findViewById(R.id.code)
+            mSend = findViewById(R.id.sendButton)
+
+
+            mSend.setOnClickListener{
+                Toast.makeText(this@MainActivity, "Sending...", Toast.LENGTH_SHORT)
+            }
+        }
+        catch (e: Exception){
+
+        }
+
+        /*
+        mSend.setOnClickListener(new View.OnClickListener()){
+            @Override
+            public void onClick(View v){
+
+            }
+        }
+        */
+
 
         /*
         For using glide
