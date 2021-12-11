@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.util.Log
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.detailapplication.R
@@ -42,7 +43,12 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-
+    fun choosePicture(){
+        val intent = Intent(this, PhotoActivity::class.java)
+        startActivity(intent)
+        //Intent intent = new Intent();
+        intent.setType("image/*");
+    }
 
 
     /*
