@@ -10,7 +10,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.detailapplication.R
-import java.util.Timer
+import com.google.firebase.storage.StorageReference
+import java.util.*
 import kotlin.concurrent.schedule
 
 class HomeActivity : AppCompatActivity() {
@@ -32,6 +33,17 @@ class HomeActivity : AppCompatActivity() {
             this@HomeActivity.startActivity(myIntent)
         }
     }
+
+    fun uploadPicture(){
+        //final String randomKey = UUID.randomUUID().toString();
+        var randomKey : String
+        randomKey = UUID.randomUUID().toString()
+        var riversRef : StorageReference
+
+    }
+
+
+
 
     /*
     FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
