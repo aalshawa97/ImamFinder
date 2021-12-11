@@ -54,8 +54,6 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserLi
         return userList.size();
     }
 
-
-
     class UserListViewHolder extends RecyclerView.ViewHolder{
         TextView mName, mPhone;
         LinearLayout mLayout;

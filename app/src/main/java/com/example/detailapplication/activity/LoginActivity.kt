@@ -22,6 +22,7 @@ import kotlin.concurrent.schedule
 
 
 import com.google.android.gms.common.api.ApiException
+import com.google.firebase.storage.StorageReference
 import java.util.*
 
 //@repeatable
@@ -63,6 +64,7 @@ class LoginActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         lateinit var btnSignIn: Button
         //Initialization
+        //CameraPhoto cameraPhoto = new CameraPhoto(getApplicationContext());
         super.onCreate(savedInstanceState)
         setContentView(com.example.detailapplication.R.layout.activity_login)
         BSelectImage = findViewById(R.id.BSelectImage)
@@ -103,6 +105,10 @@ class LoginActivity : AppCompatActivity(){
     fun register(view: android.view.View) {
         val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
+    }
+
+    fun uploadPicture(){
+        //StorageReference riversRef = storageRef.child("images/rivers.jpg");
     }
 
     // this function is triggered when

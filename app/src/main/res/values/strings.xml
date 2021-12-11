@@ -6,6 +6,8 @@
     <string name="code">Enter code</string>
     <string name="verify">Send verification code</string>
     <string name="phone">Enter Phone Number</string>
+    <string name="imam_name">Name: </string>
+    <string name="imam_phone">Phone: </string>
     <string name="imam_photo">Photo</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>
     <string name="add_word">Add word</string>
