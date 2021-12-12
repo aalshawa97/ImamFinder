@@ -100,6 +100,7 @@ fab.setOnClickListener {
         //Load the date from the network or other resources
         //into the array list asynchronously
         contactsList.add(Imam("Muhammad Khateeb"))
+        contactsList.add(Imam("Muhammad Multe"))
         contactsList.add(Imam("Idris Alam"))
         contactsList.add(Imam("Osama Alatssi"))
         contactsList.add(Imam("Abdullah Muhammad"))
