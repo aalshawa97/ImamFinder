@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.util.Log
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +17,10 @@ import java.util.*
 import kotlin.concurrent.schedule
 
 class HomeActivity : AppCompatActivity() {
+    lateinit var profilePicture : ImageView
+    lateinit var storage : FirebaseStorage
+    lateinit var storageReference: StorageReference
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         /*
@@ -40,18 +45,26 @@ class HomeActivity : AppCompatActivity() {
         var randomKey : String
         randomKey = UUID.randomUUID().toString()
         var riversRef : StorageReference
-
+        //riversRef.outFile(imageUri)
     }
 
     fun choosePicture(){
         val intent = Intent(this, PhotoActivity::class.java)
-        startActivity(intent)
-        //Intent intent = new Intent();
-        intent.setType("image/*");
+        intent.setType("image/*")
+        uploadPicture()
+        intent.setAction(Intent.ACTION_GET_CONTENT)
+        //startActivityForResult(intent)
     }
 
-
-    /*
+    override fun onActivityResult(
+        requestCode: Int,
+        resultCode: Int,
+        data: android.content.Intent?
+    ) {
+        //super.onActivityResult(requestCode, resultCode, data)
+        //if(requestCode == 1 )
+    }
+/*
     FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
         if (!task.isSuccessful) {
             Log.w(TAG, "Fetching FCM registration token failed", task.exception)

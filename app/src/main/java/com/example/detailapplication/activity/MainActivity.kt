@@ -11,6 +11,7 @@ import java.util.Timer
 import kotlin.concurrent.schedule
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.detailapplication.*
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mPhoneNumber: EditText
     private lateinit var mCode: EditText
     private lateinit var mSend: Button
+    private lateinit var profilePicture : ImageView
 
     var programImages = intArrayOf(
         R.drawable.osama_alatssi_imam_finder_ic_launcher_background,
@@ -88,7 +90,7 @@ fab.setOnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        setContentView(R.layout.activity_main)
         val intent = Intent(Intent.ACTION_CALL)
         intent.data = Uri.parse("5039359491")
         //startActivity(intent)
