@@ -163,6 +163,7 @@ fab.setOnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //var cover = findViewById(R.id.coverImg);
         val intent = Intent(Intent.ACTION_CALL)
         intent.data = Uri.parse("5039359491")
         //startActivity(intent)
