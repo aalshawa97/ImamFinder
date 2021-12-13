@@ -36,7 +36,7 @@ class ItemDetailFragment : Fragment() {
 
     lateinit var myImam: Imam;
 
-    var imams: Array<Imam> = Array(1) { Imam("Abdullah Atassi "); Imam("Muhammad Khateeb "); Imam("Idris Alam "); Imam("Abdullah Muhammad ")}
+    var imams: Array<Imam> = Array(1) { Imam("Abdullah Atassi ", "5039359491", "/drawable/_200px_ismail_ibn_musa_menks_talk_at_kerala_state_business_excellence_awards_2015");}
 
     // This property is only valid between onCreateView and
     // onDestroyView.

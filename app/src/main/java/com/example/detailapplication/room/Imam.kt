@@ -32,4 +32,6 @@ import androidx.room.PrimaryKey
  */
 
 @Entity(tableName = "imam_table")
-data class Imam(@PrimaryKey @ColumnInfo(name = "imam") val word: String)
+data class Imam(@PrimaryKey @ColumnInfo(name = "imam") val word: String,
+                @ColumnInfo(name = "phone") val phone: String,
+                @ColumnInfo(name = "img_uri") val img_uri: String)

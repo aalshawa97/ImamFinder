@@ -3,19 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/abdullah_muhammad_imam_finder_ic_launcher_background.xml" value="0.15648148148148147" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/demo.xml" value="0.17083333333333334" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic_baseline_record_voice_over_24.xml" value="0.15648148148148147" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic_phone.xml" value="0.15648148148148147" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/idris_alam_imam_finder_ic_launcher_background.xml" value="0.15648148148148147" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/muhammad_khateeb_imam_finder_ic_launcher_background.xml" value="0.19479166666666667" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/profile.xml" value="0.15648148148148147" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_chat.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_find_user.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_firestore.xml" value="0.1296875" />
-        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_main_whatsapp_clone.xml" value="0.1296875" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_recycler.xml" value="0.27239583333333334" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/contact_list_item.xml" value="0.4" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/fragment_item_list.xml" value="0.1546875" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/fragment_item_list2.xml" value="0.2" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/layout_list_item.xml" value="0.1890625" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/my_row.xml" value="0.264" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/recycler_view.xml" value="0.1890625" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/recycler_view_item.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/text_row_item.xml" value="0.1" />
       </map>
     </option>
   </component>

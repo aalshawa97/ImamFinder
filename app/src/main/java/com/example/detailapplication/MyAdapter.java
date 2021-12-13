@@ -109,7 +109,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
 
         // Set the data to the views here
         holder.setContactName(contact.getWord());
-        holder.setContactNumber(""+contact.getWord().length());
+        holder.setContactNumber(contact.getPhone());
 
         // You can set click listners to indvidual items in the viewholder here
         // make sure you pass down the listner or make the Data members of the viewHolder public

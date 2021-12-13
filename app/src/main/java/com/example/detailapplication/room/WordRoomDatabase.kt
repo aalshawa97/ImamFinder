@@ -28,14 +28,14 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     imamDao.deleteAll()
 
                     // Add sample words.
-                    var imam = Imam("Idris Akbar")
+                    var imam = Imam("Idris Akbar", "5039359491", "drawable/_200px_ismail_ibn_musa_menks_talk_at_kerala_state_business_excellence_awards_2015")
                     imamDao.insert(imam)
-                    imam = Imam("Mahdi Ahmed!")
-                    imamDao.insert(imam)
+                    //imam = Imam("Mahdi Ahmed!")
+                    //imamDao.insert(imam)
 
                     // TODO: Add your own words!
-                    imam = Imam("Sulaymaan Mustafa!")
-                    imamDao.insert(imam)
+                    //imam = Imam("Sulaymaan Mustafa!")
+                    //imamDao.insert(imam)
                 }
             }
         }

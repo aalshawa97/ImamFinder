@@ -14,10 +14,12 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat.startActivity
 import com.example.detailapplication.*
 import com.example.detailapplication.MainAdapter.*
 import com.example.detailapplication.MainAdapter.Type.Pixel
 import com.example.detailapplication.room.Imam
+import java.io.File
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
@@ -88,6 +90,76 @@ fab.setOnClickListener {
         startActivity(intent)
     }
 
+    /*
+    private fun saveFiletoDrive(file: File, mime: String) {
+        Drive.DriveApi.newDriveContents(mDriveClient).setResultCallback(
+            object : ResultCallback<DriveContentsResult?>() {
+                fun onResult(result: DriveContentsResult) {
+                    if (!result.getStatus().isSuccess()) {
+                        Log.i(TAG, "Failed to create new contents.")
+                        return
+                    }
+                    Log.i(TAG, "Connection successful, creating new contents...")
+                    var outputStream: OutputStream? = result.getDriveContents()
+                        .getOutputStream()
+                    var fis: FileInputStream?
+                    try {
+                        fis = FileInputStream(file.path)
+                        val baos = ByteArrayOutputStream()
+                        val buf = ByteArray(1024)
+                        var n: Int
+                        while (-1 != fis.read(buf).also { n = it }) baos.write(buf, 0, n)
+                        val photoBytes: ByteArray = baos.toByteArray()
+                        outputStream.write(photoBytes)
+                        outputStream.close()
+                        outputStream = null
+                        fis.close()
+                        fis = null
+                    } catch (e: FileNotFoundException) {
+                        Log.w(TAG, "FileNotFoundException: " + e.getMessage())
+                    } catch (e1: IOException) {
+                        Log.w(TAG, "Unable to write file contents." + e1.getMessage())
+                    }
+                    val title = file.name
+                    val metadataChangeSet: MetadataChangeSet = Builder()
+                        .setMimeType(mime).setTitle(title).build()
+                    if (mime == MIME_PHOTO) {
+                        if (VERBOSE) Log.i(
+                            TAG, "Creating new photo on Drive (" + title
+                                    + ")"
+                        )
+                        Drive.DriveApi.getFolder(
+                            mDriveClient,
+                            mPicFolderDriveId
+                        ).createFile(
+                            mDriveClient,
+                            metadataChangeSet,
+                            result.getDriveContents()
+                        )
+                    } else if (mime == MIME_VIDEO) {
+                        Log.i(
+                            TAG, "Creating new video on Drive (" + title
+                                    + ")"
+                        )
+                        Drive.DriveApi.getFolder(
+                            mDriveClient,
+                            mVidFolderDriveId
+                        ).createFile(
+                            mDriveClient,
+                            metadataChangeSet,
+                            result.getDriveContents()
+                        )
+                    }
+                    if (file.delete()) {
+                        if (VERBOSE) Log.d(TAG, "Deleted " + file.name + " from sdcard")
+                    } else {
+                        Log.w(TAG, "Failed to delete " + file.name + " from sdcard")
+                    }
+                }
+            })
+    }
+    */
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -99,7 +171,8 @@ fab.setOnClickListener {
         makeCallButton = findViewById(R.id.button_call);
         //Load the date from the network or other resources
         //into the array list asynchronously
-        contactsList.add(Imam("Muhammad Khateeb"))
+        contactsList.add(Imam("Muhammad Multe Khateeb", "5039359491", "/drawable_200px_ismail_ibn_musa_menks_talk_at_kerala_state_business_excellence_awards_2015"))
+        /*
         contactsList.add(Imam("Muhammad Multe"))
         contactsList.add(Imam("Idris Alam"))
         contactsList.add(Imam("Osama Alatssi"))
@@ -107,6 +180,7 @@ fab.setOnClickListener {
         contactsList.add(Imam("Muhammad Muhammad"))
         contactsList.add(Imam("Mufti Muhammad Ali"))
         contactsList.add(Imam("Abdulsalam Roomal"))
+        */
 
         recycler = findViewById(R.id.my_recycler_view)
         var layoutManager = LinearLayoutManager(this)
@@ -114,6 +188,36 @@ fab.setOnClickListener {
         listAdapter = MyAdapter(contactsList, this)
         recycler.setAdapter(listAdapter)
 
+
+        /*
+        new Thread() {
+            @Override
+            public void run() {
+                // write content to DriveContents
+                OutputStream outputStream = driveContents.getOutputStream();
+                // Write the bitmap data from it.
+                MetadataChangeSet metadataChangeSet = new MetadataChangeSet.Builder()
+                    .setMimeType("image/jpeg").setTitle(title)
+                    .build();
+                Bitmap image = BitmapFactory.decodeFile(location));
+                ByteArrayOutputStream bitmapStream = new ByteArrayOutputStream();
+                image.compress(Bitmap.CompressFormat.JPEG, 80, bitmapStream);
+                try {
+                    outputStream.write(bitmapStream.toByteArray());
+                } catch (IOException e1) {
+                    Log.i("E", "Unable to write file contents.");
+                }
+                image.recycle();
+                outputStream = null;
+                String title = "noisy";
+
+                Log.i("E", "Creating new pic on Drive (" + title + ")");
+                Drive.DriveApi.getFolder(mGoogleApiClient,driveId)
+                    .createFile(mGoogleApiClient, metadataChangeSet, driveContents)
+                    .setResultCallback(fileCallback);
+            }
+        }.start();
+        */
         try {
             mPhoneNumber = findViewById(R.id.phoneNumber)
 

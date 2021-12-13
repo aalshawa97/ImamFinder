@@ -23,8 +23,8 @@ import java.util.Observer
 
 class ImamMainActivity : AppCompatActivity() {
     private val newWordActivityRequestCode = 1
-    var imam = Imam("Idris Akbar")
-    var imamList = listOf<Imam>(imam)
+//    var imam = Imam("Idris Akbar", "5039359491")
+//    var imamList = listOf<Imam>(imam)
     private lateinit var wordViewModel: WordViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,7 +76,7 @@ class ImamMainActivity : AppCompatActivity() {
 
         if (requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK) {
             intentData?.let { data ->
-                val word = Imam(NewWordActivity.EXTRA_REPLY)
+                val word = Imam(NewWordActivity.EXTRA_REPLY, "5039359491", "/drawable_200px_ismail_ibn_musa_menks_talk_at_kerala_state_business_excellence_awards_2015")
                 wordViewModel.insert(word)
             }
         } else {
