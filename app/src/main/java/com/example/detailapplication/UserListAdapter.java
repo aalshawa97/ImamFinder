@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.example.detailapplication.R;
@@ -41,6 +42,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserLi
         holder.mName.setText(userList.get(position).getName());
         holder.mPhone.setText(userList.get(position).getPhone());
 
+
         holder.mAdd.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -56,12 +58,14 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserLi
 
     class UserListViewHolder extends RecyclerView.ViewHolder{
         TextView mName, mPhone;
+        ImageView mImageView;
         LinearLayout mLayout;
         CheckBox mAdd;
         UserListViewHolder(View view){
             super(view);
             mName = view.findViewById(R.id.name);
             mPhone = view.findViewById(R.id.phone);
+            mImageView = view.findViewById(R.id.GfG_logo);
             mAdd = view.findViewById(R.id.add);
             mLayout = view.findViewById(R.id.layout);
         }

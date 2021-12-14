@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.net.Uri
 import android.view.View
-import java.util.Timer
 import kotlin.concurrent.schedule
 import android.widget.Button
 import android.widget.EditText
@@ -19,7 +18,9 @@ import com.example.detailapplication.*
 import com.example.detailapplication.MainAdapter.*
 import com.example.detailapplication.MainAdapter.Type.Pixel
 import com.example.detailapplication.room.Imam
+import com.google.firebase.storage.StorageReference
 import java.io.File
+import java.util.*
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
@@ -160,6 +161,32 @@ fab.setOnClickListener {
     }
     */
 
+    fun uploadPicture(){
+        //final String randomKey = UUID.randomUUID().toString();
+        var randomKey : String
+        randomKey = UUID.randomUUID().toString()
+        var riversRef : StorageReference
+        //riversRef.outFile(imageUri)
+
+        /*
+        const storageRef = firebase.storage().ref();
+        const fileRef = storageRef.child(`${folder}/${filename}`);
+        const metadata = {
+            contentType: file.type,
+            customMetadata: { }
+        };
+        return fileRef.put(file, metadata);
+        */
+    }
+
+    fun choosePicture(uri : String){
+        val intent = Intent(this, PhotoActivity::class.java)
+        intent.setType("image/" + uri)
+        uploadPicture()
+        intent.setAction(Intent.ACTION_GET_CONTENT)
+        //startActivityForResult(intent)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -173,6 +200,7 @@ fab.setOnClickListener {
         //Load the date from the network or other resources
         //into the array list asynchronously
         contactsList.add(Imam("Muhammad Multe Khateeb", "5039359491", "/drawable_200px_ismail_ibn_musa_menks_talk_at_kerala_state_business_excellence_awards_2015"))
+        choosePicture("/drawable_200px_ismail_ibn_musa_menks_talk_at_kerala_state_business_excellence_awards_2015")
         /*
         contactsList.add(Imam("Muhammad Multe"))
         contactsList.add(Imam("Idris Alam"))
