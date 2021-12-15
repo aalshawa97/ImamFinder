@@ -1,6 +1,8 @@
 package com.example.detailapplication;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.detailapplication.room.Imam;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
@@ -110,6 +113,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
         // Set the data to the views here
         holder.setContactName(contact.getWord());
         holder.setContactNumber(contact.getPhone());
+        holder.setContactPhoto(contact.getImg_uri());
+
 
         // You can set click listners to indvidual items in the viewholder here
         // make sure you pass down the listner or make the Data members of the viewHolder public
@@ -131,10 +136,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
 
         private final TextView txtName;
         private final TextView txtNumber;
+        private final ImageView profilePicture;
 
         public ContactHolder(View itemView) {
             super(itemView);
-
+            profilePicture = itemView.findViewById(R.id.GfG_logo);
             txtName = itemView.findViewById(R.id.txt_name);
             txtNumber = itemView.findViewById(R.id.txt_number);
         }
@@ -145,6 +151,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
 
         public void setContactNumber(String number) {
             txtNumber.setText(number);
+        }
+
+        public void setContactPhoto(String uri) {
+            File imgFile = new File(uri);
+
+            if(imgFile.exists())
+            {
+                Bitmap myBitMap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+                profilePicture.setImageBitmap(myBitMap);
+            }
+            //profilePicture.setImageResource(R.drawable.hire_islamic_experts);
         }
     }
 }
