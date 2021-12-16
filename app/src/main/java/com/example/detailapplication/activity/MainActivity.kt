@@ -200,7 +200,7 @@ fab.setOnClickListener {
         //Load the date from the network or other resources
         //into the array list asynchronously
         contactsList.add(Imam("Muhammad Multe Khateeb", "5039359491", "/drawable_200px_ismail_ibn_musa_menks_talk_at_kerala_state_business_excellence_awards_2015"))
-        choosePicture("/drawable_200px_ismail_ibn_musa_menks_talk_at_kerala_state_business_excellence_awards_2015")
+        //choosePicture("/drawable_200px_ismail_ibn_musa_menks_talk_at_kerala_state_business_excellence_awards_2015")
         /*
         contactsList.add(Imam("Muhammad Multe"))
         contactsList.add(Imam("Idris Alam"))
