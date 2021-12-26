@@ -3,6 +3,7 @@ package com.example.detailapplication;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +11,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.legacy.widget.Space;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.detailapplication.room.Imam;
+import com.google.android.gms.auth.api.signin.internal.Storage;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicMarkableReference;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
 
@@ -140,6 +148,33 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
 
         public ContactHolder(View itemView) {
             super(itemView);
+            // Create a storage reference from our app
+            //Storage storage = null;
+            // Create a storage reference from our app
+            //
+            // StorageReference storageRef = (StorageReference) storage.getReference();
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+           // StorageReference storageRef = storage.getReferenceFromUrl("Url to storage");
+            StorageReference storageRef = storage.getReference();
+            Uri uri = Uri.parse("C:\\Users\\15039\\AndroidStudioProjects\\ImamFinder\\app\\src\\main\\res\\drawable\\mask_starfish.png");
+            storageRef.putFile(uri);
+            /*
+            try {
+
+                InputStream input = context.getContentResolver().openInputStream(uri);
+                if (input == null) {
+                    return null;
+                }
+                return BitmapFactory.decodeStream(input);
+            }
+            catch (FileNotFoundException e)
+            {
+
+            }
+            */
+            // Create a child reference
+            // imagesRef now points to "images"
+            //StorageReference imagesRef = Space.getRoot();
             profilePicture = itemView.findViewById(R.id.GfG_logo);
             txtName = itemView.findViewById(R.id.txt_name);
             txtNumber = itemView.findViewById(R.id.txt_number);

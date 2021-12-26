@@ -271,7 +271,6 @@ fab.setOnClickListener {
         }
         */
 
-
         /*
         For using glide
         findViewById<RecyclerView>(R.id.list).apply {
@@ -281,11 +280,7 @@ fab.setOnClickListener {
         }
         */
 
-
         //listAdapter!!.notifyDataSetChanged()
-
-
-
 
         /*
         inline fun Timer.schedule(
