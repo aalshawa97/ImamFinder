@@ -157,6 +157,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
            // StorageReference storageRef = storage.getReferenceFromUrl("Url to storage");
             StorageReference storageRef = storage.getReference();
             Uri uri = Uri.parse("C:\\Users\\15039\\AndroidStudioProjects\\ImamFinder\\app\\src\\main\\res\\drawable\\mask_starfish.png");
+            //new ViewHolderOne(getResources);
             storageRef.putFile(uri);
             /*
             try {
