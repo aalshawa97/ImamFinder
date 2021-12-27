@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -202,7 +203,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
             setContactPhoto(uri.toString());
             //Store the data of the imam from JSON
             JSONParser jsonParser = new JSONParser();
-            //JSONObject javaObject =javaObject.get("name").toString());
+
+            JSONObject javaObject;
+            try {
+                javaObject = new JSONObject("{\"Imam\":\"Muhammad Multe Khateeb\"}");
+                String oneObjectsItem = javaObject.toString();
+                Log.d("JSON", "ContactHolder: " + oneObjectsItem);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             /*
             JsonArrayRequest request = new JsonArrayRequest( Request.Method.GET, uri, null,
                     new Response.Listener<JSONArray>()
