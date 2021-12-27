@@ -9,15 +9,33 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.legacy.widget.Space;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.example.detailapplication.room.Imam;
 import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+//Read from json imports
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+//import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.ParseException;
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -142,9 +160,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
     // This is your ViewHolder class that helps to populate data to the view
     public static class ContactHolder extends RecyclerView.ViewHolder {
 
-        private final TextView txtName;
-        private final TextView txtNumber;
-        private final ImageView profilePicture;
+        private TextView txtName = null;
+        private TextView txtNumber= null;
+        private ImageView profilePicture = null;
 
         public ContactHolder(View itemView) {
             super(itemView);
@@ -159,6 +177,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
             Uri uri = Uri.parse("C:\\Users\\15039\\AndroidStudioProjects\\ImamFinder\\app\\src\\main\\res\\drawable\\mask_starfish.png");
             //new ViewHolderOne(getResources);
             storageRef.putFile(uri);
+            Toast.makeText(itemView.getContext(), "URI: " + uri.toString(), Toast.LENGTH_LONG);
+
             /*
             try {
 
@@ -177,9 +197,49 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
             // imagesRef now points to "images"
             //StorageReference imagesRef = Space.getRoot();
             profilePicture = itemView.findViewById(R.id.GfG_logo);
+            setContactPhoto(uri.toString());
+            //Store the data of the imam from JSON
+            //JSONParser jsonParser = new JSONParser();
+            //JSONObject javaObject =javaObject.get("name").toString());
+            /*
+            JsonArrayRequest request = new JsonArrayRequest( Request.Method.GET, uri, null,
+                    new Response.Listener<JSONArray>()
+                    {
+                        @Override
+                        public void onResponse( JSONArray response )
+                        {
+
+                            cityID = "";
+                            try
+                            {
+                                JSONObject cityInfo = response.getJSONObject( 0 );
+                                cityID = cityInfo.getString( "woeid" );
+                            }
+                            catch( JSONException e )
+                            {
+
+                                e.printStackTrace();
+                            }
+
+                            volleyResponseListener.onResponse( cityID );
+                        }
+                    }, new Response.ErrorListener()
+            {
+                @Override
+                public void onErrorResponse( VolleyError error )
+                {
+
+//
+
+                    volleyResponseListener.onError( "Error occurred" );
+                }
+            } );
+            */
             txtName = itemView.findViewById(R.id.txt_name);
             txtNumber = itemView.findViewById(R.id.txt_number);
         }
+
+
 
         public void setContactName(String name) {
             txtName.setText(name);
