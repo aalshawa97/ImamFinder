@@ -33,7 +33,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-//import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.*;
+// import org.json.simple.*;
+import org.json.*;
 //import org.json.simple.parser.ParseException;
 
 
@@ -199,7 +201,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
             profilePicture = itemView.findViewById(R.id.GfG_logo);
             setContactPhoto(uri.toString());
             //Store the data of the imam from JSON
-            //JSONParser jsonParser = new JSONParser();
+            JSONParser jsonParser = new JSONParser();
             //JSONObject javaObject =javaObject.get("name").toString());
             /*
             JsonArrayRequest request = new JsonArrayRequest( Request.Method.GET, uri, null,
