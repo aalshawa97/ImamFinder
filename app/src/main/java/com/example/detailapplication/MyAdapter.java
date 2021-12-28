@@ -25,6 +25,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.detailapplication.room.Imam;
 import com.google.android.gms.auth.api.signin.internal.Storage;
+import com.google.api.LogDescriptor;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -213,6 +214,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
                 Log.d("JSON", "ContactHolder: " + oneObjectsItem);
                 //Now parse from the file
                 JSONparser jsonParser1 = null;
+                //Log.d("JSON", "ContactHolder: " + jsonParser1.jsonParse());
                 //Log.d("JSON parsing from file:", "ContactHolder: " + jsonParser1.getJsonFromAssets(this.txtName.getContext(), "./imam.json"));
             } catch (JSONException e) {
                 e.printStackTrace();
