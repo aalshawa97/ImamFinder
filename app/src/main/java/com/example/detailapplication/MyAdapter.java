@@ -1,5 +1,6 @@
 package com.example.detailapplication;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.legacy.widget.Space;
@@ -20,6 +22,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.detailapplication.room.Imam;
 import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.firebase.storage.FirebaseStorage;
@@ -144,7 +147,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
         holder.setContactNumber(contact.getPhone());
         holder.setContactPhoto(contact.getImg_uri());
 
-
         // You can set click listners to indvidual items in the viewholder here
         // make sure you pass down the listner or make the Data members of the viewHolder public
 
@@ -209,6 +211,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
                 javaObject = new JSONObject("{\"Imam\":\"Muhammad Multe Khateeb\"}");
                 String oneObjectsItem = javaObject.toString();
                 Log.d("JSON", "ContactHolder: " + oneObjectsItem);
+                //Now parse from the file
+                JSONparser jsonParser1 = null;
+                //Log.d("JSON parsing from file:", "ContactHolder: " + jsonParser1.getJsonFromAssets(this.txtName.getContext(), "./imam.json"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -250,6 +255,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
             txtNumber = itemView.findViewById(R.id.txt_number);
         }
 
+        /*
+        private String jsonParse() {
+            String json = null;
+            try{
+                Activity context;
+                JSONParser jsonParser;
+
+                //InputStream inputStream = getApplicationContext().getAssets().open("imam.json");
+            }
+            catch (Exception e)
+            {
+                Log.d("MyAdapter", "jsonParse: ");
+            }
+
+            return json;
+        }*/
 
 
         public void setContactName(String name) {
