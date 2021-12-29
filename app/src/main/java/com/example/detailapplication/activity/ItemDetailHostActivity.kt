@@ -115,7 +115,8 @@ class ItemDetailHostActivity : AppCompatActivity() {
     {
         var name = etName.text.toString()
         Toast.makeText(this@ItemDetailHostActivity, name, Toast.LENGTH_LONG).show()
-        tvRes.setText("Welcome " + name)
+        var welcome : String = "Welcome " + name
+        tvRes.setText(welcome)
         Toast.makeText(this,"Welcome " + name, Toast.LENGTH_LONG).show();
         
         val text = findViewById(R.id.textView) as TextView;
