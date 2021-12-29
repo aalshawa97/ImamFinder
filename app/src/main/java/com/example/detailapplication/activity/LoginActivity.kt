@@ -27,7 +27,9 @@ import java.util.*
 
 //@repeatable
 class LoginActivity : AppCompatActivity(){
-    lateinit var etName: EditText   //declartion
+    //Declare and initiazlise variables
+    lateinit var etPassword: EditText
+    lateinit var etName: EditText
     lateinit var tvRes: TextView
     lateinit var IVPreviewImage: ImageView
     private var imageUri: Uri? = null
@@ -70,6 +72,7 @@ class LoginActivity : AppCompatActivity(){
         BSelectImage = findViewById(R.id.BSelectImage)
         IVPreviewImage = findViewById(R.id.imageView)
         etName = findViewById(R.id.etName)
+        etPassword = findViewById(R.id.editTextTextPassword)
         tvRes = findViewById(R.id.tvResult)
         title = "ImamFinder"
         BSelectImage?.setOnClickListener {
@@ -84,11 +87,15 @@ class LoginActivity : AppCompatActivity(){
     }
 
     fun onClick(v: View) {
-        etName
         if(etName.text.isNullOrEmpty())
         {
             Toast.makeText(this,"Could you please sign in or register? " , Toast.LENGTH_LONG).show();
         }
+        if(etPassword.text.isNullOrEmpty())
+        {
+            Toast.makeText(this,"Could you please enter a password to sign in or register? " , Toast.LENGTH_LONG).show();
+        }
+        Log.d("User sign in: ", "onClick: " + etName.text + " " + etPassword)
         Toast.makeText(this,"Welcome " + etName.text, Toast.LENGTH_LONG).show();
         //setContentView(R.layout.activity_item_detail)
         val intent = Intent(this, MainActivity::class.java)
