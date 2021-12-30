@@ -23,12 +23,14 @@ import kotlin.concurrent.schedule
 
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.storage.StorageReference
+import java.lang.NullPointerException
 import java.util.*
 
 //@repeatable
 class LoginActivity : AppCompatActivity(){
     //Declare and initiazlise variables
     lateinit var etPassword: EditText
+    lateinit var signIn : com.google.android.gms.common.SignInButton
     lateinit var etName: EditText
     lateinit var tvRes: TextView
     lateinit var IVPreviewImage: ImageView
@@ -64,13 +66,19 @@ class LoginActivity : AppCompatActivity(){
         .build()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        lateinit var btnSignIn: Button
         //Initialization
         //CameraPhoto cameraPhoto = new CameraPhoto(getApplicationContext());
         super.onCreate(savedInstanceState)
         setContentView(com.example.detailapplication.R.layout.activity_login)
         BSelectImage = findViewById(R.id.BSelectImage)
         IVPreviewImage = findViewById(R.id.imageView)
+        try{
+            signIn = findViewById(R.id.buttonSignIn)
+        }
+        catch (e : NullPointerException)
+        {
+
+        }
         etName = findViewById(R.id.etName)
         etPassword = findViewById(R.id.editTextTextPassword)
         tvRes = findViewById(R.id.tvResult)
@@ -170,5 +178,10 @@ class LoginActivity : AppCompatActivity(){
         // Please refer to the GoogleSignInStatusCodes class reference for more information.
         Log.w(TAG, "signInResult:failed code=" + e.statusCode)
         updateUI(null)
+    }
+
+    fun signOn(v : View) {
+        Toast.makeText(this, "Loading Google sign in", Toast.LENGTH_LONG)
+        Log.d("LoginActivity", "signOn: " + "loading Google sign in")
     }
 }
