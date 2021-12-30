@@ -69,7 +69,7 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
 
-        /*
+
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.server_client_id))
             .requestEmail()
@@ -84,6 +84,7 @@ class RegisterActivity : AppCompatActivity() {
             ).show() }
             .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
             .build()
+        /*
 
          */
 

@@ -107,8 +107,7 @@ class LoginActivity : AppCompatActivity(){
         */
     }
 
-    // this function is triggered when
-    // the Select Image Button is clicked
+    //this function is triggered
     fun register(view: android.view.View) {
         val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
