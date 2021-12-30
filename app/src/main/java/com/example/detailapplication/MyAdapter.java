@@ -214,7 +214,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
                 Log.d("JSON", "ContactHolder: " + oneObjectsItem);
                 //Now parse from the file
                 JSONparser jsonParser1 = null;
-                Log.d("JSON", "ContactHolder: " + jsonParser1.jsonParse());
+                //Log.d("JSON", "ContactHolder: " + jsonParser1.jsonParse());
                 //Log.d("JSON parsing from file:", "ContactHolder: " + jsonParser1.getJsonFromAssets(this.txtName.getContext(), "./imam.json"));
             } catch (JSONException e) {
                 e.printStackTrace();

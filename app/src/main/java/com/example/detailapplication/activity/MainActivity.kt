@@ -22,6 +22,8 @@ import com.google.firebase.storage.StorageReference
 import java.io.File
 import java.util.*
 import kotlin.collections.ArrayList
+import com.example.detailapplication.R
+//import com.example.findhospital.R
 
 class MainActivity : AppCompatActivity() {
     private lateinit var listAdapter: MyAdapter
