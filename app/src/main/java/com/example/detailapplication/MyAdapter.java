@@ -1,7 +1,9 @@
 package com.example.detailapplication;
 
-import android.app.Activity;
+import static androidx.core.app.ActivityCompat.startActivityForResult;
+
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -12,49 +14,40 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.Context;
 
 import androidx.annotation.NonNull;
-import androidx.legacy.widget.Space;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.detailapplication.room.Imam;
-import com.google.android.gms.auth.api.signin.internal.Storage;
-import com.google.api.LogDescriptor;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 //Read from json imports
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-
 import org.json.simple.parser.*;
 // import org.json.simple.*;
-import org.json.*;
 //import org.json.simple.parser.ParseException;
 
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicMarkableReference;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> implements GoogleApiClient.OnConnectionFailedListener {
 
     private static final int TYPE_ONE = 1;
     private static final int TYPE_TWO = 2;
-
+    private Context context;
+    private static final int RC_SIGN_In = 1;
+    private static final int RC_SIGN_IN = 1;
+    private GoogleApiClient googleApiClient;
+    private static SignInButton signIn;
     // List to store all the contact details
     private ArrayList<Imam> contactsList;
     int[] images = new int[]{ R.drawable.osama_alatssi_imam_finder_ic_launcher_background,
@@ -78,12 +71,30 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
         return new ContactHolder(view);
     }
 
+
     public ImageViewHolder onCreateViewHolderImage(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-
         // Inflate the layout view you have created for the list rows here
         View view = layoutInflater.inflate(R.layout.contact_list_item, parent, false);
         ImageViewHolder imageViewHolder = new ImageViewHolder(view);
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        /*
+        signIn.findViewById(R.id.buttonSignIn);
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                context = context.getApplicationContext();
+                context.startActivity(intent);
+                //startActivityForResult(this,intent,RC_SIGN_IN,gso);
+            }
+        });
+        */
+
+
         return imageViewHolder;
     }
 
@@ -99,6 +110,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> {
     private void initLayoutTwo(ViewHolderTwo holder, int pos) {
         //holder.tvLeft.setText(itemList.get(pos).getName());
         //holder.tvRight.setText(item.get(pos).getName());
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
     }
 
     // Static inner class to initialize the views of rows

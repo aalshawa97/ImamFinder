@@ -17,11 +17,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.example.detailapplication.R
+import com.google.android.gms.auth.api.Auth
+import com.google.android.gms.common.SignInButton
 import com.google.android.gms.tasks.Task
 import kotlin.concurrent.schedule
 
 
 import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.storage.StorageReference
 import java.lang.NullPointerException
 import java.util.*
@@ -30,7 +33,10 @@ import java.util.*
 class LoginActivity : AppCompatActivity(){
     //Declare and initiazlise variables
     lateinit var etPassword: EditText
-    lateinit var signIn : com.google.android.gms.common.SignInButton
+    lateinit var signIn : SignInButton
+    lateinit var googleApiClient: GoogleApiClient
+    lateinit var textView: TextView;
+    var RC_SIGN_In = 1
     lateinit var etName: EditText
     lateinit var tvRes: TextView
     lateinit var IVPreviewImage: ImageView
@@ -70,15 +76,25 @@ class LoginActivity : AppCompatActivity(){
         //CameraPhoto cameraPhoto = new CameraPhoto(getApplicationContext());
         super.onCreate(savedInstanceState)
         setContentView(com.example.detailapplication.R.layout.activity_login)
+
+
+        /*
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                startActivityForResult(intent,RC_SIGN_IN);
+            }
+        });
+        */
+
+    googleApiClient = GoogleApiClient.Builder(this)
+            .enableAutoManage(this, null)
+            .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+            .build()
+
         BSelectImage = findViewById(R.id.BSelectImage)
         IVPreviewImage = findViewById(R.id.imageView)
-        try{
-            signIn = findViewById(R.id.buttonSignIn)
-        }
-        catch (e : NullPointerException)
-        {
-
-        }
         etName = findViewById(R.id.etName)
         etPassword = findViewById(R.id.editTextTextPassword)
         tvRes = findViewById(R.id.tvResult)
@@ -87,6 +103,7 @@ class LoginActivity : AppCompatActivity(){
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, pickImage)
         }
+
         Log.d("LoginActivity", "Hello World")
         //btnSignIn = findViewById(R.id.btnSignIn)
         //viewInitializations()
