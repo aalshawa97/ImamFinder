@@ -68,6 +68,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> imp
         // Inflate the layout view you have created for the list rows here
         View view = layoutInflater.inflate(R.layout.contact_list_item, parent, false);
         onCreateViewHolderImage(parent, viewType);
+        //setView
+        try
+        {
+            signIn.findViewById(R.id.buttonSignIn);
+        }
+        catch (Exception e)
+        {
+
+        }
         return new ContactHolder(view);
     }
 
@@ -81,8 +90,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> imp
                 .requestEmail()
                 .build();
 
+
         /*
-        signIn.findViewById(R.id.buttonSignIn);
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
