@@ -13,6 +13,7 @@ import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.*
+import com.example.detailapplication.MyAdapter
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -123,6 +124,13 @@ class LoginActivity : AppCompatActivity(){
         Log.d("User sign in: ", "onClick: " + etName.text + " " + etPassword)
         Toast.makeText(this,"Welcome " + etName.text, Toast.LENGTH_LONG).show();
         //setContentView(R.layout.activity_item_detail)
+        //setContentView(com.example.detailapplication.R.layout.contact_list_item)
+
+        //Intent myIntent = new Intent();
+        //startActivity(this.context, myIntent, new Bundle());
+        //setContentView(com.example.detailapplication.R.layout.activity_login);
+        //MyAdapter.signIn.findViewById<View>(R.id.buttonSignIn)
+
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         /*

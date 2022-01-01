@@ -71,6 +71,9 @@
     <string name="photo_of_imam">Image of the imam</string>
     <string name="hiring">Hiring</string>
     <string name="server_client_id">AIzaSyD_9laAyRVEMzExT-gAeq4YZAOEb_aI9-w</string>
+    <string name="type_a_message">Type a message</string>
+    <string name="hello">Hello</string>
+    <string name="send">Send</string>
     <string-array name="imams">
         <item>Muhammad Khateeb</item>
         <item>Idris Alam</item>

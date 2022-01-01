@@ -1,12 +1,14 @@
 package com.example.detailapplication;
 
 import static androidx.core.app.ActivityCompat.startActivityForResult;
+import static androidx.core.content.ContextCompat.startActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,7 +49,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> imp
     private static final int RC_SIGN_In = 1;
     private static final int RC_SIGN_IN = 1;
     private GoogleApiClient googleApiClient;
-    private static SignInButton signIn;
+    public static SignInButton signIn;
     // List to store all the contact details
     private ArrayList<Imam> contactsList;
     int[] images = new int[]{ R.drawable.osama_alatssi_imam_finder_ic_launcher_background,
@@ -71,6 +73,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> imp
         //setView
         try
         {
+            //Intent myIntent = new Intent();
+            //startActivity(this.context, myIntent, new Bundle());
+            //setContentView(com.example.detailapplication.R.layout.activity_login);
             signIn.findViewById(R.id.buttonSignIn);
         }
         catch (Exception e)
@@ -102,7 +107,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> imp
             }
         });
         */
-
 
         return imageViewHolder;
     }
