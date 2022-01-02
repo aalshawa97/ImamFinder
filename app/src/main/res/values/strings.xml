@@ -74,6 +74,7 @@
     <string name="type_a_message">Type a message</string>
     <string name="hello">Hello</string>
     <string name="send">Send</string>
+    <string name="add_contact">Add contact</string>
     <string-array name="imams">
         <item>Muhammad Khateeb</item>
         <item>Idris Alam</item>
