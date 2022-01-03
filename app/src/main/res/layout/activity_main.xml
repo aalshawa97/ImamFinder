@@ -6,6 +6,12 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="5dp">
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/buttonSignIn"
+        android:onClick="signOn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in_with_google" />
     <TextView
         android:id="@+id/txt_name"
         android:layout_width="match_parent"

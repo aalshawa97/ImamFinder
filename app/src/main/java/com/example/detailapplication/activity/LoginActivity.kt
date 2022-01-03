@@ -13,6 +13,7 @@ import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.*
+import com.example.detailapplication.ChatActivity
 import com.example.detailapplication.MyAdapter
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -208,5 +209,6 @@ class LoginActivity : AppCompatActivity(){
     fun signOn(v : View) {
         Toast.makeText(this, "Loading Google sign in", Toast.LENGTH_LONG)
         Log.d("LoginActivity", "signOn: " + "loading Google sign in")
+        this@LoginActivity.startActivity(Intent(this@LoginActivity, ChatActivity::class.java))
     }
 }

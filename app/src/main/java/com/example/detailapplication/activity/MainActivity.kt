@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.view.View
 import kotlin.concurrent.schedule
 import android.widget.Button
@@ -17,16 +18,27 @@ import androidx.core.content.ContextCompat.startActivity
 import com.example.detailapplication.*
 import com.example.detailapplication.MainAdapter.*
 import com.example.detailapplication.MainAdapter.Type.Pixel
+import com.example.detailapplication.MyAdapter.signIn
 import com.example.detailapplication.room.Imam
 import com.google.firebase.storage.StorageReference
 import java.io.File
 import java.util.*
 import kotlin.collections.ArrayList
 import com.example.detailapplication.R
+import com.google.android.gms.auth.account.WorkAccount.getClient
+import com.google.android.gms.auth.api.AuthProxy.getClient
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignIn.getClient
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.SignInButton
+
 //import com.example.findhospital.R
 
 class MainActivity : AppCompatActivity() {
     private lateinit var listAdapter: MyAdapter
+    private lateinit var signInButton : SignInButton
     private val contactsList: ArrayList<Imam> = ArrayList()
     private lateinit var recycler: RecyclerView
     private lateinit var makeCallButton : Button
@@ -35,6 +47,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mCode: EditText
     private lateinit var mSend: Button
     private lateinit var profilePicture : ImageView
+    private lateinit var mGoogleSignInClient : GoogleSignInClient;
 
     var programImages = intArrayOf(
         R.drawable.osama_alatssi_imam_finder_ic_launcher_background,
@@ -189,14 +202,38 @@ fab.setOnClickListener {
         //startActivityForResult(intent)
     }
 
+    fun signIn(){
+        Toast.makeText(this, "Loading Google sign in", Toast.LENGTH_LONG)
+        Log.d("LoginActivity", "signOn: " + "loading Google sign in")
+        this@MainActivity.startActivity(mGoogleSignInClient.signInIntent)
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            //.requestIdToken("")
+            .requestEmail()
+            .build()
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
         setContentView(R.layout.activity_main)
+
         //var cover = findViewById(R.id.coverImg);
         val intent = Intent(Intent.ACTION_CALL)
         intent.data = Uri.parse("5039359491")
         //startActivity(intent)
+        try {
+            signInButton = findViewById(R.id.buttonSignIn)
+            signInButton.setOnClickListener {
+                when(it.id){
+                    R.id.buttonSignIn -> signIn()
+                }
+            }
+        }
+        catch (e:Exception)
+        {
 
+        }
         setContentView(R.layout.recycler_view)
         makeCallButton = findViewById(R.id.button_call);
         //Load the date from the network or other resources
@@ -255,6 +292,12 @@ fab.setOnClickListener {
             mCode = findViewById(R.id.code)
             mSend = findViewById(R.id.sendButton)
 
+            signInButton.setOnClickListener{
+                Toast.makeText(this, "Loading Google sign in", Toast.LENGTH_LONG)
+                Log.d("MainActivity", "signOn: " + "loading Google sign in")
+                this@MainActivity.startActivity(Intent(this@MainActivity, ChatActivity::class.java))
+
+            }
 
             mSend.setOnClickListener{
                 Toast.makeText(this@MainActivity, "Sending...", Toast.LENGTH_SHORT)
@@ -295,11 +338,9 @@ fab.setOnClickListener {
 
     }
 
-    /*
-    private fun MyAdapter(contactsList: ArrayList<Imam>, mainActivity: MainActivity): MyAdapter {
-        MyAdapter.contactsList = contactsList
-        this.mContext = mainActivity
+    override fun onStart() {
+        super.onStart()
+        var account : GoogleSignInAccount? =  GoogleSignIn.getLastSignedInAccount(this);
     }
-    */
 
 }
