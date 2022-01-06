@@ -78,7 +78,7 @@ class LoginActivity : AppCompatActivity(){
         */
     }
     val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-        //.requestIdToken("")
+        .requestIdToken("AIzaSyD_9laAyRVEMzExT-gAeq4YZAOEb_aI9-w")
         .requestEmail()
         .build()
 
@@ -91,8 +91,12 @@ class LoginActivity : AppCompatActivity(){
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         try{
-            val fromUser = intent.extras?.get("fromUser") as User
+            val fromUser = intent.extras?.get("fromUser") as com.example.detailapplication.User
             fromUid = fromUser.uid
+            var fromRooms = fromUser.rooms
+            val toUser = intent.extras?.get("toUser") as User
+            //val toUid = toUser.uid
+
         }
         catch (e : java.lang.Exception) {
 
@@ -210,7 +214,13 @@ class LoginActivity : AppCompatActivity(){
         }
 
         Log.d("LoginActivity", "Hello World")
-        //btnSignIn = findViewById(R.id.btnSignIn)
+        signIn = findViewById(R.id.buttonSignIn)
+        signIn.setOnClickListener{
+            Toast.makeText(this, "Loading Google sign in", Toast.LENGTH_LONG)
+            Log.d("LoginActivity", "signOn: " + "loading Google sign in")
+            //this@LoginActivity.startActivity(Intent(this@LoginActivity, ChatActivity::class.java))
+        }
+
         //viewInitializations()
         //Configure Google sign in
        // val gso:GoogleSignInOptions.Builder
