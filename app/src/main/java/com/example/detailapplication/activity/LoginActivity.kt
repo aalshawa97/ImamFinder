@@ -19,6 +19,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.example.detailapplication.R
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.tasks.Task
@@ -27,9 +28,16 @@ import kotlin.concurrent.schedule
 
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.GoogleApiClient
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.SetOptions
+import com.google.firebase.firestore.auth.User
 import com.google.firebase.storage.StorageReference
 import java.lang.NullPointerException
+import java.security.NoSuchAlgorithmException
 import java.util.*
+import javax.crypto.SecretKey
+import javax.crypto.spec.SecretKeySpec
 
 //@repeatable
 class LoginActivity : AppCompatActivity(){
@@ -40,6 +48,7 @@ class LoginActivity : AppCompatActivity(){
     lateinit var textView: TextView;
     var RC_SIGN_In = 1
     lateinit var etName: EditText
+    private var fromUid: String? = ""
     lateinit var tvRes: TextView
     lateinit var IVPreviewImage: ImageView
     private var imageUri: Uri? = null
@@ -79,6 +88,100 @@ class LoginActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(com.example.detailapplication.R.layout.activity_login)
 
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        try{
+            val fromUser = intent.extras?.get("fromUser") as User
+            fromUid = fromUser.uid
+        }
+        catch (e : java.lang.Exception) {
+
+        }
+        /*
+        try {
+            val fromUser = intent.extras?.get("fromUser") as User
+
+            fromUid = fromUser.uid
+            var fromRooms = fromUser.rooms
+            val toUser = intent.extras?.get("toUser") as User
+            val toUid = toUser.uid
+            var toRooms = toUser.rooms
+
+            var roomId = intent.extras?.get("roomId") as String
+
+            if (roomId == "noRoomId") {
+                roomId = rootRef!!.collection("messages").document().id
+                if (fromRooms != null) {
+                    for ((key, _) in fromRooms) {
+                        if (toRooms != null) {
+                            if (toRooms.contains(key)) {
+                                roomId = key
+                            }
+                        }
+                    }
+                }
+            }
+
+            val button = findViewById<Button>(R.id.button)
+            val edit_text = findViewById<EditText>(R.id.edit_text)
+
+            button.setOnClickListener {
+                if (fromRooms == null) {
+                    fromRooms = mutableMapOf()
+                }
+                fromRooms!![roomId] = true
+                fromUser.rooms = fromRooms
+                rootRef!!.collection("users").document(fromUid!!).set(fromUser, SetOptions.merge())
+                rootRef!!.collection("contacts").document(toUid).collection("userContacts").document(fromUid!!).set(fromUser, SetOptions.merge())
+                rootRef!!.collection("rooms").document(toUid).collection("userRooms").document(roomId).set(fromUser, SetOptions.merge())
+
+                if (toRooms == null) {
+                    toRooms = mutableMapOf()
+                }
+                toRooms!![roomId] = true
+                toUser.rooms = toRooms
+                rootRef!!.collection("users").document(toUid).set(toUser, SetOptions.merge())
+                rootRef!!.collection("contacts").document(fromUid!!).collection("userContacts").document(toUid).set(toUser, SetOptions.merge())
+                rootRef!!.collection("rooms").document(fromUid!!).collection("userRooms").document(roomId).set(toUser, SetOptions.merge())
+
+                val messageText = edit_text.text.toString()
+                val message = Message(messageText, fromUid!!)
+                rootRef!!.collection("messages").document(roomId).collection("roomMessages").add(message)
+                edit_text.text.clear()
+            }
+
+            val query = rootRef!!.collection("messages").document(roomId).collection("roomMessages").orderBy("sentAt", Query.Direction.ASCENDING)
+            val options = FirestoreRecyclerOptions.Builder<Message>().setQuery(query, Message::class.java).build()
+            adapter = MessageAdapter(options)
+            recycler_view.adapter = adapter
+
+            title = toUser.userName
+
+            //Testing RSA
+            encrypt("This is secret!")
+
+            try {
+                //cipher = Cipher.getInstance("RSA")
+                val keyBytes = byteArrayOfInts(0xA1, 0x2E, 0x38, 0xD4, 0x89, 0xC3)
+                val secretKey: SecretKey = SecretKeySpec(keyBytes, "AES")
+                //cipher.init()
+                //decipher = Cipher.getInstance("AES")
+            }
+            catch(e: NoSuchAlgorithmException)
+            {
+                e.printStackTrace()
+            }
+
+            editText = findViewById(R.id.edit_text)
+            listView = findViewById(R.id.list_viw)
+            rootRef = FirebaseFirestore.getInstance()
+            recycler_view = findViewById(R.id.recycler_view)
+        }
+        catch (e : java.lang.Exception)
+        {
+            Log.d(TAG, "onCreate: exception thrown when getting user")
+        }
+        */
 
         /*
         signIn.setOnClickListener(new View.OnClickListener() {
