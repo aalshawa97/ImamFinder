@@ -37,6 +37,9 @@ class HomeActivity : AppCompatActivity() {
         Timer("SettingUp", false).schedule(3000) {
             val myIntent = Intent(this@HomeActivity, LoginActivity::class.java)
             this@HomeActivity.startActivity(myIntent)
+            //Toast.makeText(this@HomeActivity, "Welcome", Toast.LENGTH_LONG)
+            //Toast.makeText(this, "Welcome", Toast.LENGTH_LONG).show()
+
         }
     }
 
@@ -61,6 +64,7 @@ class HomeActivity : AppCompatActivity() {
         resultCode: Int,
         data: android.content.Intent?
     ) {
+        super.onActivityResult(requestCode, resultCode, data)
         //super.onActivityResult(requestCode, resultCode, data)
         //if(requestCode == 1 )
     }

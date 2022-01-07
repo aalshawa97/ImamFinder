@@ -316,7 +316,7 @@ class LoginActivity : AppCompatActivity(){
             Toast.makeText(this, "You signed in successfully", Toast.LENGTH_LONG).show()
             startActivity(Intent(this, MainActivity::class.java))
         } else {
-            Toast.makeText(this, "You didn't signed in", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "You didn't sign in", Toast.LENGTH_LONG).show()
             //Toast.makeText(this, "Please sign in " + user, Toast.LENGTH_LONG).show()
         }
     }
