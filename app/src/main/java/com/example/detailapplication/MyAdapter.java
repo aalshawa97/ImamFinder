@@ -77,7 +77,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ContactHolder> imp
     @Override
     public ContactHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-
         // Inflate the layout view you have created for the list rows here
         View view = layoutInflater.inflate(R.layout.contact_list_item, parent, false);
         onCreateViewHolderImage(parent, viewType);

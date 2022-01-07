@@ -14,13 +14,6 @@
         android:layout_height="wrap_content"
         android:text="@string/hiring" />
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/buttonSignIn"
-        android:onClick="signOn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sign_in_with_google" />
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
         android:layout_width="96dp"

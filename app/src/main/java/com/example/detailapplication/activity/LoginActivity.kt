@@ -28,6 +28,7 @@ import kotlin.concurrent.schedule
 
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.GoogleApiClient
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.SetOptions
@@ -224,12 +225,12 @@ class LoginActivity : AppCompatActivity(){
             //startActivityForResult(signInIntent, RC_SIGN_IN)
             // Check for existing Google Sign In account, if the user is already signed in
 // the GoogleSignInAccount will be non-null.
+            this@LoginActivity.startActivity(signInIntent)
             val account = GoogleSignIn.getLastSignedInAccount(this)
             updateUI(account)
             if (account != null) {
                 Toast.makeText(applicationContext,"Hello user" + account.email, Toast.LENGTH_LONG)
             }
-            this@LoginActivity.startActivity(signInIntent)
             //this@LoginActivity.startActivity(Intent(this@LoginActivity, ChatActivity::class.java))
         }
 
@@ -305,17 +306,18 @@ class LoginActivity : AppCompatActivity(){
     //Change UI according to user data.
 
     fun updateUI(account: GoogleSignInAccount?) {
-        //final  val FirebaseAuth mAuth;
-        //mAuth = FirebaseAuth.getInstance();
-        //mAuth.signInAnonymously()
+        val mAuth : FirebaseAuth
+        mAuth = FirebaseAuth.getInstance();
+        mAuth.signInAnonymously()
         //val mAuth
-        //val user: String = mAuth.getCurrentUser().toString()
+        val user: String = mAuth.getCurrentUser().toString()
 
         if (account != null) {
             Toast.makeText(this, "You signed in successfully", Toast.LENGTH_LONG).show()
             startActivity(Intent(this, MainActivity::class.java))
         } else {
             Toast.makeText(this, "You didn't signed in", Toast.LENGTH_LONG).show()
+            //Toast.makeText(this, "Please sign in " + user, Toast.LENGTH_LONG).show()
         }
     }
 
