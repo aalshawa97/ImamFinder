@@ -78,7 +78,7 @@ class LoginActivity : AppCompatActivity(){
         */
     }
     val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-        .requestIdToken("AIzaSyD_9laAyRVEMzExT-gAeq4YZAOEb_aI9-w")
+        .requestIdToken("509547427718-ppltqdqk6jp2njn3mj5eqjonhsfugqrf.apps.googleusercontent.com")
         .requestEmail()
         .build()
 
@@ -218,6 +218,18 @@ class LoginActivity : AppCompatActivity(){
         signIn.setOnClickListener{
             Toast.makeText(this, "Loading Google sign in", Toast.LENGTH_LONG)
             Log.d("LoginActivity", "signOn: " + "loading Google sign in")
+            // Build a GoogleSignInClient with the options specified by gso.
+            val mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+            val signInIntent: Intent = mGoogleSignInClient.getSignInIntent()
+            //startActivityForResult(signInIntent, RC_SIGN_IN)
+            // Check for existing Google Sign In account, if the user is already signed in
+// the GoogleSignInAccount will be non-null.
+            val account = GoogleSignIn.getLastSignedInAccount(this)
+            updateUI(account)
+            if (account != null) {
+                Toast.makeText(applicationContext,"Hello user" + account.email, Toast.LENGTH_LONG)
+            }
+            this@LoginActivity.startActivity(signInIntent)
             //this@LoginActivity.startActivity(Intent(this@LoginActivity, ChatActivity::class.java))
         }
 
