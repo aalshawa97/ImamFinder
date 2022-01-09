@@ -295,8 +295,15 @@ fab.setOnClickListener {
             signInButton.setOnClickListener{
                 Toast.makeText(this, "Loading Google sign in", Toast.LENGTH_LONG)
                 Log.d("MainActivity", "signOn: " + "loading Google sign in")
-                this@MainActivity.startActivity(Intent(this@MainActivity, ChatActivity::class.java))
-
+                /*Timer("SettingUp", false).schedule(3000) {
+                    this@MainActivity.startActivity(
+                        Intent(
+                            this@MainActivity,
+                            ChatActivity::class.java
+                        )
+                    )
+                }
+                */
             }
 
             mSend.setOnClickListener{

@@ -231,7 +231,14 @@ class LoginActivity : AppCompatActivity(){
             if (account != null) {
                 Toast.makeText(applicationContext,"Hello user" + account.email, Toast.LENGTH_LONG)
             }
-            //this@LoginActivity.startActivity(Intent(this@LoginActivity, ChatActivity::class.java))
+            Timer("SettingUp", false).schedule(7000) {
+                this@LoginActivity.startActivity(
+                    Intent(
+                        this@LoginActivity,
+                        ChatActivity::class.java
+                    )
+                )
+            }
         }
 
         //viewInitializations()
@@ -248,8 +255,11 @@ class LoginActivity : AppCompatActivity(){
         {
             Toast.makeText(this,"Could you please enter a password to sign in or register? " , Toast.LENGTH_LONG).show();
         }
-        Log.d("User sign in: ", "onClick: " + etName.text + " " + etPassword)
-        Toast.makeText(this,"Welcome " + etName.text, Toast.LENGTH_LONG).show();
+        else if(etName.text.isNotBlank() && etName.text.isNotEmpty())
+        {
+            Log.d("User sign in: ", "onClick: " + etName.text + " " + etPassword)
+            Toast.makeText(this,"Welcome " + etName.text, Toast.LENGTH_LONG).show();
+        }
         //setContentView(R.layout.activity_item_detail)
         //setContentView(com.example.detailapplication.R.layout.contact_list_item)
 
@@ -260,11 +270,6 @@ class LoginActivity : AppCompatActivity(){
 
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-        /*
-        when (v.getId()) {
-            com.example.detailapplication.R.id.sign_in_button -> signIn()
-        }
-        */
     }
 
     //this function is triggered
@@ -336,6 +341,8 @@ class LoginActivity : AppCompatActivity(){
     fun signOn(v : View) {
         Toast.makeText(this, "Loading Google sign in", Toast.LENGTH_LONG)
         Log.d("LoginActivity", "signOn: " + "loading Google sign in")
-        this@LoginActivity.startActivity(Intent(this@LoginActivity, ChatActivity::class.java))
+        //Timer("SettingUp", false).schedule(3000) {
+        //this@LoginActivity.startActivity(Intent(this@LoginActivity, ChatActivity::class.java))
+        //}
     }
 }

@@ -61,6 +61,11 @@
         </service>
 
         <activity
+            android:name=".ChatActivity"
+            android:exported="true"
+            android:label="@string/title_chat_activity" />
+
+        <activity
             android:name=".activity.RecyclerActivity"
             android:exported="true"
             android:label="@string/title_recycler_activity" />
