@@ -37,8 +37,6 @@ class HomeActivity : AppCompatActivity() {
         Timer("SettingUp", false).schedule(3000) {
             val myIntent = Intent(this@HomeActivity, LoginActivity::class.java)
             this@HomeActivity.startActivity(myIntent)
-            //Toast.makeText(this@HomeActivity, "Welcome", Toast.LENGTH_LONG)
-            //Toast.makeText(this, "Welcome", Toast.LENGTH_LONG).show()
 
         }
     }
@@ -48,7 +46,6 @@ class HomeActivity : AppCompatActivity() {
         var randomKey : String
         randomKey = UUID.randomUUID().toString()
         var riversRef : StorageReference
-        //riversRef.outFile(imageUri)
     }
 
     fun choosePicture(){
