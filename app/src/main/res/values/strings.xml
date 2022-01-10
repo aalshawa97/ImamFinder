@@ -76,6 +76,7 @@
     <string name="send">Send</string>
     <string name="add_contact">Add contact</string>
     <string name="title_chat_activity">Chat activity</string>
+    <string name="title_find_user_activity">Find user activity</string>
     <string-array name="imams">
         <item>Muhammad Khateeb</item>
         <item>Idris Alam</item>

@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity(){
     lateinit var signIn : SignInButton
     lateinit var googleApiClient: GoogleApiClient
     lateinit var textView: TextView;
-    var RC_SIGN_In = 1
+    var RC_SIGN_In = 100
     lateinit var etName: EditText
     private var fromUid: String? = ""
     lateinit var tvRes: TextView
@@ -57,8 +57,7 @@ class LoginActivity : AppCompatActivity(){
     // One Button
     var BSelectImage: Button? = null
     val pickImage = 100
-    // constant to compare
-    // the activity result code
+    // constant to compare the activity result code
     var SELECT_PICTURE = 200
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -67,16 +66,6 @@ class LoginActivity : AppCompatActivity(){
             imageUri = data?.data
             IVPreviewImage.setImageURI(imageUri)
         }
-        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
-        /*
-        val RC_SIGN_IN
-        if (requestCode == RC_SIGN_IN) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
-            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
-            handleSignInResult(task)
-        }
-        */
     }
     val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
         .requestIdToken("509547427718-ppltqdqk6jp2njn3mj5eqjonhsfugqrf.apps.googleusercontent.com")
@@ -102,101 +91,6 @@ class LoginActivity : AppCompatActivity(){
         catch (e : java.lang.Exception) {
 
         }
-        /*
-        try {
-            val fromUser = intent.extras?.get("fromUser") as User
-
-            fromUid = fromUser.uid
-            var fromRooms = fromUser.rooms
-            val toUser = intent.extras?.get("toUser") as User
-            val toUid = toUser.uid
-            var toRooms = toUser.rooms
-
-            var roomId = intent.extras?.get("roomId") as String
-
-            if (roomId == "noRoomId") {
-                roomId = rootRef!!.collection("messages").document().id
-                if (fromRooms != null) {
-                    for ((key, _) in fromRooms) {
-                        if (toRooms != null) {
-                            if (toRooms.contains(key)) {
-                                roomId = key
-                            }
-                        }
-                    }
-                }
-            }
-
-            val button = findViewById<Button>(R.id.button)
-            val edit_text = findViewById<EditText>(R.id.edit_text)
-
-            button.setOnClickListener {
-                if (fromRooms == null) {
-                    fromRooms = mutableMapOf()
-                }
-                fromRooms!![roomId] = true
-                fromUser.rooms = fromRooms
-                rootRef!!.collection("users").document(fromUid!!).set(fromUser, SetOptions.merge())
-                rootRef!!.collection("contacts").document(toUid).collection("userContacts").document(fromUid!!).set(fromUser, SetOptions.merge())
-                rootRef!!.collection("rooms").document(toUid).collection("userRooms").document(roomId).set(fromUser, SetOptions.merge())
-
-                if (toRooms == null) {
-                    toRooms = mutableMapOf()
-                }
-                toRooms!![roomId] = true
-                toUser.rooms = toRooms
-                rootRef!!.collection("users").document(toUid).set(toUser, SetOptions.merge())
-                rootRef!!.collection("contacts").document(fromUid!!).collection("userContacts").document(toUid).set(toUser, SetOptions.merge())
-                rootRef!!.collection("rooms").document(fromUid!!).collection("userRooms").document(roomId).set(toUser, SetOptions.merge())
-
-                val messageText = edit_text.text.toString()
-                val message = Message(messageText, fromUid!!)
-                rootRef!!.collection("messages").document(roomId).collection("roomMessages").add(message)
-                edit_text.text.clear()
-            }
-
-            val query = rootRef!!.collection("messages").document(roomId).collection("roomMessages").orderBy("sentAt", Query.Direction.ASCENDING)
-            val options = FirestoreRecyclerOptions.Builder<Message>().setQuery(query, Message::class.java).build()
-            adapter = MessageAdapter(options)
-            recycler_view.adapter = adapter
-
-            title = toUser.userName
-
-            //Testing RSA
-            encrypt("This is secret!")
-
-            try {
-                //cipher = Cipher.getInstance("RSA")
-                val keyBytes = byteArrayOfInts(0xA1, 0x2E, 0x38, 0xD4, 0x89, 0xC3)
-                val secretKey: SecretKey = SecretKeySpec(keyBytes, "AES")
-                //cipher.init()
-                //decipher = Cipher.getInstance("AES")
-            }
-            catch(e: NoSuchAlgorithmException)
-            {
-                e.printStackTrace()
-            }
-
-            editText = findViewById(R.id.edit_text)
-            listView = findViewById(R.id.list_viw)
-            rootRef = FirebaseFirestore.getInstance()
-            recycler_view = findViewById(R.id.recycler_view)
-        }
-        catch (e : java.lang.Exception)
-        {
-            Log.d(TAG, "onCreate: exception thrown when getting user")
-        }
-        */
-
-        /*
-        signIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
-                startActivityForResult(intent,RC_SIGN_IN);
-            }
-        });
-        */
 
     googleApiClient = GoogleApiClient.Builder(this)
             .enableAutoManage(this, null)

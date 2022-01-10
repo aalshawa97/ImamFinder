@@ -19,8 +19,9 @@
         android:theme="@style/Theme.DetailApplication"
         tools:targetApi="n">
         <activity
-            android:name=".activity.User"
-            android:exported="false" />
+            android:name=".activity.FindUserActivity"
+            android:exported="false"
+            android:label="@string/title_find_user_activity"/>
         <!--
      Set custom default icon. This is used when no icon is set for incoming notification messages.
      See README(https://goo.gl/l4GJaQ) for more.
