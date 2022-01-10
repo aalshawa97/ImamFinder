@@ -35,12 +35,16 @@ open class ChatActivity: AppCompatActivity() {
     private var fromUid: String? = ""
     private var adapter: MessageAdapter? = null
     private lateinit var recycler_view  : RecyclerView
-
+    lateinit var edit_text :EditText
     fun byteArrayOfInts(vararg ints: Int) = ByteArray(ints.size) { pos -> ints[pos].toByte() }
+
+    fun initViews(){
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
+        //findViewById<EditText>(R.id.edit_text)
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
@@ -69,7 +73,6 @@ open class ChatActivity: AppCompatActivity() {
             }
 
             val button = findViewById<Button>(R.id.button)
-            val edit_text = findViewById<EditText>(R.id.edit_text)
 
             button.setOnClickListener {
                 if (fromRooms == null) {
