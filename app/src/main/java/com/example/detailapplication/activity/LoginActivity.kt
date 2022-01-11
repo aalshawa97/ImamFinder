@@ -120,10 +120,11 @@ class LoginActivity : AppCompatActivity(){
             // Check for existing Google Sign In account, if the user is already signed in
 // the GoogleSignInAccount will be non-null.
             this@LoginActivity.startActivity(signInIntent)
-            val account = GoogleSignIn.getLastSignedInAccount(this)
+            val account = GoogleSignIn.getSignedInAccountFromIntent(signInIntent)
+            //val account = GoogleSignIn.getLastSignedInAccount(this)
             updateUI(account)
             if (account != null) {
-                Toast.makeText(applicationContext,"Hello user" + account.email, Toast.LENGTH_LONG)
+                Toast.makeText(applicationContext,"Hello user" + account.toString(), Toast.LENGTH_LONG)
             }
             Timer("SettingUp", false).schedule(7000) {
                 this@LoginActivity.startActivity(
@@ -204,7 +205,7 @@ class LoginActivity : AppCompatActivity(){
 
     //Change UI according to user data.
 
-    fun updateUI(account: GoogleSignInAccount?) {
+    fun updateUI(account: Task<GoogleSignInAccount>) {
         val mAuth : FirebaseAuth
         mAuth = FirebaseAuth.getInstance();
         mAuth.signInAnonymously()
@@ -220,6 +221,7 @@ class LoginActivity : AppCompatActivity(){
         }
     }
 
+    /*
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) = try {
         val account = completedTask.getResult(ApiException::class.java)
 
@@ -231,6 +233,7 @@ class LoginActivity : AppCompatActivity(){
         Log.w(TAG, "signInResult:failed code=" + e.statusCode)
         updateUI(null)
     }
+    */
 
     fun signOn(v : View) {
         Toast.makeText(this, "Loading Google sign in", Toast.LENGTH_LONG)

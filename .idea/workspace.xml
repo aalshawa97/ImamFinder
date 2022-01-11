@@ -14,9 +14,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20e00d60-2e57-4f7c-9f40-f40c3c8260e2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/contact_list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/contact_list_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/detailapplication/activity/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/detailapplication/activity/LoginActivity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -413,17 +415,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/detailapplication/activity/LoginActivity.kt</url>
-          <line>162</line>
+          <line>163</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/detailapplication/activity/LoginActivity.kt</url>
-          <line>122</line>
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/detailapplication/activity/LoginActivity.kt</url>
-          <line>238</line>
+          <line>241</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
@@ -435,6 +432,11 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/detailapplication/ChatActivity.kt</url>
           <line>44</line>
           <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/detailapplication/activity/LoginActivity.kt</url>
+          <line>122</line>
+          <option name="timeStamp" value="106" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
