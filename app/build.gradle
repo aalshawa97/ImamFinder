@@ -9,7 +9,7 @@ android {
     compileSdkVersion 32
     defaultConfig {
         applicationId "com.example.detailapplication"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 32
         versionCode 1
         versionName "1.0"
@@ -47,6 +47,7 @@ android {
 
 dependencies {
     apply plugin: 'kotlin-kapt'
+    implementation 'io.getstream:stream-chat-android-client:4.26.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'android.arch.persistence.room:runtime:1.1.1'
     annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
