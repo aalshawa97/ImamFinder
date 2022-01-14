@@ -27,6 +27,7 @@ import javax.crypto.SecretKeyFactory
 import javax.crypto.spec.IvParameterSpec
 import javax.crypto.spec.PBEKeySpec
 import javax.crypto.spec.SecretKeySpec
+import android.os.FileUtils;
 
 open class ChatActivity: AppCompatActivity() {
     lateinit var editText: EditText

@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.detailapplication">
     <!--  -->
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="16" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+                                                                                                                                                             <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android:android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android:android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
