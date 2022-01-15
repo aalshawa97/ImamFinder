@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/send/baseline_send_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/supervised_user_circle/baseline_supervised_user_circle_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_send" />
-                            <entry key="sourceFile" value="C:\Users\15039\AndroidStudioProjects\ImamFinder" />
+                            <entry key="outputName" value="ic_user" />
+                            <entry key="sourceFile" value="C:\Users\15039\Downloads\1538298822.svg" />
                           </map>
                         </option>
                       </PersistentState>
