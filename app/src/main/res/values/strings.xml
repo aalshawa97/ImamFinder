@@ -79,6 +79,7 @@
     <string name="title_chat_activity">Chat activity</string>
     <string name="title_find_user_activity">Find user activity</string>
     <string name="user_message">User message</string>
+    <string name="bot_message">Bot message</string>
     <string-array name="imams">
         <item>Muhammad Khateeb</item>
         <item>Idris Alam</item>
