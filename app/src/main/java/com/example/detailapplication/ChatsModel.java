@@ -21,8 +21,8 @@ public class ChatsModel {
         this.sender = sender;
     }
 
-    public ChatsModel(String message) {
+    public ChatsModel(String message, String userKey) {
         this.message = message;
-        this.sender = sender;
+        this.sender = userKey;
     }
 }

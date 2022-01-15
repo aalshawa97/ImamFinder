@@ -1,17 +1,30 @@
 package com.example.detailapplication;
 
 public class MsgModel {
-    private String cnt;
+    // string to store our message and sender
+    private String message;
+    private String sender;
 
-    public String getCnt(){
-        return cnt;
+    // constructor.
+    public MsgModel(String message, String sender) {
+        this.message = message;
+        this.sender = sender;
     }
 
-    public void setCnt(String cnt){
-        this.cnt = cnt;
+    // getter and setter methods.
+    public String getMessage() {
+        return message;
     }
 
-    public MsgModel(String cnt){
-        this.cnt = cnt;
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getSender() {
+        return sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
     }
 }
