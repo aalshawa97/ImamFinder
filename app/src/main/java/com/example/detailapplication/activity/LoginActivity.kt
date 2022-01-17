@@ -1,44 +1,28 @@
 package com.example.detailapplication.activity
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.content.Intent
 import android.net.Uri
 import java.util.Timer
-import android.os.Handler
-import android.os.Looper
-import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.*
-import com.example.detailapplication.ChatActivity
-import com.example.detailapplication.MyAdapter
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.example.detailapplication.R
-import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.tasks.Task
 import kotlin.concurrent.schedule
 
 
-import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
-import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.auth.User
-import com.google.firebase.storage.StorageReference
-import java.lang.NullPointerException
-import java.security.NoSuchAlgorithmException
 import java.util.*
-import javax.crypto.SecretKey
-import javax.crypto.spec.SecretKeySpec
 
 //@repeatable
 class LoginActivity : AppCompatActivity(){

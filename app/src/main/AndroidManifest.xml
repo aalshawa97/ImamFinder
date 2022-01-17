@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android:android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android:android.permission.ACCESS_NETWORK_STATE" />
 
@@ -67,12 +69,12 @@
         </service>
 
         <activity
-            android:name=".ChatActivity"
+            android:name=".activity.ChatActivity"
             android:exported="true"
             android:label="@string/title_chat_activity" />
 
         <activity
-            android:name=".SimpleChatActivity"
+            android:name=".activity.SimpleChatActivity"
             android:exported="true"
             android:label="@string/title_simple_chat_activity" />
 
