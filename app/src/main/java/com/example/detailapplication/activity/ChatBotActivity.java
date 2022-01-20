@@ -106,7 +106,7 @@ public class ChatBotActivity extends AppCompatActivity {
         // url for our brain
         // make sure to add mshape for uid.
         // make sure to add your url.
-        String url = "https://api.brainshop.ai/get?bid=162882&key=t3JF55qSHHY5Ga5v&uid=[uid]&msg=" + userMsg;
+        String url = "http://api.brainshop.ai/get?bid=162882&key=t3JF55qSHHY5Ga5v&uid=[abdullah97]&msg=" + userMsg;
 
         // creating a variable for our request queue.
         RequestQueue queue = Volley.newRequestQueue(ChatBotActivity.this);
@@ -135,8 +135,8 @@ public class ChatBotActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 // error handling.
-                messageModalArrayList.add(new ChatsModel("Sorry no response found", BOT_KEY));
-                Toast.makeText(ChatBotActivity.this, "No response from the bot..", Toast.LENGTH_SHORT).show();
+                messageModalArrayList.add(new ChatsModel("Sorry no response found... \"Innkeeper: \\\"The room is $15 a night. It's $5 if you make your own bed.\\\" Guest: \\\"I'll make my own bed.\\\" Innkeeper: \\\"Good. I'll get you some nails and wood.\\\"\"", BOT_KEY));
+                Toast.makeText(ChatBotActivity.this, "No response from the bot... \"Innkeeper: \\\"The room is $15 a night. It's $5 if you make your own bed.\\\" Guest: \\\"I'll make my own bed.\\\" Innkeeper: \\\"Good. I'll get you some nails and wood.\\\"\"", Toast.LENGTH_SHORT).show();
             }
         });
 
