@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.detailapplication.R
 import com.google.firebase.storage.StorageReference
+import paul.mr_paul.blackbot.MainActivity
 import java.util.*
 import kotlin.concurrent.schedule
 

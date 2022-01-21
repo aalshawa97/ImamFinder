@@ -10,7 +10,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="buttonLabel">#FFFFFF</color>
     <color name="colorAccent">#FD6FFF</color>
-
+    <color name="colorPrimaryDark">#e15b64</color>
     <color name="back_color">#13253D</color>
     <color name="bot_back_color">#203757</color>
     <color name="user_back_color">#6965FF</color>

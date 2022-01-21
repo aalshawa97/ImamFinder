@@ -54,6 +54,9 @@
             android:name=".activity.RegisterActivity"
             android:exported="true" />
         <activity
+            android:name="paul.mr_paul.blackbot.MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.ChatBotActivity"
             android:exported="true" />
         <activity

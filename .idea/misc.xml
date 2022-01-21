@@ -4,12 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/abdullah_muhammad_imam_finder_ic_launcher_background.xml" value="0.15648148148148147" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/bot_animation.xml" value="0.2235897435897436" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/demo.xml" value="0.17083333333333334" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic__chatbot.xml" value="0.14351851851851852" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic_baseline_record_voice_over_24.xml" value="0.15648148148148147" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic_chatbot.xml" value="0.1" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic_delete_chats_button.xml" value="0.1" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic_mute_button.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic_phone.xml" value="0.15648148148148147" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic_user.xml" value="0.14351851851851852" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/ic_volume_up_button.xml" value="0.2235897435897436" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/idris_alam_imam_finder_ic_launcher_background.xml" value="0.15648148148148147" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/item_mine_message.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/drawable/message_to.xml" value="0.14270833333333333" />
@@ -22,6 +26,7 @@
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_firestore.xml" value="0.1296875" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_main_chat.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_main_whatsapp_clone.xml" value="0.1296875" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_new_word.xml" value="0.11574074074074074" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_recycler.xml" value="0.27239583333333334" />
@@ -29,6 +34,7 @@
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_simple_chat.xml" value="0.16927083333333334" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/activity_storage.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/bot_msg_rv_item.xml" value="0.27239583333333334" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/card_edge.xml" value="0.15885416666666666" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/chat.xml" value="0.12135416666666667" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/contact_list_item.xml" value="0.2" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/contacts_list_item.xml" value="0.1" />
@@ -47,6 +53,7 @@
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/item_user.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/layout_list_item.xml" value="0.1890625" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/menu_sign_out.xml" value="0.19270833333333334" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/message_view_layout.xml" value="0.15885416666666666" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/my_row.xml" value="0.264" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/recycler_view.xml" value="0.1890625" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/ImamFinder/app/src/main/res/layout/recycler_view_item.xml" value="0.18489583333333334" />
