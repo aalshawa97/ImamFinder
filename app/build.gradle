@@ -40,7 +40,6 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
-        //noinspection DataBindingWithoutKapt
         dataBinding = true
         viewBinding = true
     }
@@ -83,10 +82,10 @@ dependencies {
     //implementation 'com.google.firebase:firebase-storage:20.0.0'
     implementation 'com.google.android.gms:play-services-auth:20.0.1'
     implementation 'com.google.firebase:firebase-messaging-ktx:23.0.0'
-    implementation 'androidx.room:room-common:2.4.0'
-    implementation 'androidx.room:room-runtime:2.4.0'
+    implementation 'androidx.room:room-common:2.4.1'
+    implementation 'androidx.room:room-runtime:2.4.1'
 
-    annotationProcessor 'androidx.room:room-compiler:2.4.0'
+    annotationProcessor 'androidx.room:room-compiler:2.4.1'
     //Add the following line:
     //Google Services plugin
     apply plugin: 'com.google.gms.google-services'
