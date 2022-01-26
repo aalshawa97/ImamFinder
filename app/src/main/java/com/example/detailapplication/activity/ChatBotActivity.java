@@ -61,7 +61,10 @@ public class ChatBotActivity extends AppCompatActivity {
         // creating a new array list
         messageModalArrayList = new ArrayList<>();
 
+        sendMsgIB.setOnClickListener(view -> handleMessageImageButton());
+
         // adding on click listener for send message button.
+        /*
         sendMsgIB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +84,7 @@ public class ChatBotActivity extends AppCompatActivity {
                 userMsgEdt.setText("");
             }
         });
+        */
 
         // on below line we are initialing our adapter class and passing our array list to it.
         messageRVAdapter = new ChatRVAdapter(messageModalArrayList, this);
@@ -95,6 +99,23 @@ public class ChatBotActivity extends AppCompatActivity {
         // below line we are setting
         // adapter to our recycler view.
         chatsRV.setAdapter(messageRVAdapter);
+    }
+
+    public void handleMessageImageButton(){
+        // checking if the message entered
+        // by user is empty or not.
+        if (userMsgEdt.getText().toString().isEmpty()) {
+            // if the edit text is empty display a toast message.
+            Toast.makeText(ChatBotActivity.this, "Please enter your message..", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // calling a method to send message
+        // to our bot to get response.
+        sendMessage(userMsgEdt.getText().toString());
+
+        // below line we are setting text in our edit text as empty
+        userMsgEdt.setText("");
     }
 
     private void sendMessage(String userMsg) {
