@@ -1,7 +1,6 @@
 package com.example.detailapplication.activity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -22,25 +20,15 @@ import com.example.detailapplication.ChatsModel;
 import com.example.detailapplication.R;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 public class ChatBotActivity extends AppCompatActivity {
 
-    // creating variables for our
-    // widgets in xml file.
-    private RecyclerView chatsRV;
-    private ImageButton sendMsgIB;
     private EditText userMsgEdt;
-    private final String USER_KEY = "user";
     private final String BOT_KEY = "bot";
 
-    // creating a variable for
-    // our volley request queue.
-    private RequestQueue mRequestQueue;
-
-    // creating a variable for array list and adapter class.
+    //Creating a variable for array list and adapter class.
     private ArrayList<ChatsModel> messageModalArrayList;
     private ChatRVAdapter messageRVAdapter;
 
@@ -49,13 +37,17 @@ public class ChatBotActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat);
 
-        // on below line we are initializing all our views.
-        chatsRV = findViewById(R.id.idRVChats);
-        sendMsgIB = findViewById(R.id.idFABSend);
+        //  On below line we are initializing all our views.
+        // creating variables for our
+        // widgets in xml file.
+        RecyclerView chatsRV = findViewById(R.id.idRVChats);
+        ImageButton sendMsgIB = findViewById(R.id.idFABSend);
         userMsgEdt = findViewById(R.id.idEdtMessage);
 
         // below line is to initialize our request queue.
-        mRequestQueue = Volley.newRequestQueue(ChatBotActivity.this);
+        // creating a variable for
+        // our volley request queue.
+        RequestQueue mRequestQueue = Volley.newRequestQueue(ChatBotActivity.this);
         mRequestQueue.getCache().clear();
 
         // creating a new array list
@@ -64,27 +56,6 @@ public class ChatBotActivity extends AppCompatActivity {
         sendMsgIB.setOnClickListener(view -> handleMessageImageButton());
 
         // adding on click listener for send message button.
-        /*
-        sendMsgIB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // checking if the message entered
-                // by user is empty or not.
-                if (userMsgEdt.getText().toString().isEmpty()) {
-                    // if the edit text is empty display a toast message.
-                    Toast.makeText(ChatBotActivity.this, "Please enter your message..", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                // calling a method to send message
-                // to our bot to get response.
-                sendMessage(userMsgEdt.getText().toString());
-
-                // below line we are setting text in our edit text as empty
-                userMsgEdt.setText("");
-            }
-        });
-        */
 
         // on below line we are initialing our adapter class and passing our array list to it.
         messageRVAdapter = new ChatRVAdapter(messageModalArrayList, this);
@@ -121,8 +92,9 @@ public class ChatBotActivity extends AppCompatActivity {
     private void sendMessage(String userMsg) {
         // below line is to pass message to our
         // array list which is entered by the user.
+        String USER_KEY = "user";
         messageModalArrayList.add(new ChatsModel(userMsg, USER_KEY));
-        messageRVAdapter.notifyDataSetChanged();
+        messageRVAdapter.notifyItemChanged(messageModalArrayList.size()- 1);
 
         // url for our brain
         // make sure to add mshape for uid.
@@ -133,32 +105,26 @@ public class ChatBotActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(ChatBotActivity.this);
 
         // on below line we are making a json object request for a get request and passing our url .
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    // in on response method we are extracting data 
-                    // from json response and adding this response to our array list.
-                    String botResponse = response.getString("cnt");
-                    messageModalArrayList.add(new ChatsModel(botResponse, BOT_KEY));
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
+            try {
+                // in on response method we are extracting data
+                // from json response and adding this response to our array list.
+                String botResponse = response.getString("cnt");
+                messageModalArrayList.add(new ChatsModel(botResponse, BOT_KEY));
 
-                    // notifying our adapter as data changed.
-                    messageRVAdapter.notifyDataSetChanged();
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                // notifying our adapter as data changed.
+                messageRVAdapter.notifyItemChanged(messageModalArrayList.size() - 1);
+            } catch (JSONException e) {
+                e.printStackTrace();
 
-                    // handling error response from bot.
-                    messageModalArrayList.add(new ChatsModel("No response", BOT_KEY));
-                    messageRVAdapter.notifyDataSetChanged();
-                }
+                // handling error response from bot.
+                messageModalArrayList.add(new ChatsModel("No response", BOT_KEY));
+                messageRVAdapter.notifyItemChanged(messageModalArrayList.size() - 1);
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                // error handling.
-                messageModalArrayList.add(new ChatsModel("Sorry no response found... \"Innkeeper: \\\"The room is $15 a night. It's $5 if you make your own bed.\\\" Guest: \\\"I'll make my own bed.\\\" Innkeeper: \\\"Good. I'll get you some nails and wood.\\\"\"", BOT_KEY));
-                Toast.makeText(ChatBotActivity.this, "No response from the bot... \"Innkeeper: \\\"The room is $15 a night. It's $5 if you make your own bed.\\\" Guest: \\\"I'll make my own bed.\\\" Innkeeper: \\\"Good. I'll get you some nails and wood.\\\"\"", Toast.LENGTH_SHORT).show();
-            }
+        }, error -> {
+            // error handling.
+            messageModalArrayList.add(new ChatsModel("Sorry no response found... \"Innkeeper: \\\"The room is $15 a night. It's $5 if you make your own bed.\\\" Guest: \\\"I'll make my own bed.\\\" Innkeeper: \\\"Good. I'll get you some nails and wood.\\\"\"", BOT_KEY));
+            Toast.makeText(ChatBotActivity.this, "No response from the bot... \"Innkeeper: \\\"The room is $15 a night. It's $5 if you make your own bed.\\\" Guest: \\\"I'll make my own bed.\\\" Innkeeper: \\\"Good. I'll get you some nails and wood.\\\"\"", Toast.LENGTH_SHORT).show();
         });
 
         jsonObjectRequest.setRetryPolicy(new RetryPolicy() {
@@ -173,7 +139,7 @@ public class ChatBotActivity extends AppCompatActivity {
             }
 
             @Override
-            public void retry(VolleyError error) throws VolleyError {
+            public void retry(VolleyError error) {
 
             }
         });
