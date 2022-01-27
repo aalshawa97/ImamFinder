@@ -23,6 +23,13 @@ class ExampleInstrumentedTest {
     }
 
     @Test
+    fun notNullAppContext() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertNotEquals(null, appContext.packageName)
+    }
+
+    @Test
     fun useNotAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
