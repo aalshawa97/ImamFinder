@@ -1,12 +1,13 @@
 package com.example.detailapplication
 
-import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
-
+import androidx.test.platform.app.InstrumentationRegistry
+import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
 
-import org.junit.Assert.*
+//import org.junit.Assert.assertNotEquals
+
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -22,10 +23,12 @@ class ExampleInstrumentedTest {
         assertEquals("com.example.detailapplication", appContext.packageName)
     }
 
+    /*
     @Test
     fun notNullAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        //assertThat(appContext, null)
         assertNotEquals(null, appContext.packageName)
     }
 
@@ -35,4 +38,5 @@ class ExampleInstrumentedTest {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertNotEquals("Random", appContext.packageName)
     }
+    */
 }
