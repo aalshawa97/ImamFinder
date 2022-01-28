@@ -1,7 +1,7 @@
 package com.example.detailapplication
 
 import org.junit.Test
-
+//import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Assert.*
 
 /**
@@ -19,6 +19,14 @@ class ExampleUnitTest {
     fun spelling_isCorrect() {
         assertEquals("Hi", "Hi")
     }
+
+    /*
+    @Test
+    fun context_isCorrect() {
+        // Context of the app under test.
+        val appContext = context_isCorrect()
+        assertNotEquals(false, appContext)
+    }*/
 
 
 }
