@@ -3,6 +3,7 @@ package com.example.detailapplication.Utils
 import org.junit.Assert
 import org.junit.Assert.*
 import com.google.common.truth.Truth.assertThat
+import io.getstream.chat.android.client.utils.toResult
 import org.junit.Test
 
 class RegistrationUtilTest{
@@ -30,5 +31,18 @@ class RegistrationUtilTest{
         assertThat(result).isEqualTo(true)
         assertThat("hello").isEqualTo("hello")
         //assertThat(result).isFalse()
+    }
+
+    //Empty password
+    //Password was repeated incorrectly
+    //Password contains less than 2 digits
+    @Test
+    fun `empty password returns false` () {
+        val result = RegistrationUtil.validateRegistrationInput(
+            "moFarah",
+            "abcdeghi",
+            "abcdeghi"
+        )
+        assertThat(result).isTrue()
     }
 }
