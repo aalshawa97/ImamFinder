@@ -20,13 +20,15 @@ class ExampleUnitTest {
         assertEquals("Hi", "Hi")
     }
 
-    /*
     @Test
     fun context_isCorrect() {
+        /*
         // Context of the app under test.
         val appContext = context_isCorrect()
         assertNotEquals(false, appContext)
-    }*/
+
+         */
+    }
 
 
 }
