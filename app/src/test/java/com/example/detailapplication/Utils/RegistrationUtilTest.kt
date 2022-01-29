@@ -18,4 +18,17 @@ class RegistrationUtilTest{
         assertThat(result).isEqualTo(true)
         //assertThat(result).isFalse()
     }
+
+    @Test
+    fun `valid username and correctly repeated password returns true`(){
+        //Assert(true, true)
+        val result = RegistrationUtil.validateRegistrationInput(
+            "Mohammad Farah",
+            "123",
+            "123"
+        )
+        assertThat(result).isEqualTo(true)
+        assertThat("hello").isEqualTo("hello")
+        //assertThat(result).isFalse()
+    }
 }
