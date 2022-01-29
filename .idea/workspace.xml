@@ -14,6 +14,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20e00d60-2e57-4f7c-9f40-f40c3c8260e2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/detailapplication/Utils/RegistrationUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/detailapplication/Utils/RegistrationUtil.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/detailapplication/Utils/RegistrationUtilTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/detailapplication/Utils/RegistrationUtilTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +187,7 @@
       <command value="./gradlew signingReport" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.RegistrationUtilTest">
+  <component name="RunManager" selected="Gradle.RegistrationUtilTest.valid username and correctly repeated password returns true">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="ImamFinder.app" />
       <option name="DEPLOY" value="true" />
@@ -346,9 +354,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RegistrationUtilTest.valid username and correctly repeated password returns true" />
         <item itemvalue="Gradle.RegistrationUtilTest" />
         <item itemvalue="Gradle.RegistrationUtilTest.empty password returns false" />
-        <item itemvalue="Gradle.RegistrationUtilTest.valid username and correctly repeated password returns true" />
         <item itemvalue="Gradle.RegistrationUtilTest.empty username returns false " />
         <item itemvalue="Gradle.ExampleUnitTest.context_isCorrect" />
       </list>
@@ -457,6 +465,14 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/detailapplication/activity/LoginActivity.kt</url>
           <line>106</line>
           <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/app/src/test/java/com/example/detailapplication/Utils/RegistrationUtilTest.kt</url>
+          <line>39</line>
+          <properties class="com.example.detailapplication.Utils.RegistrationUtilTest" method="empty password returns false">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="110" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

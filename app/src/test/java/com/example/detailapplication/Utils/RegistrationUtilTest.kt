@@ -16,7 +16,7 @@ class RegistrationUtilTest{
             "123",
             "123"
         )
-        assertThat(result).isEqualTo(true)
+        assertThat(result).isEqualTo(false)
         //assertThat(result).isFalse()
     }
 
@@ -28,8 +28,8 @@ class RegistrationUtilTest{
             "123",
             "123"
         )
-        assertThat(result).isEqualTo(true)
-        assertThat("hello").isEqualTo("hello")
+        assertThat(result).isEqualTo(false)
+        //assertThat("hello").isEqualTo("hello")
         //assertThat(result).isFalse()
     }
 
@@ -43,6 +43,7 @@ class RegistrationUtilTest{
             "abcdeghi",
             "abcdeghi"
         )
-        assertThat(result).isTrue()
+        assertThat(result).isFalse()
     }
+
 }
