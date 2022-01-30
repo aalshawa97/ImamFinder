@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    //apply plugin: 'kotlin-kapt'
+    id 'kotlin-kapt'
     id 'com.google.gms.google-services'
 }
 
@@ -40,12 +40,20 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
-        dataBinding = true
-        viewBinding  true
+        dataBinding true
+        viewBinding true
     }
 }
 
 dependencies {
+    //androidTestImplementation "androidx.test:runner:$androidXTestVersion"
+    //androidTestImplementation "androidx.test:rules:$androidXTestVersion"
+    // Optional -- UI testing with Espresso
+    //androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    // Optional -- UI testing with UI Automator
+    //androidTestImplementation "androidx.test.uiautomator:uiautomator:$uiAutomatorVersion"
+    // Optional -- UI testing with Compose
+    //androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     apply plugin: 'kotlin-kapt'
     //implementation "org.alicebot.*"
     implementation 'com.google.android.material:material:1.5.0'
