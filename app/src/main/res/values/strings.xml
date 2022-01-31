@@ -81,6 +81,7 @@
     <string name="user_message">User message</string>
     <string name="bot_message">Bot message</string>
     <string name="title_simple_chat_activity">Simple chat activity</string>
+    <string name="home_activity">Home activity</string>
     <string-array name="imams">
         <item>Muhammad Khateeb</item>
         <item>Idris Alam</item>
